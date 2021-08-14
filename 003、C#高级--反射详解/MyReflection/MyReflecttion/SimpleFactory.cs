@@ -8,7 +8,7 @@ namespace MyReflecttion
     public class SimpleFactory
     {
         //创建SqlServerHelper的时候，没有出现SqlserverHelper；没有依赖SqlServerHelper
-        //依赖的是两个字符串Business.DB.SqlServer.dll + Business.DB.SqlServer.SqlServerHelper
+        //依赖的是两个字符串Business.DB.SqlServer.dll + Business.DB.SqlServer.SqlServerHelper，从配置文件读取。
         //去掉个对细节的依赖的：依赖于抽象，不再依赖于细节；依赖倒置原则； 增强代码的稳定性；
         public static IDBHelper CreateInstance()
         {  
