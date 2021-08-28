@@ -20,7 +20,7 @@
 
 ### [特性详解](https://blog.csdn.net/liyou123456789/article/details/119314247)
 
-### [委托详解](https://blog.csdn.net/liyou123456789/article/details/119113577)
+### [委托详解](https://blog.csdn.net/liyou123456789/article/details/119704294)
 
 ### [LambdaLinq详解](https://blog.csdn.net/liyou123456789/article/details/119853634)
 
