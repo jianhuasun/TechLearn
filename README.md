@@ -24,6 +24,8 @@
 
 ### [LambdaLinq详解](https://blog.csdn.net/liyou123456789/article/details/119853634)
 
+### [Expression详解](https://blog.csdn.net/liyou123456789/article/details/119967779)
+
 > 013、NetX
 
 ### [NET跨平台基础01](https://blog.csdn.net/liyou123456789/article/details/119714802)
