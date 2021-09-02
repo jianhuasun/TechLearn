@@ -27,26 +27,7 @@ namespace MyLambdaLinq
                 }
             }
             return newlist;
-        }
-
-        /// <summary>
-        /// yield扩展方法
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="oldlist"></param>
-        /// <param name="func"></param>
-        /// <returns></returns>
-        public static IEnumerable<T> CustomYieldWhere<T>(this IEnumerable<T> oldlist, Func<T, bool> func)
-        {            
-            foreach (var item in oldlist)
-            {
-                Console.WriteLine("************************开始判断*************************");
-                if (func.Invoke(item))
-                {
-                    yield return item;
-                }
-            }
-        }
+        }        
 
         ////来自于Linq的Where实现
         //public static IEnumerable<TSource> Where<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)
@@ -376,20 +357,6 @@ namespace MyLambdaLinq
                         && item.ClassId == 1
                         && item.Age > 20).ToList();
                 Console.WriteLine("************************方案3：Linq中的Where*************************");
-            }
-
-            //（4）yield关键字
-            //在扩展IEnumable的时候，可以使用yield 关键字，yield关键字必须和IEnumable成套使用
-            //yield关键做到了按需获取，判断的时候，只要是符合条件的，就返回了，如果不符合就继续往后判断
-            {
-                Console.WriteLine("************************yield关键字*************************");
-                List<Student> studentList = this.GetStudentList();
-                IEnumerable<Student> student2 = studentList.CustomYieldWhere(s => s.Age > 30);
-                foreach (var item in student2)
-                {
-                    Console.WriteLine(item.Name);
-                }
-                Console.WriteLine("************************yield关键字*************************");
             }
         }
     }

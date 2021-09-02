@@ -98,9 +98,6 @@ namespace MyLambdaLinq
                     ////实现原理和我们自己写的扩展方法类似
                     ////Linq的底层都是通过迭代器来实现就是支持循环
                     ////Linq的底层使用IEnumerable来承接数据
-                    ////（4）yield关键字
-                    ////在扩展IEnumable的时候，可以使用yield 关键字，yield关键字必须和IEnumable成套使用
-                    ////yield关键做到了按需获取，判断的时候，只要是符合条件的，就返回了，如果不符合就继续往后判断
                     //new LinqShow().Show();
                     ////3、Linq的优势
                     ////（1）减少编码

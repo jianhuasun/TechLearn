@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\NetLearnNote\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj": {}
+    "D:\\Codes\\TechLearn\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\NetLearnNote\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj": {
+    "D:\\Codes\\TechLearn\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\NetLearnNote\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj",
+        "projectUniqueName": "D:\\Codes\\TechLearn\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj",
         "projectName": "MyLambdaLinq",
-        "projectPath": "D:\\Codes\\NetLearnNote\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj",
+        "projectPath": "D:\\Codes\\TechLearn\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\MyLambdaLinq.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\NetLearnNote\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\obj\\",
+        "outputPath": "D:\\Codes\\TechLearn\\003、C#高级--Lambda&Linq\\MyLambdaLinq\\MyLambdaLinq\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

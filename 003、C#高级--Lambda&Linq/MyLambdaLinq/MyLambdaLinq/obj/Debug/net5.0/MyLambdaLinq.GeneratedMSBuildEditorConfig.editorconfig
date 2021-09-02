@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = MyLambdaLinq
-build_property.ProjectDir = D:\Codes\NetLearnNote\003、C#高级--Lambda&Linq\MyLambdaLinq\MyLambdaLinq\
+build_property.ProjectDir = D:\Codes\TechLearn\003、C#高级--Lambda&Linq\MyLambdaLinq\MyLambdaLinq\
