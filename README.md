@@ -30,6 +30,8 @@
 
 ### [多线程详解](https://blog.csdn.net/liyou123456789/article/details/120595489)
 
+### [加密解密详解](https://blog.csdn.net/liyou123456789/article/details/120609269)
+
 > 013、NetX
 
 ### [NET跨平台基础01](https://blog.csdn.net/liyou123456789/article/details/119714802)
