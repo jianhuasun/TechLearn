@@ -1,5 +1,7 @@
 # 数据库--SQLServer详解
 
+## [零、文章目录](https://blog.csdn.net/liyou123456789/article/details/119715435)
+
 ## 一、数据库概念
 
 ### 1、数据库基本概念
@@ -84,7 +86,7 @@ Structured Query Language，即SQL，SQL是关系型数据库标准语言，其�
 
 ### 3、docker安装SqlServer2019
 
-> ### 拉取镜像
+> 拉取镜像
 
 ```bash
 docker pull mcr.microsoft.com/mssql/server:2019-latest
