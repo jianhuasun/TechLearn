@@ -12,73 +12,85 @@
 
 ### 2、.NET5之前
 
-![image-20210711141028242](assets/image-20210711141028242.png)
+![02f7d91e19e3f533acaaa6bd3e59816d](assets/02f7d91e19e3f533acaaa6bd3e59816d.jpeg)
 
 ### 3、.NET5统一了.NETCore和.NET Frameowork 
 
-![image-20210711141130556](assets/image-20210711141130556.png)
+![4d87bb6e6a6bea6f70821f09b212cd2a](assets/4d87bb6e6a6bea6f70821f09b212cd2a.jpeg)
 
 如果是.NET Core 3.1 升级到.NET5，只需要调整框架的版本，平滑升级，应用层变化小，主要是底层变化。
 
 如果是Net Framwork升级NetCore就是比较大的变化，应用层底层都变化很大。
 
-## 二、环境准备
+### 4、Net6进一步完善跨平台
 
-### 1、安装VS2019
+![019f924c2f5e7f1bbccc6c17b3e7f772](assets/019f924c2f5e7f1bbccc6c17b3e7f772-16365548689231.jpeg)
 
-Visual Studio2019  16.8.2版本+   现在安装默认带有.NET5的 CLR+依赖包
 
-VS2019下载网址 https://visualstudio.microsoft.com/zh-hans/vs/
 
-### 2、新建项目
+### 5、源码地址
 
-#### （1）创建空的解决方案
+Github地址：[https://github.com/dotnet/aspnetcore/tree/main](https://github.com/dotnet/aspnetcore/tree/main)
 
-![image-20210719064908548](assets/image-20210719064908548.png)
+### 6、安装Visual Studio
 
-#### （2）设置项目名称，位置
+Visual Studio2019  16.8.2版本+   现在安装默认带有.NET5+的 CLR+依赖包
 
-![image-20210719065040217](assets/image-20210719065040217.png)
+下载网址： [https://visualstudio.microsoft.com/zh-hans/vs/](https://visualstudio.microsoft.com/zh-hans/vs/)
 
-![image-20210719065527238](assets/image-20210719065527238.png)
+## 二、新建项目
 
-#### （3）解决方案添加新项目
+### 1、创建MVC项目
 
-![image-20210719065411288](assets/image-20210719065411288.png)
+#### （1）创建MVC项目
 
-![image-20210719065443299](assets/image-20210719065443299.png)
+![image-20211110221856248](assets/image-20211110221856248.png)
 
-![image-20210711145907802](assets/image-20210711145907802.png)
+#### （2）设置项目名称位置
 
-#### （4）创建项目
+![image-20211110224012095](assets/image-20211110224012095.png)
 
-![image-20210711145946294](assets/image-20210711145946294.png)
+#### （3）其他信息配置
+
+![image-20211110224040031](assets/image-20211110224040031.png)
+
+#### （4）项目创建完成
+
+![image-20211110224129940](assets/image-20211110224129940.png)
 
 #### （5）运行结果
 
-![image-20210711152126663](assets/image-20210711152126663.png)
+![image-20211110224205208](assets/image-20211110224205208.png)
 
-![image-20210711152101721](assets/image-20210711152101721.png)
+![image-20211110224327086](assets/image-20211110224327086.png)
 
+#### （6）项目结构解读
 
+- Connected Service：服务引用
 
-### 3、视图即时生效
+- properties->launchSettings.json：项目启动需要的一些配置：包含了端口号，IP地址
 
-> 图形界面配置方式
+- wwwroot：静态文件目录，js/css等
 
-上面的代码在创建的时候没有勾选启动Razor运行时编译，所以修改完代码之后页面刷新是没有效果的，需要重新编译代码才可以，勾选之后就可以实现即时编译
+- 依赖项：项目依赖的程序集
 
-![image-20210711154234252](assets/image-20210711154234252.png)
+- MVC：模型试图控制器
+- appsettings：配置文件
+- Program：控制台
+- Startup：支持网站运行的一些相关配置（Net6已经没有了）
 
-> 代码配置方式
+#### （7）MVC模式解读
 
-（1）Nuget安装：Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+- C: Controller：控制器，负责业务逻辑计算
+- V: 表现层：用来展示各种结果，和用户互动
+- M: 模型：串联在C--V之间，保存数据
 
-![image-20210711154506385](assets/image-20210711154506385.png)
+#### （8）视图即时生效
 
-![image-20210711154531558](assets/image-20210711154531558.png)
+- Nuget安装：Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
 
-（2）在ConfigureServices方法中增加配置服务
+- 在ConfigureServices方法中增加配置服务
+
 
 ~~~c#
 //添加支持Razor即时编译
@@ -124,7 +136,11 @@ namespace DemoNet5Mvc.Controllers
 }
 ```
 
-==**User4如果用String类型定义的话，会报找不到视图，所以一定要Object类型**==
+==User4如果用String类型定义的话，会报找不到视图，被当成了视图，所以一定要Object类型==
+
+==ViewBag.User1和ViewData["User1"]指向的是同一个地址的数据，后者的赋值会覆盖前者的赋值==
+
+==TempData是一次性的，第二次访问就没有了==
 
 #### （4）Index视图页面代码
 
