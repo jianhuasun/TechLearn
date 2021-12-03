@@ -2415,6 +2415,8 @@ hostname
 hostname -a
 # 修改主机名(重启后无效)
 hostname xxx
+# 永久修改(重启生效)
+hostnamectl set-hostname xxx
 ```
 
 #### （2）ifconfig(显示或设置网络设备)
