@@ -2158,10 +2158,13 @@ umount -f [挂载位置] 强制卸载
 
 **常用参数：**﻿
 
-| a    | 显示现行终端机下的所有程序，包括其他用户的程序 |
-| ---- | ---------------------------------------------- |
-| u    | 以用户为主的格式来显示程序状况                 |
-| x    | 显示所有程序，不以终端机来区分                 |
+| -a   | 显示所有终端机下执行的程序，除了阶段作业领导者之外 |
+| ---- | -------------------------------------------------- |
+| -e   | 显示所有程序                                       |
+| -f   | 显示UID,PPIP,C与STIME栏位                          |
+| -u   | 列出属于该用户的程序的状况，也可使用用户名称来指定 |
+| x    | 显示所有程序，不以终端机来区分                     |
+| -C   | 指定执行指令的名称，并列出该指令的程序的状况       |
 
 ```bash
 #显示所有当前进程
@@ -2497,7 +2500,98 @@ netstat -ap | grep ssh
 
 #### （4）域名映射
 
-　/etc/hosts文件用于在通过主机名进行访问时做ip地址解析之用,相当于windows系统的C:\Windows\System32\drivers\etc\hosts文件的功能.
+　/etc/hosts文件用于在通过主机名进行访问时做ip地址解析之用,相当于windows系统的C:\Windows\System32\drivers\etc\hosts文件的功能。
+
+#### （5）ip addr(查看IP地址)
+
+```bash
+[root@bluecusliyou ~]# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:16:3e:16:fa:95 brd ff:ff:ff:ff:ff:ff
+    inet 172.27.45.106/20 brd 172.27.47.255 scope global dynamic noprefixroute eth0
+       valid_lft 312184993sec preferred_lft 312184993sec
+    inet6 fe80::216:3eff:fe16:fa95/64 scope link 
+       valid_lft forever preferred_lft forever
+3: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:3f:30:cc:94 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:3fff:fe30:cc94/64 scope link 
+       valid_lft forever preferred_lft forever
+89: vethf0fc6b7@if88: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP group default 
+    link/ether 02:31:61:b2:ab:a9 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet6 fe80::31:61ff:feb2:aba9/64 scope link 
+       valid_lft forever preferred_lft forever
+91: veth3f74a7c@if90: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP group default 
+    link/ether b6:07:90:98:e7:2b brd ff:ff:ff:ff:ff:ff link-netnsid 1
+    inet6 fe80::b407:90ff:fe98:e72b/64 scope link 
+       valid_lft forever preferred_lft forever
+```
+
+#### （6）ping(测试主机间网络连通性)
+
+ping命令主要用来测试主机之间网络的连通性，也可以用于。执行ping指令会使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。
+
+不过值得我们注意的是：Linux系统下的ping命令与Windows系统下的ping命令稍有不同。Windows下运行ping命令一般会发出4个请求就结束运行该命令；而Linux下不会自动终止，此时需要我们按CTR+C终止或者使用-c参数为ping命令指定发送的请求数目。
+
+| -d   | 使用Socket的SO_DEBUG功能                 |
+| ---- | ---------------------------------------- |
+| -c   | 指定发送报文的次数                       |
+| -i   | 指定收发信息的间隔时间                   |
+| -I   | 使用指定的网络接口送出数据包             |
+| -l   | 设置在送出要求信息之前，先行发出的数据包 |
+| -n   | 只输出数值                               |
+| -p   | 设置填满数据包的范本样式                 |
+| -q   | 不显示指令执行过程                       |
+| -R   | 记录路由过程                             |
+| -s   | 设置数据包的大小                         |
+| -t   | 设置存活数值TTL的大小                    |
+| -v   | 详细显示指令的执行过程                   |
+
+```bash
+#检测网站的连通性
+[root@bluecusliyou ~]# ping www.baidu.com
+PING www.a.shifen.com (110.242.68.3) 56(84) bytes of data.
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=1 ttl=50 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=2 ttl=50 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=3 ttl=50 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=4 ttl=50 time=10.7 ms
+^C
+--- www.a.shifen.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 7ms
+rtt min/avg/max/mdev = 10.695/10.717/10.743/0.076 ms
+#ping4次
+[root@bluecusliyou ~]# ping -c 4 www.baidu.com
+PING www.a.shifen.com (110.242.68.4) 56(84) bytes of data.
+64 bytes from 110.242.68.4 (110.242.68.4): icmp_seq=1 ttl=50 time=11.6 ms
+64 bytes from 110.242.68.4 (110.242.68.4): icmp_seq=2 ttl=50 time=11.7 ms
+64 bytes from 110.242.68.4 (110.242.68.4): icmp_seq=3 ttl=50 time=11.7 ms
+64 bytes from 110.242.68.4 (110.242.68.4): icmp_seq=4 ttl=50 time=11.7 ms
+
+--- www.a.shifen.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 7ms
+rtt min/avg/max/mdev = 11.636/11.660/11.685/0.133 ms
+#ping4次间隔3秒
+[root@bluecusliyou ~]# ping -c 4 -i 3 www.baidu.com
+PING www.a.shifen.com (110.242.68.3) 56(84) bytes of data.
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=1 ttl=50 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=2 ttl=50 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=3 ttl=50 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=4 ttl=50 time=10.8 ms
+
+--- www.a.shifen.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 17ms
+rtt min/avg/max/mdev = 10.710/10.737/10.751/0.104 ms
+#指定网站的IP
+[root@bluecusliyou ~]# ping -c 1 www.baidu.com | grep from | cut -d " " -f 4
+110.242.68.4
+```
 
 ### 6、防火墙命令
 
