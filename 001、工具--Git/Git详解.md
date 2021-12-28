@@ -956,14 +956,12 @@ git remote set-url --add oginin <远程仓库地址2>
 
 #### （4）配置本地库关联多个远程库 不同SSH
 
-工作用到公司的git repo，自己在github、coding有自己的repo，但是是在同一台笔记本上连接一个ssh证书对应一个仓库，在做相应的配置即可以公司、GitHub、Coding三个repo为例
-
 > 创建三份ssh证书
 
 根据每个repo用到的email生成ssh证书
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t rsa -C "your_email@example.com"
 ```
 
  根据不同的repo进行命名，后面需要给每个repo配置证书
@@ -979,32 +977,29 @@ Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
 ```
 
-重复3次，生成3个ssh证书，分别为： id_rsa_work 、id_rsa_github、id_rsa_coding，位于～/.ssh 目录下
+重复3次，生成3个ssh证书，分别为： id_rsa_gitee 、id_rsa_github、id_rsa_coding，位于～/.ssh 目录下
 
 > 配置repo相应的ssh证书
 
 在~/.ssh 目录下新建 config文件 touch ~/.ssh/config，填写内容如下
 
 ```bash
-#dhms 
-host git-server
+#gitee 
+host gitee.com
 user liyou
-hostname lan.work.cloud
-port 29418
-identityfile ~/.ssh/id_rsa_work
-KexAlgorithms XXXXXXXXXXXXXXXXXX
+hostname gitee.com
+identityfile ~/.ssh/id_rsa_gitee
 
 #github
-Host github.com
+host github.com
 User liyou
-HostName github.com
+hostname github.com
 IdentityFile ~/.ssh/id_rsa_github
 
 #coding
-Host git.coding.net
+host git.coding.net
 User liyou
-HostName git.coding.net
-PreferredAuthentications publickey
+hostname git.coding.net
 IdentityFile ~/.ssh/id_rsa_coding
 ```
 
