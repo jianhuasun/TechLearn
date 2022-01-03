@@ -1,0 +1,15 @@
+D:\NetDemos\ConsoleAppTest\bin\Debug\net6.0\ConsoleAppTest.exe
+D:\NetDemos\ConsoleAppTest\bin\Debug\net6.0\ConsoleAppTest.deps.json
+D:\NetDemos\ConsoleAppTest\bin\Debug\net6.0\ConsoleAppTest.runtimeconfig.json
+D:\NetDemos\ConsoleAppTest\bin\Debug\net6.0\ConsoleAppTest.dll
+D:\NetDemos\ConsoleAppTest\bin\Debug\net6.0\ref\ConsoleAppTest.dll
+D:\NetDemos\ConsoleAppTest\bin\Debug\net6.0\ConsoleAppTest.pdb
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.csproj.AssemblyReference.cache
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.AssemblyInfoInputs.cache
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.AssemblyInfo.cs
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.csproj.CoreCompileInputs.cache
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.dll
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ref\ConsoleAppTest.dll
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.pdb
+D:\NetDemos\ConsoleAppTest\obj\Debug\net6.0\ConsoleAppTest.genruntimeconfig.cache
