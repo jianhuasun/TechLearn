@@ -2467,6 +2467,8 @@ ifconfig eth0 192.168.1.56 netmask 255.255.255.0 broadcast 192.168.1.255
 | -u   | 显示UDP传输协议的连线状况                |
 | -i   | 显示网络界面信息表单                     |
 | -n   | 直接使用IP地址，不通过域名服务器         |
+| -t   | (tcp) 仅显示tcp相关选项                  |
+| -l   | 仅列出在Listen(监听)的服务状态           |
 
 > 列出所有端口 (包括监听和未监听的)
 
@@ -2496,6 +2498,14 @@ netstat -lx
 
 ```bash
 netstat -ap | grep ssh
+```
+
+> 找出端口占用情况
+
+```bash
+[root@worker3 ~]# netstat -tunlp |grep 80
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      1759906/docker-prox 
+tcp6       0      0 :::80                   :::*                    LISTEN      1759910/docker-prox 
 ```
 
 #### （4）域名映射
