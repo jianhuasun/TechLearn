@@ -209,23 +209,22 @@ root           8       2  0 09:49 ?        00:00:00 [mm_percpu_wq]
 root           9       2  0 09:49 ?        00:00:00 [ksoftirqd/0]
 root          10       2  0 09:49 ?        00:00:03 [rcu_sched]
 root          11       2  0 09:49 ?        00:00:00 [migration/0]
-#进入容器内部查看进程核宿主机中的进程完全不同
-[root@bluecusliyou ~]# docker run -it --name mycentos centos
-[root@4862c3d32d3b /]# ps -ef
+#进入容器内部查看进程核宿主机中的进程和网络完全不同
+[root@bluecusliyou ~]# docker run -it --name centos centos
+[root@5a54231926d5 /]# ps -ef
 UID          PID    PPID  C STIME TTY          TIME CMD
-root           1       0  3 01:41 pts/0    00:00:00 /bin/bash
-root          15       1  0 01:41 pts/0    00:00:00 ps -ef
-#容器的网络配置
-[root@4862c3d32d3b /]# ip addr
+root           1       0  3 07:22 pts/0    00:00:00 /bin/bash
+root          15       1  0 07:22 pts/0    00:00:00 ps -ef
+[root@5a54231926d5 /]# ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-211: eth0@if212: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
-    link/ether 02:42:ac:11:00:0a brd ff:ff:ff:ff:ff:ff link-netnsid 0
-    inet 172.17.0.10/16 brd 172.17.255.255 scope global eth0
+112: eth0@if113: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
        valid_lft forever preferred_lft forever
-[root@4862c3d32d3b /]
+[root@5a54231926d5 /]# 
 #宿主机的网络配置和容器也是不同的
 [root@bluecusliyou ~]# ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -295,20 +294,19 @@ root          15       1  0 01:41 pts/0    00:00:00 ps -ef
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-98: eth0@if99: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
-    link/ether 02:42:ac:11:00:04 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-    inet 172.17.0.4/16 brd 172.17.255.255 scope global eth0
+112: eth0@if113: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
        valid_lft forever preferred_lft forever
 #直接进入容器查看网络信息是一样的
-[root@bluecusliyou ~]# docker exec -it centos /bin/bash
-[root@a6ed40c1d9a4 /]# ip addr
+[root@bluecusliyou ~]# docker exec -it centos ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-98: eth0@if99: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
-    link/ether 02:42:ac:11:00:04 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-    inet 172.17.0.4/16 brd 172.17.255.255 scope global eth0
+112: eth0@if113: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
        valid_lft forever preferred_lft forever
 ```
 
