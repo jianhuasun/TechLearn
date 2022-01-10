@@ -1772,11 +1772,11 @@ docker push   imageName[:tag]              #推送镜像到仓库
 
 #### （1）docker login（登录仓库）
 
-只有dockerhub的主机名[SERVER]（index.docker.io）是可以省略的，其他私有仓库的域名或者IP必须写上。
+只有dockerhub的[仓库host:port]（index.docker.io）是可以省略的，其他私有仓库的域名或者IP必须写上。
 
 登录信息可以在文件中查看/root/.docker/config.json。
 
-私有仓库登录之后才能上传拉取，公有仓库，不登录也可以上传拉取。
+私有仓库登录后能上传拉取，不登录不能上传拉取。公有仓库，登录可以上传拉取，不登录只能拉取不能上传。
 
 ```bash
 [root@bluecusliyou ~]# docker login --help
