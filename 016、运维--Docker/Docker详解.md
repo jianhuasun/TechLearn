@@ -3910,8 +3910,8 @@ your-server-ip registery
         "insecure-registries": ["registery:5000"]
 }
 #重新加载配置文件
-[root@VM-16-4-centos harbor]# systemctl daemon-reload
-[root@VM-16-4-centos harbor]# systemctl restart docker
+[root@blueculiyou harbor]# systemctl daemon-reload
+[root@blueculiyou harbor]# systemctl restart docker
 ```
 
 #### （4）客户端上传镜像
