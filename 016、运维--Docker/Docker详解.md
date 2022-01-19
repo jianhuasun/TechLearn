@@ -4,33 +4,7 @@
 
 ## 一、Docker基础
 
-### 1、Docker简介
-
-Docker 是一个开源的应用容器引擎，基于Go 语言并遵从 Apache2.0 协议开源。
-
-让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的操作系统的机器上，也可以实现虚拟化。容器是**完全使用沙箱机制，相互隔离，性能开销极低**。
-
-Docker 从 17.03 版本之后分为 CE（Community Edition: 社区版） 和 EE（Enterprise Edition: 企业版），我们用社区版就可以了。
-
-### 2、Docker起源
-
-#### （1）Docker历史
-
-2010年，几个搞IT的年轻人，在美国旧金山成立了一家名叫“dotCloud”的公司。这家公司主要提供基于PaaS的云计算技术服务。具体来说，是和LXC有关的容器技术。后来，dotCloud公司将自己的容器技术进行了简化和标准化，并命名为Docker。
-
-Docker技术诞生之后，并没有引起行业的关注。而dotCloud公司，作为一家小型创业企业，在激烈的竞争之下，也步履维艰。正当他们快要坚持不下去的时候，脑子里蹦出了“开源”的想法。
-
-2013年3月，dotCloud公司的创始人之一，Docker之父，28岁的Solomon Hykes正式决定，将Docker项目开源。
-
-不开则已，一开惊人。越来越多的IT工程师发现了Docker的优点，然后蜂拥而至，加入Docker开源社区。Docker的人气迅速攀升，速度之快，令人瞠目结舌。
-
-开源当月，Docker 0.1版本发布。此后的每一个月，Docker都会发布一个版本。到2014年6月9日，Docker 1.0版本正式发布。
-
-此时的Docker，已经成为行业里人气最火爆的开源技术，没有之一。甚至像Google、微软、Amazon、VMware这样的巨头，都对它青睐有加，表示将全力支持。
-
-Docker火了之后，dotCloud公司干脆把公司名字也改成了Docker Inc.。
-
-#### （2）容器技术演进
+### 1、容器发展
 
 > 物理机
 
@@ -50,7 +24,7 @@ Docker火了之后，dotCloud公司干脆把公司名字也改成了Docker Inc.�
 
 由于虚拟机存在这些缺点，Linux 发展出了另一种虚拟化技术：Linux 容器（Linux Containers，缩写为 LXC）。
 
-**Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。**或者说，在正常进程的外面套了一个保护层。对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层系统的隔离。
+Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。或者说，在正常进程的外面套了一个保护层。对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层系统的隔离。
 
 由于容器是进程级别的，相比虚拟机有很多优势：
 
@@ -79,6 +53,59 @@ Docker在容器的基础上，进行了进一步的封装，从文件系统、�
 当新建一个 容器时，docker不需要和虚拟机一样重新加载一个操作系统内核。当新建一个虚拟机时，虚拟机软件需要加载GuestOS，整个新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统，省略了这个复杂的过程，因此新建一个docker容器只需要几秒钟。
 
 ![QQ截图20210106203603](assets/QQ%E6%88%AA%E5%9B%BE20210106203603.png)
+
+> Kubernetes
+
+Kubernetes(k8s)是Google开源的容器集群管理系统（谷歌内部:Borg），目前已经成为容器编排一个标准。为容器化的应用提供部署运行、资源调度、服务发现和动态伸缩、高可用等一系列完整功能，提高了大规模容器集群管理的便捷性。
+
+### 2、Docker简介
+
+> Docker简介
+
+[Docker](http://c.biancheng.net/docker/) 是一种运行于 Linux 和 Windows 上的软件，用于创建、管理和编排容器。
+
+Docker 是在 GitHub 上开发的 Moby 开源项目的一部分。
+
+Docker 公司，位于旧金山，是整个 Moby 开源项目的维护者。Docker 公司还提供包含支持服务的商业版本的 Docker。
+
+> Docker公司
+
+Docker 公司位于旧金山，由法裔美籍开发者和企业家 Solumon Hykes 创立。
+
+有意思的是，Docker 公司起初是一家名为 dotCloud 的平台即服务（Platform-as-a-Service, PaaS）提供商。
+
+底层技术上，dotCloud 平台利用了 Linux 容器技术。为了方便创建和管理这些容器，dotCloud 开发了一套内部工具，之后被命名为“Docker”。Docker就是这样诞生的！
+
+2013年，dotCloud 的 PaaS 业务并不景气，公司需要寻求新的突破。于是他们聘请了 Ben Golub 作为新的 CEO，将公司重命名为“Docker”，放弃dotCloud PaaS 平台，怀揣着“将 Docker 和容器技术推向全世界”的使命，开启了一段新的征程。
+
+> Docker 运行时与编排引擎
+
+多数技术人员在谈到 Docker 时，主要是指 Docker 引擎。Docker 引擎是用于运行和编排容器的基础设施工具。
+
+Docker 引擎可以从 Docker 网站下载，也可以基于 GitHub 上的源码进行构建。无论是开源版本还是商业版本，都有 Linux 和 Windows 版本。
+
+Docker 引擎主要有两个版本：企业版（EE）和社区版（CE）。
+
+> Docker开源项目（Moby）
+
+“Docker”一词也会用于指代开源 Docker 项目。其中包含一系列可以从 Docker 官网下载和安装的工具，比如 Docker 服务端和 Docker 客户端。
+
+不过，该项目在 2017 年于 Austin 举办的 DockerCon 上正式命名为 Moby 项目。
+
+由于这次改名，GitHub 上的 docker/docker 库也被转移到了 moby/moby，并且拥有了项目自己的 Logo。
+Moby 项目的目标是基于开源的方式，发展成为 Docker 上游，并将 Docker 拆分为更多的模块化组件。
+
+Moby 项目托管于 GitHub 的 Moby 代码库，包括子项目和工具列表。核心的 Docker 引擎项目位于 GitHub 的 moby/moby，但是引擎中的代码正持续被拆分和模块化。
+
+> 开放容器计划
+
+OCI 是一个旨在对容器基础架构中的基础组件（如镜像格式与容器运行时）进行标准化的管理委员会。
+
+OCI 已经发布了两份规范（标准）：镜像规范和运行时规范。
+
+公平地说，这两个 OCI 规范对 Docker 的架构和核心产品设计产生了显著影响。Docker 1.11 版本中，Docker 引擎架构已经遵循 OCI 运行时规范了。
+
+OCI 在 Linux 基金会的支持下运作，Docker 公司和 CoreOS 公司都是主要贡献者。
 
 ### 3、Docker架构
 
@@ -169,7 +196,7 @@ Docker镜像是一个特殊的文件系统，提供容器运行时所需的程�
 
 仓库是一个集中存储和分发镜像的服务。Docker Registry包含很多个仓库，每个仓库对应多个标签，不同标签对应一个软件的不同版本。仓库分为公开仓库（Public）和私有仓库（Private）两种形式。
 
-最大的公开仓库是Docker Hub，是Docker提供用于存储和分布镜像的官方Docker Registry，也是默认的Registry，其网址为[https://hub.docker.com](https://hub.docker.com)。用于让我们集中存储和分发镜像。
+最大的公开仓库是Docker Hub，是Docker提供用于存储和分布镜像的官方Docker Registry，也是默认的Registry。
 
 Docker Hub有很多官方或其他开发提供的高质量镜像供我们使用，如果要将我们自己构建的镜像上传到Docker Hub上，我们需要在Docker Hub上注册一个账号，然后把自己在本地构建的镜像发送到Docker Hub的仓库中。
 
@@ -428,15 +455,15 @@ drwxr-xr-x   2 root root 0 11月  7 15:33 user.slice
 -rw-r--r-- 1 root root 0 1月   9 10:30 tasks
 #查看系统进程，随便找一个CPU负载较高的进程
 [root@bluecusliyou cpudemo]# top
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                                
-   2395 root      10 -10  217692  63904   4988 S   4.7   1.7   4:54.54 AliYunDun                                                                                                                              
-    794 root      20   0  221364   5888   4204 S   0.3   0.2   0:42.94 sssd_nss                                                                                                                               
-    855 root      20   0  425268  16916    100 S   0.3   0.5   0:00.83 tuned                                                                                                                                  
-    868 root      20   0 1351416  24712   3592 S   0.3   0.7   0:05.32 containerd                                                                                                                             
-   1120 root      20   0  155256   4036   2376 S   0.3   0.1   0:30.26 sshd                                                                                                                                   
- 249465 root      20   0   67648   5060   4244 R   0.3   0.1   0:00.02 top                                                                                                                                    
-      1 root      20   0  176880   6480   3740 S   0.0   0.2   0:01.44 systemd                                                                                                                                
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd                                                                                                                               
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   2395 root      10 -10  217692  63904   4988 S   4.7   1.7   4:54.54 AliYunDun 
+    794 root      20   0  221364   5888   4204 S   0.3   0.2   0:42.94 sssd_nss
+    855 root      20   0  425268  16916    100 S   0.3   0.5   0:00.83 tuned
+    868 root      20   0 1351416  24712   3592 S   0.3   0.7   0:05.32 containerd
+   1120 root      20   0  155256   4036   2376 S   0.3   0.1   0:30.26 sshd
+ 249465 root      20   0   67648   5060   4244 R   0.3   0.1   0:00.02 top
+      1 root      20   0  176880   6480   3740 S   0.0   0.2   0:01.44 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
       3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp        
 #告诉cgroup要控制的是哪个进程
 [root@bluecusliyou cpudemo]# echo 2395 > cgroup.procs
@@ -450,31 +477,33 @@ drwxr-xr-x   2 root root 0 11月  7 15:33 user.slice
 [root@bluecusliyou cpudemo]# echo 1000 > cpu.cfs_quota_us
 #查看系统进程,CPU占用降低了
 [root@bluecusliyou cpudemo]# top
-2395 root      10 -10  218532  64976   4988 R   1.0   1.8   5:05.02 AliYunDun                                                                                                                              
-   1120 root      20   0  155256   4036   2376 S   0.7   0.1   0:31.87 sshd                                                                                                                                   
-    794 root      20   0  221364   5888   4204 S   0.3   0.2   0:44.35 sssd_nss                                                                                                                               
-    996 root      20   0   57892   1716      0 S   0.3   0.0   0:03.18 AliYunDunUpdate                                                                                                                        
-   1060 root      20   0  805868   8900   4468 S   0.3   0.2   0:04.36 aliyun-service                                                                                                                         
- 256487 root      20   0       0      0      0 I   0.3   0.0   0:00.01 kworker/1:1-events                                                                                                                     
+PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                 
+2395 root      10 -10  218532  64976   4988 R   1.0   1.8   5:05.02 AliYunDun
+   1120 root      20   0  155256   4036   2376 S   0.7   0.1   0:31.87 sshd 
+    794 root      20   0  221364   5888   4204 S   0.3   0.2   0:44.35 sssd_nss
+    996 root      20   0   57892   1716      0 S   0.3   0.0   0:03.18 AliYunDunUpdate
+   1060 root      20   0  805868   8900   4468 S   0.3   0.2   0:04.36 aliyun-service 
+ 256487 root      20   0       0      0      0 I   0.3   0.0   0:00.01 kworker/1:1-events
       1 root      20   0  176880   6480   3740 S   0.0   0.2   0:01.44 systemd           
 ```
 
-### 3、文件系统
+### 3、Union FS
 
 Linux 的命名空间和控制组分别解决了不同资源隔离的问题，前者解决了进程、网络以及文件系统的隔离，后者实现了 CPU、内存等资源的隔离，但是在 Docker 中还有另一个非常重要的问题需要解决，也就是镜像的存储和分发问题。
 
-#### （1）UnionFs 
-
-UnionFS （联合文件系统）其实是一种为 Linux 操作系统设计的用于把多个文件系统联合到同一个挂载点的文件系统服务。而 AUFS 即 Advanced UnionFS 其实就是 UnionFS 的升级版，它能够提供更优秀的性能和效率。
+#### （1）联合文件系统
 
 Docker 支持了不同的存储驱动，包括 `aufs`、`devicemapper`、`overlay2`、`zfs` 和 `vfs` 等等，在最新的 Docker 中，`overlay2` 取代了 `aufs` 成为了推荐的存储驱动，但是在没有 `overlay2` 驱动的机器上仍然会使用 `aufs` 作为 Docker 的默认驱动。
 
 ![image-20220103210258553](assets/image-20220103210258553.png)
 
 ```bash
+#通过命令可以查看当前机器的文件系统
 [root@bluecusliyou ~]# docker info | grep Storage
  Storage Driver: overlay2
 ```
+
+UnionFS（联合文件系统）其实是一种为 Linux 操作系统设计的用于把多个文件系统联合到同一个挂载点的文件系统服务。而 AUFS 即 Advanced UnionFS 其实就是 UnionFS 的升级版，它能够提供更优秀的性能和效率。
 
 OverlayFS 也是一种与 AUFS 类似的联合文件系统，同样属于文件级的存储驱动，包含了最初的Overlay 和更新更稳定的 overlay2。Overlay 只有两层：upper 层和 Lower 层。Lower 层代表镜像层，upper 层代表容器可写层。
 
@@ -503,7 +532,7 @@ from upper
 
 #### （2）容器和镜像是什么
 
-镜像其实本质就是一个文件，镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发的软件，他包含运行某个软件所需的所有内容，包括**代码、运行时库、环境变量和配置文件**。
+镜像其实本质就是一个文件，用来打包运行环境和软件，他包含运行某个软件所需的所有内容，包括代码、运行时库、环境变量和配置文件。
 
 我们首先需要理解 Docker 是如何构建并且存储镜像的，也需要明白 Docker 的镜像是如何被每一个容器所使用的；Docker 中的每一个镜像都是由一系列只读的层组成的，Dockerfile 中的每一个命令都会在已有的只读层上创建一个新的层。如下有一个DockerFile文件。
 
@@ -514,7 +543,7 @@ RUN make /app
 CMD python /app/app.py
 ```
 
-上述的 Dockerfile 文件会构建一个拥有四层 layer 的镜像。当镜像被 `docker run` 命令创建时就会在镜像的最上层添加一个可写的层，也就是容器层，所有对于运行时容器的修改其实都是对这个容器读写层的修改。
+上述的 Dockerfile 文件会构建一个拥有四层 layer 的镜像。每一个镜像层都是建立在另一个镜像层之上的，同时所有的镜像层都是只读的，当镜像被 `docker run` 命令创建时就会在镜像的最上层添加一个可写的层，也就是容器层，所有对于运行时容器的修改其实都是对这个容器读写层的修改。
 
 ![image-20220103155950630](assets/image-20220103155950630.png)
 
@@ -522,9 +551,25 @@ CMD python /app/app.py
 
 ![image-20220103160027644](assets/image-20220103160027644.png)
 
-在 Docker 中，所有镜像层和容器层的内容都存储在 `/var/lib/docker/aufs/diff/` 目录中，而 `/var/lib/docker/aufs/layers/` 中存储着镜像层的元数据，每一个文件都保存着镜像层的元数据，最后的 `/var/lib/docker/aufs/mnt/` 包含镜像或者容器层的挂载点，最终会被 Docker 通过联合的方式进行组装。
-
-![image-20220103161151015](assets/image-20220103161151015.png)
+```bash
+#可以查看镜像详情，看到文件存储的位置
+[root@bluecusliyou ~]# docker image inspect nginx
+[
+    {
+        ...
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/96562081bb21856c9dbe4954de162212f7bd995c12a2ca2020799035b851f878/diff:/var/lib/docker/overlay2/2041f352a717bbaa3bb001bd2e458e55725341f602910ef7cdfaddf143bc9b59/diff:/var/lib/docker/overlay2/ce724e7f1f657a904975065b4a9800ca9365b4f4c425f67971bb422d78b08eab/diff:/var/lib/docker/overlay2/15c0d2d84de64718eaec1476ad2bf649d4dba1bde69b3724fafd6f37c3ef6f40/diff:/var/lib/docker/overlay2/083c6fb016be0ff1170f95f49b661d0437a7c884dd4d0b653bd9cb9650641f1f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/aed671c328f45f5a73296c9cd013581255889065976f83e850f4ee15de14decc/merged",
+                "UpperDir": "/var/lib/docker/overlay2/aed671c328f45f5a73296c9cd013581255889065976f83e850f4ee15de14decc/diff",
+                "WorkDir": "/var/lib/docker/overlay2/aed671c328f45f5a73296c9cd013581255889065976f83e850f4ee15de14decc/work"
+            },
+            "Name": "overlay2"
+        }
+        ...
+    }
+]
+```
 
 #### （3）容器和镜像加载原理
 
@@ -599,9 +644,9 @@ docker.io/library/redis:latest
 
 docker官网：[https://www.docker.com/](https://www.docker.com/)
 
-文档：[https://docs.docker.com/](https://docs.docker.com/)
+文档：[https://docs.docker.com/](https://docs.docker.com/)]
 
-仓库：[https://hub.docker.com/](https://hub.docker.com/)
+开源项目地址：[https://github.com/moby/moby](https://github.com/moby/moby)
 
 ### 2、各系统安装Docker
 
@@ -806,27 +851,26 @@ Run 'docker COMMAND --help' for more information on a command.
 ### 2、容器命令
 
 ```bash
-#新建容器并启动
-docker run -d --name 容器名称 -p 宿主机端口:容器端口 -v 宿主机目录：容器目录 imageName[:tag]       
-docker ps                                        #列出所有运行的容器
-docker ps -a                                     #列出所有容器
-exit/Ctrl+P+Q                                     #退出容器
-docker stop start restart kill containerId或containerName #启停容器
-docker rm containerId或containerName              #删除指定容器
-docker rm -f containerId或containerName           #强制删除启动的容器
-docker rm -f $(docker ps -aq)                     #强制删除所有容器
-docker rm $(docker ps -q -f status=exited)        #删除所有未运行的容器
-docker inspect containerId或containerName         #查看容器信息
-docker exec -it containerId /bin/bash             #进入容器内部
-docker logs containerId或containerName            #查看容器日志
-docker top containerId或containerName             #查看容器中进程信息
-docker cp containerId或containerName：容器内路径 宿主机路径 #从容器中拷贝文件到宿主机
-docker cp 宿主机路径 containerId或containerName：容器内路径 #从宿主机拷贝文件到容器
-#docker commit 提交容器成为一个新的镜像
-docker commit -m="提交的描述信息" -a="作者" containerId 目标镜像名:[TAG]
+docker run imageName[:tag]                                     #新建容器并启动
+docker ps                                                      #列出所有运行的容器
+docker ps -a                                                   #列出所有容器
+docker exec -it containerId或containerName /bin/bash           #进入容器内部
+exit/Ctrl+P+Q                                                  #退出容器
+docker stop start restart kill containerId或containerName      #启停容器
+docker rm containerId或containerName                           #删除指定容器
+docker rm -f containerId或containerName                        #强制删除启动的容器
+docker rm -f $(docker ps -aq)                                  #强制删除所有容器
+docker rm $(docker ps -q -f status=exited)        			   #删除所有未运行的容器
+docker inspect containerId或containerName                      #查看容器信息
+docker logs containerId或containerName                         #查看容器日志
+docker top containerId或containerName                          #查看容器中进程信息
+docker cp containerId或containerName：容器内路径 宿主机路径        #从容器中拷贝文件到宿主机
+docker cp 宿主机路径 containerId或containerName：容器内路径        #从宿主机拷贝文件到容器
+docker diff containerId或containerName                         #容器运行后文件发生的变化
+docker commit containerId或containerName imageName[:tag]       #提交容器成为一个新的镜像
 ```
 
-#### （1）docker run(新建容器并启动)
+#### docker run(新建容器并启动)
 
 | 名称，简写 | 描述                                                         |
 | ---------- | ------------------------------------------------------------ |
@@ -837,13 +881,15 @@ docker commit -m="提交的描述信息" -a="作者" containerId 目标镜像名
 | `-P(大写)` | 随机指定端口                                                 |
 | `-p`       | 宿主机端口：容器端口 端口映射                                |
 | `-v`       | 宿主机目录：容器目录 目录映射                                |
+| `-e`       | 指定容器运行的环境变量                                       |
+| `-w`       | 指定容器内工作目录                                           |
 
 ```bash
 #运行容器，没有交互一般直接就退出了
 docker run imageName[:tag]
 #以交互式创建容器，容器创建后自动进入容器中，Crtl+P+Q退出，容器继续运行，exit退出容器后，容器自动退出
 docker run -it imageName[:tag]
-#以守护式创建容器，容器在后台运行，不会退出，i可以省略
+#以守护式创建容器，容器在后台运行，不会退出
 docker run -[i]d imageName[:tag]
 #以守护时创建容器，设定容器名称，端口映射，挂载文件目录
 docker run -d --name 容器名称 -p 宿主机端口:容器端口 -v 宿主机目录：容器目录 imageName[:tag]
@@ -852,35 +898,25 @@ docker run -d --name 容器名称 -p 宿主机端口:容器端口 -v 宿主机�
 ```bash
 #运行容器，没有交互一般直接就退出了
 [root@bluecusliyou ~]# docker run centos
-[root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                     PORTS                                   NAMES
-da4d4c7786b8   centos    "/bin/bash"              7 seconds ago   Exited (0) 6 seconds ago                                           infallible_bouman
-...
+[root@bluecusliyou ~]# docker ps -l
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS                     PORTS     NAMES
+546e34cebc66   centos    "/bin/bash"   9 seconds ago   Exited (0) 8 seconds ago             friendly_ritchie
 #以交互式创建容器，容器创建后自动进入容器中，Crtl+P+Q退出，容器继续运行
 [root@bluecusliyou ~]# docker run -it centos
-[root@d4ab6c74f85e /]# 
-[root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                          PORTS                                   NAMES
-d4ab6c74f85e   centos    "/bin/bash"              20 seconds ago       Up 19 seconds                                                           pedantic_ganguly
-da4d4c7786b8   centos    "/bin/bash"              About a minute ago   Exited (0) About a minute ago                                        infallible_bouman
+[root@45f8aca32e8a /]# 
+[root@bluecusliyou ~]# docker ps -l
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS          PORTS     NAMES
+45f8aca32e8a   centos    "/bin/bash"   20 seconds ago   Up 19 seconds             quirky_swirles
 #以交互式创建容器，容器创建后自动进入容器中，exit退出容器后，容器自动退出
-[root@bluecusliyou ~]# docker run -it centos 
-[root@b136abc380d3 /]# exit
+[root@bluecusliyou ~]# docker run -it centos
+[root@a36ec2025146 /]# exit
 exit
-[root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                     PORTS                                   NAMES
-b136abc380d3   centos    "/bin/bash"              8 seconds ago   Exited (0) 5 seconds ago                                           thirsty_elion
-d4ab6c74f85e   centos    "/bin/bash"              2 minutes ago   Up 2 minutes                                                       pedantic_ganguly
-da4d4c7786b8   centos    "/bin/bash"              3 minutes ago   Exited (0) 3 minutes ago                                           infallible_bouman
-#docker run -it centos和docker run -it centos /bin/bash效果是一样的，镜像构建的命令就是运行bash
-[root@bluecusliyou ~]# docker history centos
-IMAGE          CREATED        CREATED BY                                      SIZE      COMMENT
-5d0da3dc9764   3 months ago   /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
-<missing>      3 months ago   /bin/sh -c #(nop)  LABEL org.label-schema.sc…   0B        
-<missing>      3 months ago   /bin/sh -c #(nop) ADD file:805cb5e15fb6e0bb0…   231MB   
+[root@bluecusliyou ~]# docker ps -l
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                      PORTS     NAMES
+a36ec2025146   centos    "/bin/bash"   16 seconds ago   Exited (0) 11 seconds ago             stupefied_archimedes
 #运行容器，设定容器名称，指定端口，端口访问成功
 [root@bluecusliyou ~]# docker run -d --name nginx_crun -p 3344:80 nginx
-38134864f0436b1d57e0a1f9705d84c0ab055621c0179c74ae4dbc045a02bf2d
+e244a095f8569fcd00da63d939ed1cb382595195ed5da4c22dbb634f5f9197fc
 [root@bluecusliyou ~]# curl localhost:3344
 <!DOCTYPE html>
 <html>
@@ -915,11 +951,11 @@ Commercial support is available at
 
 ![1638411980992](assets/1638411980992.png)
 
-> 重启策略
+> 容器重启策略
 
-- Docker容器的重启策略
+- Docker容器重启策略
 
-Docker容器的重启都是由Docker守护进程完成的，因此与守护进程息息相，Docker容器的重启策略如下：
+Docker容器的重启都是由Docker守护进程完成的，因此与守护进程息息相关，Docker容器的重启策略如下：
 
 no，默认策略，在容器退出时不重启容器
 on-failure，在容器非正常退出时（退出状态非0），才会重启容器
@@ -939,10 +975,6 @@ unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker
 - docker run的--restart选项
 
 通过--restart选项，可以设置容器的重启策略，以决定在容器退出时Docker守护进程是否重启刚刚退出的容器。
-
-示例：
-docker run -d --restart=always 容器名
-docker run -d --restart=on-failure:10 容器名
 
 - 查看容器详情补充
 
@@ -1040,7 +1072,7 @@ docker run -it --cpu-period=50000 --cpu-quota=25000 ubuntu:16.04 /bin/bash
 docker run -it -m 500M --memory-reservation 200M ubuntu:16.04 /bin/bash
 ```
 
-#### （2）docker ps(列出所有运行的容器)
+#### docker ps(列出所有运行的容器)
 
 ```bash
 [root@bluecusliyou ~]# docker ps --help
@@ -1057,175 +1089,243 @@ Options:
   -l, --latest          Show the latest created container (includes all states)
       --no-trunc        Don't truncate output
   -q, --quiet           Only display container IDs
-  -s, --size            Display total file sizes
+  -s, --size            Display total file sizes  
 ```
 
 ```bash
 #显示所有运行容器
 [root@bluecusliyou ~]# docker ps
-CONTAINER ID   IMAGE                                        COMMAND                  CREATED       STATUS       PORTS                                                  NAMES
-7ca5d4e48ef9   mysql:latest                                 "docker-entrypoint.s…"   7 weeks ago   Up 3 weeks   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   mysqlserver
-d57589593db8   mcr.microsoft.com/mssql/server:2019-latest   "/opt/mssql/bin/perm…"   7 weeks ago   Up 3 weeks   0.0.0.0:1433->1433/tcp, :::1433->1433/tcp              mssql
-3dffd55fb626   bluecusliyou/demonet5:0.1                    "dotnet DemoNet5Mvc.…"   8 weeks ago   Up 3 weeks   0.0.0.0:80->80/tcp, :::80->80/tcp, 443/tcp             recursing_nobel
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+e244a095f856   nginx     "/docker-entrypoint.…"   41 seconds ago   Up 40 seconds   0.0.0.0:3344->80/tcp, :::3344->80/tcp   nginx_crun
+45f8aca32e8a   centos    "/bin/bash"              2 minutes ago    Up 2 minutes                                            quirky_swirles
 #显示所有容器，包括非运行中的容器
 [root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE                                        COMMAND                  CREATED        STATUS                    PORTS                                                  NAMES
-5d894bd1a47f   centos                                       "/bin/bash"              14 hours ago   Exited (0) 14 hours ago                                                          tender_perlman
-e3c86f3b61cb   7b8db4329c1c                                 "/assets/wrapper"        13 days ago    Created                                                                          gitlab
-7ca5d4e48ef9   mysql:latest                                 "docker-entrypoint.s…"   7 weeks ago    Up 3 weeks                0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   mysqlserver
-d57589593db8   mcr.microsoft.com/mssql/server:2019-latest   "/opt/mssql/bin/perm…"   7 weeks ago    Up 3 weeks                0.0.0.0:1433->1433/tcp, :::1433->1433/tcp              mssql
-3dffd55fb626   bluecusliyou/demonet5:0.1                    "dotnet DemoNet5Mvc.…"   8 weeks ago    Up 3 weeks                0.0.0.0:80->80/tcp, :::80->80/tcp, 443/tcp             recursing_nobel
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                     PORTS                                   NAMES
+e244a095f856   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute          0.0.0.0:3344->80/tcp, :::3344->80/tcp   nginx_crun
+a36ec2025146   centos    "/bin/bash"              2 minutes ago        Exited (0) 2 minutes ago                                           stupefied_archimedes
+45f8aca32e8a   centos    "/bin/bash"              2 minutes ago        Up 2 minutes                                                       quirky_swirles
+546e34cebc66   centos    "/bin/bash"              3 minutes ago        Exited (0) 3 minutes ago                                           friendly_ritchie
 #显示正在运行的容器包括历史容器ID
 [root@bluecusliyou ~]# docker ps -aq
-5d894bd1a47f
-e3c86f3b61cb
-7ca5d4e48ef9
-d57589593db8
-3dffd55fb626
+e244a095f856
+a36ec2025146
+45f8aca32e8a
+546e34cebc66
+#显示最后一条容器
+[root@bluecusliyou ~]# docker ps -l
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+e244a095f856   nginx     "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes   0.0.0.0:3344->80/tcp, :::3344->80/tcp   nginx_crun
+#显示最后几条容器
+[root@bluecusliyou ~]# docker ps -n 2
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                     PORTS                                   NAMES
+e244a095f856   nginx     "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes               0.0.0.0:3344->80/tcp, :::3344->80/tcp   nginx_crun
+a36ec2025146   centos    "/bin/bash"              4 minutes ago   Exited (0) 4 minutes ago                                           stupefied_archimedes
 ```
 
-#### （3）exit(退出容器)
+#### docker exec(进入容器内部)
+
+```bash
+[root@bluecusliyou ~]# docker exec --help
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+
+Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+      --env-file list        Read in a file of environment variables
+  -i, --interactive          Keep STDIN open even if not attached
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY
+  -u, --user string          Username or UID (format: <name|uid>[:<group|gid>])
+  -w, --workdir string       Working directory inside the container
+```
+
+```bash
+[root@bluecusliyou ~]# docker run -d --name nginx_cexec nginx
+0c3cc43e2c77f90dfa00c3782a312057cef1e28bdc28a44b72d42040cfd2263a
+[root@bluecusliyou ~]# docker exec -it nginx_cexec /bin/bash
+root@0c3cc43e2c77:/# 
+```
+
+#### exit/Ctrl + P + Q(退出容器)
+
+进入容器内部执行此命令
 
 ```bash
 exit           #前台交互式退出容器，容器退出
-Ctrl + P + Q   #前台交互式退出容器，容器自动运行
+Ctrl + P + Q   #前台交互式退出容器，容器保持运行
 ```
 
-#### （4）docker stop start restart kill(启停容器)
+```bash
+#exit退出容器
+[root@bluecusliyou ~]# docker run -it --name centos_cexit centos
+[root@3d2494edc773 /]# exit   
+exit
+#Ctrl+P+Q退出容器
+[root@bluecusliyou ~]# docker run -it --name centos_cctlpq centos
+[root@a58d1f9c181a /]# 
+[root@bluecusliyou ~]# docker ps -n 2
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                      PORTS     NAMES
+a58d1f9c181a   centos    "/bin/bash"   30 seconds ago   Up 29 seconds                         centos_cctlpq
+3d2494edc773   centos    "/bin/bash"   2 minutes ago    Exited (0) 45 seconds ago             centos_cexit
+```
+
+#### docker stop start restart kill(启停容器)
 
 ```bash
-[root@bluecusliyou ~]# docker run -d --name nginx01 nginx
-c0826473303e3a6a5e402cb8240f232255a2fcb6eca9a2d8ed545ebd10ddbd82
+[root@bluecusliyou ~]# docker run -d --name nginx_cqt nginx
+8cf831c8c78971f9a40139ba957693e22d9c65912e842c946edfe0154741c118
 #停止容器
-[root@bluecusliyou ~]# docker stop nginx01
-nginx01
+[root@bluecusliyou ~]# docker stop nginx_cqt
+nginx_cqt
 #启动容器
-[root@bluecusliyou ~]# docker start nginx01
-nginx01
+[root@bluecusliyou ~]# docker start nginx_cqt
+nginx_cqt
 #重启容器
-[root@bluecusliyou ~]# docker restart nginx01
-nginx01
+[root@bluecusliyou ~]# docker restart nginx_cqt
+nginx_cqt
 #暂停容器
-[root@bluecusliyou ~]# docker pause nginx01
-nginx01
+[root@bluecusliyou ~]# docker pause nginx_cqt
+nginx_cqt
 #恢复暂停
-[root@bluecusliyou ~]# docker unpause nginx01
-nginx01
+[root@bluecusliyou ~]# docker unpause nginx_cqt
+nginx_cqt
 #强制停止容器
-[root@bluecusliyou ~]# docker kill nginx01
-nginx01
+[root@bluecusliyou ~]# docker kill nginx_cqt
+nginx_cqt
 ```
 
-#### （5）docker rm(删除容器)
+#### docker rm(删除容器)
 
 ```bash
-#删除容器，只能删除停止的容器，运行容器无法删除
-[root@bluecusliyou ~]# docker rm nginx01
-nginx01
-#-f 强制删除运行中的容器
-[root@bluecusliyou ~]# docker run -d --name nginx01 nginx
-b029f8e958efa522503d3685e82c55d8e62c1dd94596971c7ebb0cf2b48e0422
-[root@bluecusliyou ~]# docker ps |grep nginx01
-b029f8e958ef   nginx     "/docker-entrypoint.…"   20 seconds ago   Up 18 seconds   80/tcp                                  nginx01
-[root@bluecusliyou ~]# docker rm nginx01
-Error response from daemon: You cannot remove a running container b029f8e958efa522503d3685e82c55d8e62c1dd94596971c7ebb0cf2b48e0422. Stop the container before attempting removal or force remove
-[root@bluecusliyou ~]# docker rm -f nginx01
-nginx01
-#删除多个容器
-[root@bluecusliyou ~]# docker run -d --name nginx01 nginx
-46da7dd89d723d7d029f72c9b9c7af125790965d6f0feea3d8c37b61bd9d039f
-[root@bluecusliyou ~]# docker run -d --name nginx02 nginx
-6d81de3fe426d056566455f01a82fdce172d3d6502fd59fb6a4791d234ff8a84
-[root@bluecusliyou ~]# docker run -d --name nginx03 nginx
-19b8f75ec4c7d59a4649c9a4ef10ec0dff0e71ffe24730d97bb009472572d242
+[root@bluecusliyou ~]# docker rm --help
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+
+Options:
+  -f, --force     Force the removal of a running container (uses SIGKILL)
+  -l, --link      Remove the specified link
+  -v, --volumes   Remove anonymous volumes associated with the container
+```
+
+```bash
 [root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE     COMMAND                  CREATED             STATUS                   PORTS                                   NAMES
-19b8f75ec4c7   nginx     "/docker-entrypoint.…"   58 minutes ago      Up 58 minutes            80/tcp                                  nginx03
-6d81de3fe426   nginx     "/docker-entrypoint.…"   58 minutes ago      Up 58 minutes            80/tcp                                  nginx02
-46da7dd89d72   nginx     "/docker-entrypoint.…"   58 minutes ago      Up 58 minutes            80/tcp                                  nginx01
-[root@bluecusliyou ~]# docker rm -f nginx01 nginx02 nginx03
-nginx01
-nginx02
-nginx03
-#删除所有未运行的容器
-[root@bluecusliyou ~]# docker rm $(docker ps -q -f status=exited)
-b136abc380d3
-da4d4c7786b8
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                            PORTS                                   NAMES
+8cf831c8c789   nginx     "/docker-entrypoint.…"   3 minutes ago    Exited (137) About a minute ago                                           nginx_cqt
+e244a095f856   nginx     "/docker-entrypoint.…"   9 minutes ago    Up 9 minutes                      0.0.0.0:3344->80/tcp, :::3344->80/tcp   nginx_crun
+a36ec2025146   centos    "/bin/bash"              10 minutes ago   Exited (0) 9 minutes ago                                                  stupefied_archimedes
+45f8aca32e8a   centos    "/bin/bash"              10 minutes ago   Up 10 minutes                                                             quirky_swirles
+546e34cebc66   centos    "/bin/bash"              11 minutes ago   Exited (0) 11 minutes ago                                                 friendly_ritchie
+#无法直接删除运行容器
+[root@bluecusliyou ~]# docker rm nginx_crun
+Error response from daemon: You cannot remove a running container e244a095f8569fcd00da63d939ed1cb382595195ed5da4c22dbb634f5f9197fc. Stop the container before attempting removal or force remove
+#删除退出的容器
+[root@bluecusliyou ~]# docker rm friendly_ritchie
+friendly_ritchie
+#-f 强制删除运行中的容器
+[root@bluecusliyou ~]# docker rm -f nginx_crun
+nginx_crun
+#删除多个容器
+[root@bluecusliyou ~]# docker rm -f nginx_cqt stupefied_archimedes 
+nginx_cqt
+stupefied_archimedes
 #删除所有容器
 [root@bluecusliyou ~]# docker rm -f $(docker ps -aq)
-38134864f043
-746709e30f63
-d4ab6c74f85e
-bf4bcd3a37ad
-a916f1d3c625
-2504291aeb98
-5a2f59d8b461
-09593f4c5c55
-f5ef981caaca
-5d5671155661
-4ed35df5bfa7
+45f8aca32e8a
 ```
 
-#### （6）docker exec(进入容器内部)
+#### docker inspect(查看容器信息)
 
 ```bash
-[root@bluecusliyou ~]# docker run -d --name nginx01 -p 3344:80 nginx
-e7039f04ac33b441ebbe45666e5ca8b94c84ed6412a35b4880b4d08afd8ad5cb
-[root@bluecusliyou ~]# docker exec -it nginx01 /bin/bash
-root@cb76d20e200a:/# 
+[root@bluecusliyou ~]# docker inspect --help
+
+Usage:  docker inspect [OPTIONS] NAME|ID [NAME|ID...]
+
+Return low-level information on Docker objects
+
+Options:
+  -f, --format string   Format the output using the given Go template
+  -s, --size            Display total file sizes if the type is container
+      --type string     Return JSON for specified type
+
 ```
 
-#### （7）docker inspect(查看容器信息)
-
 ```bash
-[root@bluecusliyou ~]# docker inspect nginx01
+[root@bluecusliyou ~]# docker run -d --name nginx_cinspect nginx
+0747a4ca275edbe5fbfc3f6c3009de1cd7f9a9f50314cd2867432c2f52c24537
+[root@bluecusliyou ~]# docker inspect nginx_cinspect
 [
     {
-        "Id": "e7039f04ac33b441ebbe45666e5ca8b94c84ed6412a35b4880b4d08afd8ad5cb",
-        "Created": "2022-01-09T07:03:40.279242887Z",
-        "Path": "/docker-entrypoint.sh",
-        "Args": [
-            "nginx",
-            "-g",
-            "daemon off;"
-        ],
-        "State": {
-            "Status": "running",
-            "Running": true,
-            "Paused": false,
-            "Restarting": false,
-            "OOMKilled": false,
-            "Dead": false,
-            "Pid": 655413,
-            "ExitCode": 0,
-            "Error": "",
-            "StartedAt": "2022-01-09T07:03:40.879285169Z",
-            "FinishedAt": "0001-01-01T00:00:00Z"
+        ...
+        "Config": {
+            "Hostname": "0747a4ca275e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.21.5",
+                "NJS_VERSION=0.7.1",
+                "PKG_RELEASE=1~bullseye"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "nginx",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
         },
-        "Image": "sha256:605c77e624ddb75e6110f997c58876baa13f8754486b461117934b24a9dc3a85",
-        "ResolvConfPath": "/var/lib/docker/containers/e7039f04ac33b441ebbe45666e5ca8b94c84ed6412a35b4880b4d08afd8ad5cb/resolv.conf",
-        "HostnamePath": "/var/lib/docker/containers/e7039f04ac33b441ebbe45666e5ca8b94c84ed6412a35b4880b4d08afd8ad5cb/hostname",
-        "HostsPath": "/var/lib/docker/containers/e7039f04ac33b441ebbe45666e5ca8b94c84ed6412a35b4880b4d08afd8ad5cb/hosts",
-        "LogPath": "/var/lib/docker/containers/e7039f04ac33b441ebbe45666e5ca8b94c84ed6412a35b4880b4d08afd8ad5cb/e7039f04ac33b441ebbe45666e5ca8b94c84ed6412a35b4880b4d08afd8ad5cb-json.log",
-
-    ...
+        ...
+    }
 ]
 ```
 
-#### （8）docker logs(查看容器日志)
-
-| 名称，简写            | 描述                                                         |
-| --------------------- | ------------------------------------------------------------ |
-| `--details`           | 显示更多的信息                                               |
-| `--follow` , `-f`     | 跟踪日志输出                                                 |
-| `--since`             | 显示自时间戳（例如 2013-01-02T13:23:37Z）或相关（例如 42m 为 42 分钟）以来的日志 |
-| `--tail` , `-n`       | 从日志末尾显示的行数，默认all                                |
-| `--timestamps` , `-t` | 显示时间戳                                                   |
-| `--until`             | [**API 1.35+**](https://docs.docker.com/engine/api/v1.35/) 在时间戳（例如 2013-01-02T13:23:37Z）或相关（例如 42m 为 42 分钟）之前显示日志 |
+#### docker logs(查看容器日志)
 
 ```bash
-#查看最近20分钟内的所有日志
-[root@bluecusliyou ~]# docker logs --since 20m nginx01
+[root@bluecusliyou ~]# docker logs --help
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+
+Options:
+      --details        Show extra details provided to logs
+  -f, --follow         Follow log output
+      --since string   Show logs since timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes)
+  -n, --tail string    Number of lines to show from the end of the logs (default "all")
+  -t, --timestamps     Show timestamps
+      --until string   Show logs before a timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes)
+```
+
+```bash
+#查看容器日志
+[root@bluecusliyou ~]# docker run -d --name nginx_clogs nginx
+4ea24b83a984a3df63ac98439d7f51ca2b78a6f7544b0aadaaf9742838179681
+[root@bluecusliyou ~]# docker logs nginx_clogs
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
@@ -1234,34 +1334,28 @@ root@cb76d20e200a:/#
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 /docker-entrypoint.sh: Configuration complete; ready for start up
-2021/12/01 06:37:35 [notice] 1#1: using the "epoll" event method
-...
-#查看最近20分钟内最近10条日志
-[root@bluecusliyou ~]# docker logs --since 20m --tail 10 nginx01
-/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
-/docker-entrypoint.sh: Configuration complete; ready for start up
-2021/12/01 06:40:31 [notice] 1#1: using the "epoll" event method
-2021/12/01 06:40:31 [notice] 1#1: nginx/1.21.4
-2021/12/01 06:40:31 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
-2021/12/01 06:40:31 [notice] 1#1: OS: Linux 4.18.0-193.28.1.el8_2.x86_64
-2021/12/01 06:40:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
-2021/12/01 06:40:31 [notice] 1#1: start worker processes
-2021/12/01 06:40:31 [notice] 1#1: start worker process 24
-2021/12/01 06:40:31 [notice] 1#1: start worker process 25
+2022/01/14 03:29:24 [notice] 1#1: using the "epoll" event method
+2022/01/14 03:29:24 [notice] 1#1: nginx/1.21.5
+2022/01/14 03:29:24 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/01/14 03:29:24 [notice] 1#1: OS: Linux 4.18.0-193.28.1.el8_2.x86_64
+2022/01/14 03:29:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/01/14 03:29:24 [notice] 1#1: start worker processes
+2022/01/14 03:29:24 [notice] 1#1: start worker process 31
+2022/01/14 03:29:24 [notice] 1#1: start worker process 32
 #查看最近20分钟内最近10条日志，并实时监控后续日志
-[root@bluecusliyou ~]# docker logs -f --since 20m --tail 10 nginx01
+[root@bluecusliyou ~]# docker logs -f --since 20m --tail 10 nginx_clogs
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 /docker-entrypoint.sh: Configuration complete; ready for start up
-2021/12/01 06:40:31 [notice] 1#1: using the "epoll" event method
-2021/12/01 06:40:31 [notice] 1#1: nginx/1.21.4
-2021/12/01 06:40:31 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
-2021/12/01 06:40:31 [notice] 1#1: OS: Linux 4.18.0-193.28.1.el8_2.x86_64
-2021/12/01 06:40:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
-2021/12/01 06:40:31 [notice] 1#1: start worker processes
-2021/12/01 06:40:31 [notice] 1#1: start worker process 24
-2021/12/01 06:40:31 [notice] 1#1: start worker process 25
+2022/01/14 03:29:24 [notice] 1#1: using the "epoll" event method
+2022/01/14 03:29:24 [notice] 1#1: nginx/1.21.5
+2022/01/14 03:29:24 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/01/14 03:29:24 [notice] 1#1: OS: Linux 4.18.0-193.28.1.el8_2.x86_64
+2022/01/14 03:29:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/01/14 03:29:24 [notice] 1#1: start worker processes
+2022/01/14 03:29:24 [notice] 1#1: start worker process 31
+2022/01/14 03:29:24 [notice] 1#1: start worker process 32
 #查询某个时间段内的日志
-[root@bluecusliyou ~]# docker logs --since='2021-11-30' --until='2021-12-02' nginx01
+[root@bluecusliyou ~]# docker logs --since='2022-01-13' --until='2022-01-15' nginx_clogs
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
@@ -1270,98 +1364,178 @@ root@cb76d20e200a:/#
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 /docker-entrypoint.sh: Configuration complete; ready for start up
-2021/12/01 06:37:35 [notice] 1#1: using the "epoll" event method
-2021/12/01 06:37:35 [notice] 1#1: nginx/1.21.4
-2021/12/01 06:37:35 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
-2021/12/01 06:37:35 [notice] 1#1: OS: Linux 4.18.0-193.28.1.el8_2.x86_64
-...
+2022/01/14 03:29:24 [notice] 1#1: using the "epoll" event method
+2022/01/14 03:29:24 [notice] 1#1: nginx/1.21.5
+2022/01/14 03:29:24 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/01/14 03:29:24 [notice] 1#1: OS: Linux 4.18.0-193.28.1.el8_2.x86_64
+2022/01/14 03:29:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/01/14 03:29:24 [notice] 1#1: start worker processes
+2022/01/14 03:29:24 [notice] 1#1: start worker process 31
+2022/01/14 03:29:24 [notice] 1#1: start worker process 32
 ```
 
-#### （9）docker top(查看容器中进程信息)
+#### docker top(查看容器中进程信息)
 
 ```bash
-[root@bluecusliyou ~]# docker top nginx01
+[root@bluecusliyou ~]# docker top nginx_clogs
 UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
-root                311462              311443              0                   14:40               ?                   00:00:00            nginx: master process nginx -g daemon off;
-101                 311510              311462              0                   14:40               ?                   00:00:00            nginx: worker process
-101                 311511              311462              0                   14:40               ?                   00:00:00            nginx: worker process
+root                98433               98414               0                   11:29               ?                   00:00:00            nginx: master process nginx -g daemon off;
+101                 98505               98433               0                   11:29               ?                   00:00:00            nginx: worker process
+101                 98506               98433               0                   11:29               ?                   00:00:00            nginx: worker process
 ```
 
-#### （10）docker cp(容器主机间拷贝)
+#### docker cp(容器主机间拷贝)
 
 ```bash
-docker cp containerId或containerName：容器内路径 宿主机路径 #从容器中拷贝文件到宿主机
-docker cp 宿主机路径 containerId或containerName：容器内路径 #从宿主机拷贝文件到容器
+[root@bluecusliyou ~]# docker cp --help
+
+Usage:  docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+        docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+
+Copy files/folders between a container and the local filesystem
+
+Use '-' as the source to read a tar archive from stdin
+and extract it to a directory destination in a container.
+Use '-' as the destination to stream a tar archive of a
+container source to stdout.
+
+Options:
+  -a, --archive       Archive mode (copy all uid/gid information)
+  -L, --follow-link   Always follow symbol link in SRC_PATH
 ```
 
 ```bash
-#宿主机文件拷贝到容器
-[root@bluecusliyou ~]# cd /home/testfile
-[root@bluecusliyou testfile]# ls
-test.html
-[root@bluecusliyou testfile]# docker cp /home/testfile/test.html nginx01:/usr/share/nginx/html
-[root@bluecusliyou testfile]# curl localhost:3344/test.html
-testfile
+#宿主机创建空目录，运行一个容器
+[root@bluecusliyou ~]# mkdir -p /home/testfile
+[root@bluecusliyou ~]# docker run -d --name nginx_ccp -p 3344:80 nginx
+8a8486c624465b389f8f218bb9663d77d8ae14c1529d85243a9a27d5eb8f5720
 #容器文件拷贝到宿主机
-[root@bluecusliyou testfile]# docker cp nginx01:/usr/share/nginx/html/index.html /home/testfile
-[root@bluecusliyou testfile]# ls
-index.html  test.html
+[root@bluecusliyou ~]# docker cp nginx_ccp:/usr/share/nginx/html/index.html /home/testfile
+[root@bluecusliyou ~]# ls /home/testfile
+index.html
+#宿主机文件拷贝到容器
+[root@bluecusliyou ~]# docker cp /home/testfile/index.html nginx_ccp:/usr/share/nginx/html/test.html
+[root@bluecusliyou ~]# curl localhost:3344/test.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
 ```
 
-#### （11）docker commit(提交容器成镜像)
+#### docker diff(容器运行后文件发生的变化)
 
 ```bash
-#docker commit 提交容器成为一个新的镜像副本
-docker commit -m="提交的描述信息" -a="作者" 容器id 目标镜像名:[TAG]
+[root@bluecusliyou ~]# docker diff nginx_ccp
+C /var
+C /var/cache
+C /var/cache/nginx
+A /var/cache/nginx/uwsgi_temp
+A /var/cache/nginx/client_temp
+A /var/cache/nginx/fastcgi_temp
+A /var/cache/nginx/proxy_temp
+A /var/cache/nginx/scgi_temp
+C /usr
+C /usr/share
+C /usr/share/nginx
+C /usr/share/nginx/html
+A /usr/share/nginx/html/test.html
+C /etc
+C /etc/nginx
+C /etc/nginx/conf.d
+C /etc/nginx/conf.d/default.conf
+C /run
+A /run/nginx.pid
+```
+
+#### docker commit(提交容器成镜像)
+
+```bash
+[root@bluecusliyou ~]# docker commit --help
+
+Usage:  docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+Create a new image from a container's changes
+
+Options:
+  -a, --author string    Author (e.g., "John Hannibal Smith <hannibal@a-team.com>")
+  -c, --change list      Apply Dockerfile instruction to the created image
+  -m, --message string   Commit message
+  -p, --pause            Pause container during commit (default true)
 ```
 
 ```bash
-#提交容器成一个新的镜像副本
-[root@bluecusliyou testfile]# docker commit -m test -a bluecusliyou nginx01 mynginximage
-sha256:8adeebef67395b2ffca12a72cf23504b7493d02d6b98aaeee4c7b6dd218a6bd7
-[root@bluecusliyou testfile]# docker images
-REPOSITORY                        TAG       IMAGE ID       CREATED         SIZE
-mynginximage                      latest    8adeebef6739   3 minutes ago   141MB
-<none>                            <none>    87fef850e40f   2 days ago      238MB
-bluecusliyou/webapptest           0.1       666c22bc0b37   3 days ago      217MB
-webapptest                        0.1       666c22bc0b37   3 days ago      217MB
-<none>                            <none>    3fcc47472f1e   3 days ago      745MB
-nginx                             latest    605c77e624dd   10 days ago     141MB
-harbor.io/bluecusliyou/mynginx    0.1       605c77e624dd   10 days ago     141MB
-mcr.microsoft.com/dotnet/sdk      6.0       e86d68dca8c7   2 weeks ago     716MB
-mcr.microsoft.com/dotnet/aspnet   6.0       8d32e18b77a4   2 weeks ago     208MB
-hello-world                       latest    feb5d9fea6a5   3 months ago    13.3kB
-centos                            latest    5d0da3dc9764   3 months ago    231MB
+[root@bluecusliyou ~]# docker commit nginx_ccp mynginximage
+sha256:e902a486acf0bc36ddccec85d5372d96427b04eba12e687bf7d472f39a3193ef
+[root@bluecusliyou ~]# docker images mynginximage
+REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
+mynginximage   latest    e902a486acf0   16 seconds ago   141MB
 #运行新镜像的容器，访问成功
-[root@bluecusliyou testfile]# docker run -d --name nginx02 -p 3355:80 mynginximage
-2e4ae6fdb4259e539eff5d465d5f071382bd75092f92f54dfc1509c3096d50f0
-[root@bluecusliyou testfile]# curl localhost:3355/test.html
-testfile
+[root@bluecusliyou ~]# docker run -d --name nginx_ccommit -p 3355:80 mynginximage
+23f76aae87471bd974f650eebb13ac4bb00bb6301ca265c30619770415c159a7
+[root@bluecusliyou ~]# curl localhost:3355/test.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
 ```
 
 ### 3、镜像命令
 
 ```bash
-docker images                   			#查看所有镜像
-docker images -a                  			#查看所有镜像，包括中间层镜像
-docker images –q               			    #查看所有镜像ID
-docker images -aq                           #查看所有镜像，包括中间层镜像ID
-docker rmi -f imageid                       #删除指定的镜像
-docker rmi -f imageidA imageidB imageidC    #删除指定多个镜像
-docker rmi -f $(docker images -aq)          #删除全部的镜像
-docker images imageName                 	#查看具体镜像
-docker image inspect imageName              #查看具体镜像详情
-docker history imageName                    #查看镜像的创建历史
-# 构建镜像命令，文件在当前目录下且文件名是Dockerfile可以不写-f指定
-# 最后的 . 代表本次执行的上下文路径是当前路径，是指 docker 在构建镜像，有时候想要使用到本机的文件（比如复制），docker build 命令得知这个路径后，会将路径下的所有内容打包。
-# 上下文路径下不要放无用的文件，因为会一起打包发送给 docker 引擎，如果文件过多会造成过程缓慢。
-docker build -f dockerfile文件路径 -t 镜像名:[tag] .
-docker tag 源镜像[:tag] 目标镜像[;tag]         #给镜像打标签，打完标签的新的镜像还是指向原来的镜像的
-docker save 镜像[:tag] -o 文件                #导出镜像到文件
-docker load -i 文件                           #导入镜像
+docker images                   			        #查看所有镜像
+docker images -a                  			        #查看所有镜像，包括中间层镜像
+docker images -aq                                   #查看所有镜像，包括中间层镜像ID
+docker images imageName                 	        #查看具体镜像
+docker rmi imageid或者imageName                      #删除指定的镜像
+docker rmi imageidA imageidB imageidC               #删除指定多个镜像
+docker rmi -f imageid或者imageName                   #强制删除指定的镜像
+docker rmi -f $(docker images -aq)                  #删除全部的镜像
+docker image inspect imageName                      #查看具体镜像详情
+docker history imageName                            #查看镜像的创建历史
+docker build -f dockerfilepath -t imageName:[tag] . #构建镜像
+docker save imageName[:tag] -o 文件                  #导出镜像到文件
+docker load -i 文件                                  #导入镜像
 ```
 
-#### （1）docker images(查看所有本地镜像)
+#### docker images(查看所有本地镜像)
 
 ```bash
 [root@bluecusliyou ~]# docker images --help
@@ -1382,103 +1556,130 @@ Options:
 ```bash
 #查看所有镜像
 [root@bluecusliyou ~]# docker images
-REPOSITORY                        TAG       IMAGE ID       CREATED          SIZE
-mynginximage                      latest    8adeebef6739   33 minutes ago   141MB
-bluecusliyou/webapptest           0.1       666c22bc0b37   3 days ago       217MB
-webapptest                        0.1       666c22bc0b37   3 days ago       217MB
-harbor.io/bluecusliyou/mynginx    0.1       605c77e624dd   10 days ago      141MB
-mcr.microsoft.com/dotnet/aspnet   6.0       8d32e18b77a4   2 weeks ago      208MB
+REPOSITORY     TAG       IMAGE ID       CREATED         SIZE
+mynginximage   latest    e902a486acf0   5 minutes ago   141MB
+nginx          latest    605c77e624dd   2 weeks ago     141MB
+redis          latest    7614ae9453d1   3 weeks ago     113MB
+centos         latest    5d0da3dc9764   4 months ago    231MB
 #查看所有镜像，包括中间层镜像
 [root@bluecusliyou ~]# docker images -a
-REPOSITORY                        TAG       IMAGE ID       CREATED          SIZE
-mynginximage                      latest    8adeebef6739   33 minutes ago   141MB
-<none>                            <none>    bdefada8daf0   3 days ago       217MB
-bluecusliyou/webapptest           0.1       666c22bc0b37   3 days ago       217MB
-webapptest                        0.1       666c22bc0b37   3 days ago       217MB
-<none>                            <none>    1e56d5d95640   3 days ago       208MB
-<none>                            <none>    39f7043298ba   3 days ago       208MB
-<none>                            <none>    be7f749ab48d   3 days ago       208MB
-<none>                            <none>    850549350db5   3 days ago       208MB
-harbor.io/bluecusliyou/mynginx    0.1       605c77e624dd   10 days ago      141MB
-mcr.microsoft.com/dotnet/aspnet   6.0       8d32e18b77a4   2 weeks ago      208MB
-#查看所有镜像ID
-[root@bluecusliyou ~]# docker images -q
-8adeebef6739
-666c22bc0b37
-666c22bc0b37
-605c77e624dd
-8d32e18b77a4
+REPOSITORY     TAG       IMAGE ID       CREATED         SIZE
+mynginximage   latest    e902a486acf0   5 minutes ago   141MB
+nginx          latest    605c77e624dd   2 weeks ago     141MB
+redis          latest    7614ae9453d1   3 weeks ago     113MB
+centos         latest    5d0da3dc9764   4 months ago    231MB
 #查看所有镜像，包括中间层镜像ID
 [root@bluecusliyou ~]# docker images -aq
-8adeebef6739
-bdefada8daf0
-666c22bc0b37
-666c22bc0b37
-1e56d5d95640
-be7f749ab48d
-39f7043298ba
-850549350db5
+e902a486acf0
 605c77e624dd
-8d32e18b77a4
+7614ae9453d1
+5d0da3dc9764
 #显示具体镜像信息
 [root@bluecusliyou ~]# docker images mynginximage
-REPOSITORY     TAG       IMAGE ID       CREATED             SIZE
-mynginximage   latest    8adeebef6739   About an hour ago   141MB
+REPOSITORY     TAG       IMAGE ID       CREATED         SIZE
+mynginximage   latest    e902a486acf0   7 minutes ago   141MB
 ```
 
-#### （2）docker rmi(删除镜像)
-
-普通删除：能删除没有容器使用的镜像，包括停止的容器使用也无法删除。
-
-强制删除（-f）：能删除没有容器使用的镜像，停止的容器使用可以删除。
-
-无法删除情况：被运行的容器使用的镜像无法删除。
+#### docker rmi(删除镜像)
 
 ```bash
+[root@bluecusliyou ~]# docker rmi --help
+
+Usage:  docker rmi [OPTIONS] IMAGE [IMAGE...]
+
+Remove one or more images
+
+Options:
+  -f, --force      Force removal of the image
+      --no-prune   Do not delete untagged parents
+```
+
+```bash
+#当前容器镜像列表
+[root@bluecusliyou ~]# docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED       STATUS       PORTS     NAMES
+7091ad3c2af0   centos    "/bin/bash"   2 hours ago   Up 2 hours             serene_morse
+[root@bluecusliyou ~]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+busybox      latest    beae173ccac6   2 weeks ago    1.24MB
+mynginx      latest    605c77e624dd   2 weeks ago    141MB
+nginx        latest    605c77e624dd   2 weeks ago    141MB
+tomcat       latest    fb5657adc892   3 weeks ago    680MB
+wordpress    latest    c3c92cc3dcb1   3 weeks ago    616MB
+redis        latest    7614ae9453d1   3 weeks ago    113MB
+mysql        latest    3218b38490ce   3 weeks ago    516MB
+centos       latest    5d0da3dc9764   4 months ago   231MB
+#被容器使用的镜像无法删除，-f可以强制删除，不建议，建议先删除容器再删除镜像
+[root@bluecusliyou ~]# docker rmi centos
+Error response from daemon: conflict: unable to remove repository reference "centos" (must force) - container 7091ad3c2af0 is using its referenced image 5d0da3dc9764
+#被多个镜像引用的镜像ID无法删除，-f可以强制删除，不建议，可以用唯一名称删除
+[root@bluecusliyou ~]# docker rmi 605c77e624dd
+Error response from daemon: conflict: unable to delete 605c77e624dd (must be forced) - image is referenced in multiple repositories
+docker rmi beae173ccac6
 #删除1个镜像
-[root@bluecusliyou ~]# docker rmi bluecusliyou/webapptest:0.1
-Untagged: bluecusliyou/webapptest:0.1
-Untagged: bluecusliyou/webapptest@sha256:d396cd9d28f42ebb04f14e93a639d45309ea9bfc8c66af40fff62ae1e32e2023
+[root@bluecusliyou ~]# docker rmi mynginx
+Untagged: mynginx:latest
 #删除多个镜像
-[root@bluecusliyou ~]# docker rmi mycentos:0.1 mynginximage webapptest:0.1
-Untagged: mycentos:0.1
-Deleted: sha256:9a08d80ce1516b8cd3f45b6b67af77ea45339ea48a2a398b6d03132edaa471ee
-Deleted: sha256:0c09cd09ee9e81c63b7d91037b4a23cee4b8cb64d67571b837937b2be208c78c
-Deleted: sha256:9161327109d552f0e8261c86d2895c98b5f51a7facc91fb215410ef9feeae2ec
-Deleted: sha256:4af5028a6d118fa26fa879ab49900b633d6cfc1b121185131c762d0b33d044dd
-Deleted: sha256:7368f58c129c1426b4f7922dbcff579ca3e0beeb75c759dea4509a60732a1b1c
-Deleted: sha256:02a5edbff6a7ebc214a654321daae56bc981b9322a31b1243e30b89b7bc96254
-Deleted: sha256:d0a5bf304636cc7850dbe9617991d175925ec8f1fbb0694e3d89a61b2b0d1cfc
-Deleted: sha256:555fc941815919c39f87b8576b0c9edd717323a141587a0801dc9f3bcf84426b
-Deleted: sha256:1fad66357b19aa6d77ad0b2c9bd4553b3da74f06d2e6280ccb4196cf759daec7
-Untagged: mynginximage:latest
-Deleted: sha256:8adeebef67395b2ffca12a72cf23504b7493d02d6b98aaeee4c7b6dd218a6bd7
-Deleted: sha256:d877ade889e0aa481975857393b6a1e6d477aaf4d3cdadb016c24ed241049b8b
-Untagged: webapptest:0.1
-Deleted: sha256:666c22bc0b37faabd517665dd52c59b33d47540f6d26a3083fdd9ad5bdfc3f93
-Deleted: sha256:bdefada8daf0f415b302cba10e923895327418586d3dd8557e557b6afa7ed8fe
-Deleted: sha256:09edc82890798903f4d8c716fcba16d8924660b4cac92a17c606bb7341c24ffd
-Deleted: sha256:1e56d5d95640726c470427a59a2be7a5eca1e1757a5380f7f89023ef38f13dad
-Deleted: sha256:39f7043298ba84833b51d6a03a899892facc82d83c60a899d29899451b1388ed
-Deleted: sha256:be7f749ab48d55aa379f5910d24328b5d32b3e1162ccd820a864e9e2cdee7de2
-Deleted: sha256:850549350db55ebe2dbfcf0f4962cfc66a01e839bedfb33ba7e9e1f41bf3cafc
-Deleted: sha256:e328ae4d4f66f8330aee7470a00f59399eff55d775e3602901995f6f198e5faf
+[root@bluecusliyou ~]# docker rmi wordpress busybox
+Untagged: wordpress:latest
+Untagged: wordpress@sha256:fc33b796b04162a0db2e9ea9b4c361a07058b21597b1317ad9ab3ea4593de241
+Deleted: sha256:c3c92cc3dcb1a903fed0374a837f38d716ae104d0e4c9705bddb53a76419534d
+Deleted: sha256:e03d610209901c4c643d9787f53e556f3a034ece25b597205d8333db2ff81872
+Deleted: sha256:d016493a41b04f201d91ac317b607a0fc2f87a8d825d6dfb6b8dc1bf2fba4efe
+Deleted: sha256:7904e413594a78ddb5e5909909e5c37255d7be1ada4b4bf16e33368200ddea2d
+Deleted: sha256:291dc2654c9399be32d82521744e650eb3d899d6356856dfd497f180782b76b8
+Deleted: sha256:2c7d4e23a0ce5d99dc09041e86f5bcdc2404d703e769189fddc8cc45322bbda9
+Deleted: sha256:d3e712f7ab059427794f7f209f448f94fc60dee3e4e40eb82cd99605ab55af3c
+Deleted: sha256:10ab8416164c9b2c408ac1317419e9dd113091f6290d33f73cf1cc9c9781fb2b
+Deleted: sha256:d61093d47caf389668eb96344afab2454620a5c586b1de3859e17d255a19ba89
+Deleted: sha256:3cccde4cd0f42cdd4b0a2c088a88785183e11b4e7c425ff4c4f54326e8e9764b
+Deleted: sha256:1053961a55147906b29c3be9c1186d5d9563db08c1e5b63c4e7b286f3dc043f6
+Deleted: sha256:1e1b1a779971b332e7e954d0219153cd320cdd27521a15a97da4151ef45e3d7d
+Deleted: sha256:682226507754fd5f59ce67ff0801c9df859b106cd5a3db24defb073650cf7fb5
+Deleted: sha256:782d3b9de219e51086f1cab57778a10e7a88784008cb8b629e02e173c6683cc1
+Deleted: sha256:c3d02f3fbe0afe22bc647345d3d217f2a26133062c1ada547645afdd1243cacc
+Deleted: sha256:eec2c2512d15a9611866e4ddf17af2c480009045dbca2a3a22f30becb2050ae2
+Deleted: sha256:8c360a4ebc0a45f7de7228d7d4ae497ddcf9c73218c5b4e628188f22cae1c663
+Deleted: sha256:ee5205a969dcf1186060d0b8719db08647c3f86ccf33770b83b6ef1c989258e1
+Deleted: sha256:6b322a9c05d5df05b87396796502965c8e6212aeb07ced777ed206f660c7a098
+Deleted: sha256:c688355f4fe75990c63df6c38a962e3cadfaa0d84c826a920cf2a43fa0975270
+Deleted: sha256:895915dadaf75a7370a1817ba4e54f0ee5b329b81aab80a3552736c10b065fc5
+Untagged: busybox:latest
+Untagged: busybox@sha256:5acba83a746c7608ed544dc1533b87c737a0b0fb730301639a0179f9344b1678
+Deleted: sha256:beae173ccac6ad749f76713cf4440fe3d21d1043fe616dfbe30775815d1d0f6a
+Deleted: sha256:01fd6df81c8ec7dd24bbbd72342671f41813f992999a3471b9d9cbc44ad88374
 #删除所有镜像，被容器使用的镜像是无法删除的
 [root@bluecusliyou ~]# docker rmi $(docker images -aq)
+Untagged: nginx:latest
+Untagged: nginx@sha256:0d17b565c37bcbd895e9d92315a05c1c3c9a29f762b011a10c54a66cd53c9b31
+Deleted: sha256:605c77e624ddb75e6110f997c58876baa13f8754486b461117934b24a9dc3a85
+Deleted: sha256:b625d8e29573fa369e799ca7c5df8b7a902126d2b7cbeb390af59e4b9e1210c5
+Deleted: sha256:7850d382fb05e393e211067c5ca0aada2111fcbe550a90fed04d1c634bd31a14
+Deleted: sha256:02b80ac2055edd757a996c3d554e6a8906fd3521e14d1227440afd5163a5f1c4
+Deleted: sha256:b92aa5824592ecb46e6d169f8e694a99150ccef01a2aabea7b9c02356cdabe7c
+Deleted: sha256:780238f18c540007376dd5e904f583896a69fe620876cabc06977a3af4ba4fb5
+Untagged: tomcat:latest
+Untagged: tomcat@sha256:9dee185c3b161cdfede1f5e35e8b56ebc9de88ed3a79526939701f3537a52324
+Deleted: sha256:fb5657adc892ed15910445588404c798b57f741e9921ff3c1f1abe01dbb56906
+Deleted: sha256:2b4d03a9ce5e200223e5c398d4739d23dd19ad0d6e692cfc65ba3a8fae838444
+Deleted: sha256:35c5ea12be1face90896b3a52afc28433885c4448a6c5cfe07561f82365cd18e
+Deleted: sha256:6830091c111746b7534960d17f6c156be45d8dcfe0defb06bd427ef38bf49aae
+Deleted: sha256:ea82d4efcdfa1c039d722a5a9613c18d3c3a84fbba8efae5e7f13cb3b4ec379f
+Deleted: sha256:79a6c362c6b1a580d2d8d33f6d860d45c530f34ff7c0441d36b61aceefdfd656
+Deleted: sha256:1788a74c5c86e769f61cd615269eba11c3d7648eac4a85a1ffd2840427820a2f
+Deleted: sha256:cbce712ed17923285239f9d9c0528984aef065b7413d68a0290e2c8eecc98f4a
+Deleted: sha256:aa56d037ee5925ebf11127c3e1f617874c4ce8bae6b6af7d132b7f7a4a606e6f
+Deleted: sha256:97e5f44efb543d466c5847602654a8cb22c9466b61d04988d47ec44b197ea874
+Deleted: sha256:11936051f93baf5a4fb090a8fa0999309b8173556f7826598e235e8a82127bce
 Untagged: redis:latest
+Untagged: redis@sha256:db485f2e245b5b3329fdc7eff4eb00f913e09d8feb9ca720788059fdc2ed8339
 Deleted: sha256:7614ae9453d1d87e740a2056257a6de7135c84037c367e1fffa92ae922784631
 Deleted: sha256:49c70179bc923a7d48583d58e2b6c21bde1787edf42ed1f8de9e9b96e2e88e65
 Deleted: sha256:396e06df5d1120368a7a8a4fd1e5467cdc2dd4083660890df078c654596ddc1c
 Deleted: sha256:434d118df2e9edb51238f6ba46e9efdfa21be68e88f54787531aa39a720a0740
 Deleted: sha256:2047f09c412ff06f4e2ee8a25d105055e714d99000711e27a55072e640796294
 Deleted: sha256:13d71c9ccb39b206211dd1900d06aa1984b0f5ab8abaa628c70b3eb733303a65
-Untagged: mcr.microsoft.com/dotnet/aspnet:6.0
-Untagged: mcr.microsoft.com/dotnet/aspnet@sha256:7696d5b456eede87434c232b9070f40659ff0c4b71ca622cf197815ccaee661d
-Deleted: sha256:8d32e18b77a4db7f10ec4985cc85c1e385dc6abd16f9573a8c2bc268cad4aab9
-Deleted: sha256:1a20f101367696cbab40ed7bbd02733d96777b7f566ff034bc854ff685e4a4d7
-Deleted: sha256:188e3489c714d70457e46b0f4a254ac6036aae9559fc2b5c95e15acf3ca8b49d
-Deleted: sha256:cea02d9970987a56865221510d59760fddb7cb30855777becdf38891fb45bb4d
-Deleted: sha256:ccdd7480dd6ee10d06bb3312d96c1057d5aa39ca0b0b0f034977c43ce5088905
+Deleted: sha256:2edcec3590a4ec7f40cf0743c15d78fb39d8326bc029073b41ef9727da6c851f
 Untagged: mysql:latest
 Untagged: mysql@sha256:e9027fe4d91c0153429607251656806cc784e914937271037f7738bd5b8e7709
 Deleted: sha256:3218b38490cec8d31976a40b92e09d61377359eab878db49f025e5d464367f3b
@@ -1494,54 +1695,41 @@ Deleted: sha256:b0527c827c82a8f8f37f706fcb86c420819bb7d707a8de7b664b9ca491c96838
 Deleted: sha256:75147f61f29796d6528486d8b1f9fb5d122709ea35620f8ffcea0e0ad2ab0cd0
 Deleted: sha256:2938c71ddf01643685879bf182b626f0a53b1356138ef73c40496182e84548aa
 Deleted: sha256:ad6b69b549193f81b039a1d478bc896f6e460c77c1849a4374ab95f9a3d2cea2
-Untagged: centos:latest
-Untagged: centos@sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177
-Deleted: sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6
-Deleted: sha256:74ddd0ec08fa43d09f32636ba91a0a3053b02cb4627c35051aff89f853606b59
-Error response from daemon: conflict: unable to delete 605c77e624dd (cannot be forced) - image is being used by running container 8ad0542530a8
-Error response from daemon: conflict: unable to delete 605c77e624dd (cannot be forced) - image is being used by running container 8ad0542530a8
-Error response from daemon: conflict: unable to delete 605c77e624dd (cannot be forced) - image is being used by running container 8ad0542530a8
-[root@bluecusliyou ~]# docker images
-REPOSITORY                       TAG       IMAGE ID       CREATED       SIZE
-newnginx                         latest    605c77e624dd   10 days ago   141MB
-nginx                            latest    605c77e624dd   10 days ago   141MB
-harbor.io/bluecusliyou/mynginx   0.1       605c77e624dd   10 days ago   141MB
-#容器停止之后删除镜像会报错，强制删除可以
-[root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
-8ad0542530a8   nginx     "/docker-entrypoint.…"   7 minutes ago   Up 7 minutes   0.0.0.0:3344->80/tcp, :::3344->80/tcp   nginx01
-[root@bluecusliyou ~]# docker stop nginx01
-nginx01
-[root@bluecusliyou ~]# docker rmi nginx
-Error response from daemon: conflict: unable to remove repository reference "nginx" (must force) - container 8ad0542530a8 is using its referenced image 605c77e624dd
-[root@bluecusliyou ~]# docker rmi -f nginx
-Untagged: nginx:latest
-Untagged: nginx@sha256:0d17b565c37bcbd895e9d92315a05c1c3c9a29f762b011a10c54a66cd53c9b31
-Deleted: sha256:605c77e624ddb75e6110f997c58876baa13f8754486b461117934b24a9dc3a85
-[root@bluecusliyou ~]# docker images 
-REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-[root@bluecusliyou ~]# docker pull nginx
-Using default tag: latest
-latest: Pulling from library/nginx
-a2abf6c4d29d: Already exists 
-a9edb18cadd1: Already exists 
-589b7251471a: Already exists 
-186b1aaa4aa6: Already exists 
-b4df32aa5a72: Already exists 
-a0bcbecc962e: Already exists 
-Digest: sha256:0d17b565c37bcbd895e9d92315a05c1c3c9a29f762b011a10c54a66cd53c9b31
-Status: Downloaded newer image for nginx:latest
-docker.io/library/nginx:latest
+Error response from daemon: conflict: unable to delete 5d0da3dc9764 (cannot be forced) - image is being used by running container 7091ad3c2af0
 ```
 
-#### （3）docker image inspect(查看镜像详情)
+#### docker image inspect(查看镜像详情)
 
 ```bash
 [root@bluecusliyou ~]# docker image inspect nginx
 [
     {
         ...
-            "Image": "sha256:2fb4060b053a39040c51ff7eadd30325de2c76650fc50aa42839070e16e8bdcb",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.21.5",
+                "NJS_VERSION=0.7.1",
+                "PKG_RELEASE=1~bullseye"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "sha256:82941edee2f4d17c55563bb926387c3ae39fa1a99777f088bc9d3db885192209",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": [
@@ -1552,15 +1740,13 @@ docker.io/library/nginx:latest
                 "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
             },
             "StopSignal": "SIGQUIT"
-        },
-        "DockerVersion": "20.10.7",
-        "Author": "",
-        ...
+        }...
     }
 ]
+
 ```
 
-#### （4）docker history(查看镜像的创建历史)
+#### docker history(查看镜像的创建历史)
 
 ```bash
 [root@bluecusliyou ~]# docker history --help
@@ -1596,7 +1782,7 @@ ea335eea17ab   2 weeks ago   /bin/sh -c #(nop)  CMD ["nginx" "-g" "daemon…   0
 <missing>      2 weeks ago   /bin/sh -c #(nop) ADD file:a2405ebb9892d98be…   80.4MB
 ```
 
-#### （5）docker build(构建镜像)
+#### docker build(构建镜像)
 
 ```bash
 # 构建镜像命令，文件在当前目录下且文件名是Dockerfile可以不写-f指定
@@ -1645,6 +1831,23 @@ Options:
 
 ```bash
 [root@bluecusliyou ~]# cd /home/dockerfile-centos
+[root@bluecusliyou dockerfile-centos]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    605c77e624dd   2 weeks ago    141MB
+centos       latest    5d0da3dc9764   4 months ago   231MB
+[root@bluecusliyou dockerfile-centos]# cat dockerfile-centos
+#基础镜像
+FROM centos
+#维护者信息
+MAINTAINER bluecusliyou<591071179@qq.com>
+#镜像操作指令
+ENV MYPATH /usr/local
+WORKDIR $MYPATH
+RUN yum -y install vim
+RUN yum -y install net-tools
+EXPOSE 80
+#容器启动指令
+CMD /bin/bash
 [root@bluecusliyou dockerfile-centos]# docker build -f dockerfile-centos -t mycentos .
 Sending build context to Docker daemon  2.048kB
 Step 1/8 : FROM centos
@@ -1675,34 +1878,69 @@ Removing intermediate container 0c796a08481f
 Successfully built d624390ac077
 Successfully tagged mycentos:0.1
 [root@bluecusliyou dockerfile-centos]# docker images
-REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
-mycentos     latest    b789bea5f17f   About a minute ago   326MB
-nginx        latest    605c77e624dd   10 days ago          141MB
-centos       latest    5d0da3dc9764   3 months ago         231MB
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+mycentos     latest    350c302fa1db   10 seconds ago   326MB
+nginx        latest    605c77e624dd   2 weeks ago      141MB
+centos       latest    5d0da3dc9764   4 months ago     231MB
+#镜像构建完成，运行容器
+[root@bluecusliyou dockerfiletest]# docker run -id -P --name mycentos_c1  mycentos:0.1
+8571577c0faf59c2f654938975a08fc079c558d04aacad61cd4e2b2c628c6bb2
+#查看容器详情
+[root@bluecusliyou dockerfile-centos]# docker inspect mycentos:0.1
+[
+    {
+        ...
+        "RepoTags": [
+            "mycentos:0.1"
+        ],
+        ...
+        "ContainerConfig": {
+            ...
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            ...
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "MYPATH=/usr/local"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/bin/sh\" \"-c\" \"/bin/bash\"]"
+            ],
+            ...
+            "WorkingDir": "/usr/local",
+            ...
+        },
+        ...
+        "Author": "bluecusliyou<591071179@qq.com>",
+        ...
+    }
+]
+#进入容器，查看当前路径，测试vim ping功能
+[root@bluecusliyou dockerfile-centos]# docker exec -it mycentos_c1 /bin/bash
+[root@8571577c0faf local]# pwd     
+/usr/local
+[root@8571577c0faf local]# vim testfile
+[root@8571577c0faf local]# cat testfile
+www
+[root@8571577c0faf local]# ping www.baidu.com
+PING www.a.shifen.com (110.242.68.3) 56(84) bytes of data.
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=1 ttl=49 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=2 ttl=49 time=10.7 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=3 ttl=49 time=10.6 ms
+64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=4 ttl=49 time=10.6 ms
+^C
+--- www.a.shifen.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 10.596/10.643/10.703/0.040 ms
+[root@8571577c0faf local]# exit
+exit
 ```
 
-#### （6）docker tag(给镜像打标签)
-
-```bash
-[root@bluecusliyou ~]# docker tag --help
-
-Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
-
-Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
-```
-
-```bash
-#打完标签的新的镜像还是指向原来的镜像的
-[root@bluecusliyou ~]# docker tag nginx newnginx
-[root@bluecusliyou ~]# docker images
-REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
-mycentos     latest    b789bea5f17f   About a minute ago   326MB
-newnginx     latest    605c77e624dd   10 days ago          141MB
-nginx        latest    605c77e624dd   10 days ago          141MB
-centos       latest    5d0da3dc9764   3 months ago         231MB
-```
-
-#### （7）docker save(导出镜像)
+#### docker save(导出镜像)
 
 ```bash
 [root@bluecusliyou image-save]# docker save --help
@@ -1721,7 +1959,7 @@ Options:
 nginx.tar
 ```
 
-#### （8）docker load(导入镜像)
+#### docker load(导入镜像)
 
 ```bash
 [root@bluecusliyou image-save]# docker load --help
@@ -1737,11 +1975,6 @@ Options:
 
 ```bash
 #先删除镜像，再导入镜像
-[root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
-8ad0542530a8   nginx     "/docker-entrypoint.…"   25 minutes ago   Exited (0) 17 minutes ago             nginx01
-[root@bluecusliyou ~]# docker rm -f nginx01
-nginx01
 [root@bluecusliyou ~]# docker rmi nginx
 Untagged: nginx:latest
 Untagged: nginx@sha256:0d17b565c37bcbd895e9d92315a05c1c3c9a29f762b011a10c54a66cd53c9b31
@@ -1763,16 +1996,17 @@ centos       latest    5d0da3dc9764   3 months ago    231MB
 ### 4、仓库命令
 
 ```bash
-docker login [仓库host:port]               #登录仓库,dockerhub可以不写[仓库host:port] 
-docker logout [仓库host:port]              #登出仓库,dockerhub可以不写[仓库host:port] 
-docker search imageName         		   #搜索镜像
-docker pull   imageName[:tag]              #下载镜像,不加tag就是latest
-docker push   imageName[:tag]              #推送镜像到仓库
+docker login [仓库host:port]                         #登录仓库,dockerhub可以不写[仓库host:port] 
+docker logout [仓库host:port]                        #登出仓库,dockerhub可以不写[仓库host:port] 
+docker search imageName         		            #搜索镜像
+docker tag sourceImage[:tag] targetImage[:tag]      #给镜像打标签
+docker pull   imageName[:tag]                       #下载镜像,不加tag就是latest
+docker push   imageName[:tag]                       #推送镜像到仓库
 ```
 
-#### （1）docker login（登录仓库）
+#### docker login（登录仓库）
 
-只有dockerhub的[仓库host:port]（index.docker.io）是可以省略的，其他私有仓库的域名或者IP必须写上。
+只有dockerhub的[仓库host:port]（index.docker.io）是可以省略的，其他私有仓库必须写上。
 
 登录信息可以在文件中查看/root/.docker/config.json。
 
@@ -1813,7 +2047,7 @@ Login Succeeded
 }
 ```
 
-#### （2）docker logout(登出仓库)
+#### docker logout(登出仓库)
 
 ```bash
 [root@blueculiyou ~]# docker logout --help
@@ -1829,7 +2063,7 @@ If no server is specified, the default is defined by the daemon.
 Removing login credentials for https://index.docker.io/v1/
 ```
 
-#### （3）docker search(查找镜像)
+#### docker search(查找镜像)
 
 ```bash
 [root@bluecusliyou ~]# docker search --help
@@ -1862,7 +2096,30 @@ mariadb              MariaDB Server is a high performing open sou…   4482     
 mysql/mysql-server   Optimized MySQL Server Docker images. Create…   878                  [OK]
 ```
 
-#### （4）docker pull(拉取镜像)
+#### docker tag(给镜像打标签)
+
+打标签主要是让镜像可以上传不同仓库用的
+
+```bash
+[root@bluecusliyou ~]# docker tag --help
+
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+```
+
+```bash
+#打完标签的新的镜像还是指向原来的镜像的
+[root@bluecusliyou ~]# docker tag nginx mynginx
+[root@bluecusliyou ~]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
+mycentos     latest    350c302fa1db   About a minute ago   326MB
+nginx        latest    605c77e624dd   2 weeks ago          141MB
+mynginx      latest    605c77e624dd   2 weeks ago          141MB
+centos       latest    5d0da3dc9764   4 months ago         231MB
+```
+
+#### docker pull(拉取镜像)
 
 ```bash
 [root@bluecusliyou ~]# docker pull --help
@@ -1903,7 +2160,7 @@ Status: Downloaded newer image for redis:6
 docker.io/library/redis:6
 ```
 
-#### （5）docker push(上传镜像到仓库)
+#### docker push(上传镜像到仓库)
 
 ```bash
 [root@bluecusliyou ~]# docker push --help
@@ -2013,7 +2270,7 @@ docker run --mount type=tmpfs,target=容器内文件夹 镜像名
 
 ```bash
 #查看当前所有数据卷信息
-#一大堆名字为很长字符的数据卷为匿名数据卷，是因为之前创建容器的时候没有手动创建数据卷进行了文件挂载，Docker就会自动创建匿名数据卷
+#一大堆名字为很长字符的数据卷为匿名数据卷，是因为-v没有指定卷名，Docker就会自动创建匿名数据卷
 [root@bluecusliyou ~]# docker volume ls
 DRIVER    VOLUME NAME
 #创建volume数据卷
@@ -2548,7 +2805,7 @@ f0afabacbf2e580c311b05fd2ec1ce5fda8f533abe8fddd1d69a6df0a0f7ab19
 | -p 3306:3306                          | 将宿主机3306端口映射到容器的3306端口                |
 | --lower_case_table_names=1            | 设置表名忽略大小写，只能首次修改，后续无法修改      |
 
-#### （2）客户端连接数据库，添加数据库，添加表，添加数据
+#### （2）客户端连接数据库，添加数据库表数据
 
 ![1639641794001](assets/1639641794001.png)
 
@@ -2556,7 +2813,7 @@ f0afabacbf2e580c311b05fd2ec1ce5fda8f533abe8fddd1d69a6df0a0f7ab19
 
 ![1639641887780](assets/1639641887780.png)
 
-#### （3）删除容器，数据库连接失败，宿主机文件还在
+#### （3）删除容器，宿主机文件还在
 
 ```bash
 [root@bluecusliyou _data]# docker rm -f mysqlserver
@@ -2565,7 +2822,7 @@ mysqlserver
 
 ![1639642072629](assets/1639642072629.png)
 
-#### （4）重新运行容器，数据还在，持久化成功
+#### （4）重新运行容器，数据持久化成功
 
 ```bash
 [root@bluecusliyou _data]# docker run --name mysqlserver -v /data/mysql/conf:/etc/mysql/conf.d -v /data/mysql/logs:/logs -v /data/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 mysql:latest --lower_case_table_names=1
@@ -2575,6 +2832,8 @@ mysqlserver
 ![1639642129708](assets/1639642129708.png)
 
 ## 六、Docker网络
+
+### 1、网络简介
 
 Docker网络的实现主要是依赖Linux网络有关的技术，这些技术有网络命名空间（Network Namespace）、Veth设备对、网桥、ipatables和路由。
 
@@ -2588,7 +2847,7 @@ Docker网络的实现主要是依赖Linux网络有关的技术，这些技术有
 
 （5）路由，决定数据包到底发送到哪里。
 
-### 1、命令说明
+### 2、网络模式
 
 ```bash
 [root@bluecusliyou ~]# docker network --help
@@ -2608,8 +2867,6 @@ Commands:
 
 Run 'docker network COMMAND --help' for more information on a command.
 ```
-
-### 2、网络模式
 
 安装完docker，就默认创建了三个网络
 
@@ -3272,7 +3529,7 @@ USER uid:group
 
 #### WORKDIR 指定工作目录
 
-WORKDIR用于在容器内设置一个工作目录，Dockerfile 中其后的命令 RUN、CMD、ENTRYPOINT、ADD、COPY 等命令都会在该目录下执行。WORKDIR 指定的工作目录，必须是提前创建好的。可以看成cd命令。
+WORKDIR用于在容器内设置一个工作目录，Dockerfile 中其后的命令 RUN、CMD、ENTRYPOINT、ADD、COPY 等命令都会在该目录下执行。WORKDIR 指定的工作目录，必须是提前创建好的。可以看成`cd`命令。
 
 在使用` docker run` 运行容器时，可以通过`-w`参数覆盖构建时所设置的工作目录。
 
@@ -3476,115 +3733,7 @@ drwxr-xr-x  12 root root 144 Sep 15 14:17 usr
 drwxr-xr-x  20 root root 262 Sep 15 14:17 var
 ```
 
-### 4、DockerFile实战
-
-#### （1）构建centos
-
-```bash
-# 编写Dockerfile文件
-[root@bluecusliyou dockerfile-test-centos]# vim dockerfile-test-centos
-[root@bluecusliyou dockerfile-test-centos]# cat dockerfile-test-centos
-#基础镜像
-FROM centos
-#维护者信息
-MAINTAINER bluecusliyou<591071179@qq.com>
-#镜像操作指令
-ENV MYPATH /usr/local
-WORKDIR $MYPATH
-RUN yum -y install vim
-RUN yum -y install net-tools
-EXPOSE 80
-#容器启动指令
-CMD /bin/bash
-#通过这个文件构建镜像
-[root@bluecusliyou dockerfile-centos]# docker build -f dockerfile-centos -t mycentos:0.1 .
-Sending build context to Docker daemon  2.048kB
-Step 1/8 : FROM centos
- ---> 5d0da3dc9764
-Step 2/8 : MAINTAINER bluecusliyou<591071179@qq.com>
- ---> Using cache
- ---> 2b7855d87917
-Step 3/8 : ENV MYPATH /usr/local
- ---> Using cache
- ---> 6c813a2eede5
-Step 4/8 : WORKDIR $MYPATH
- ---> Using cache
- ---> a335c187d850
-Step 5/8 : RUN yum -y install vim
- ---> Running in c20b66a82ffa
-...
-Step 6/8 : RUN yum -y install net-tools
- ---> Running in 8a857366fcea
-...
-Step 7/8 : EXPOSE 80
- ---> Running in 51f042953638
-Removing intermediate container 51f042953638
- ---> dd2c2b455a85
-Step 8/8 : CMD /bin/bash
- ---> Running in 0c796a08481f
-Removing intermediate container 0c796a08481f
- ---> d624390ac077
-Successfully built d624390ac077
-Successfully tagged mycentos:0.1
-#镜像构建完成，运行容器
-[root@bluecusliyou dockerfiletest]# docker run -id -P --name mycentos_c1  mycentos:0.1
-8571577c0faf59c2f654938975a08fc079c558d04aacad61cd4e2b2c628c6bb2
-#查看容器详情
-[root@bluecusliyou dockerfile-centos]# docker inspect mycentos:0.1
-[
-    {
-        ...
-        "RepoTags": [
-            "mycentos:0.1"
-        ],
-        ...
-        "ContainerConfig": {
-            ...
-            "ExposedPorts": {
-                "80/tcp": {}
-            },
-            ...
-            "Env": [
-                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-                "MYPATH=/usr/local"
-            ],
-            "Cmd": [
-                "/bin/sh",
-                "-c",
-                "#(nop) ",
-                "CMD [\"/bin/sh\" \"-c\" \"/bin/bash\"]"
-            ],
-            ...
-            "WorkingDir": "/usr/local",
-            ...
-        },
-        ...
-        "Author": "bluecusliyou<591071179@qq.com>",
-        ...
-    }
-]
-#进入容器，查看当前路径，测试vim ping功能
-[root@bluecusliyou dockerfile-centos]# docker exec -it mycentos_c1 /bin/bash
-[root@8571577c0faf local]# pwd     
-/usr/local
-[root@8571577c0faf local]# vim testfile
-[root@8571577c0faf local]# cat testfile
-www
-[root@8571577c0faf local]# ping www.baidu.com
-PING www.a.shifen.com (110.242.68.3) 56(84) bytes of data.
-64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=1 ttl=49 time=10.7 ms
-64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=2 ttl=49 time=10.7 ms
-64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=3 ttl=49 time=10.6 ms
-64 bytes from 110.242.68.3 (110.242.68.3): icmp_seq=4 ttl=49 time=10.6 ms
-^C
---- www.a.shifen.com ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3004ms
-rtt min/avg/max/mdev = 10.596/10.643/10.703/0.040 ms
-[root@8571577c0faf local]# exit
-exit
-```
-
-#### （2）构建Net6项目
+### 4、实战：构建.Net项目
 
 创建一个Net6项目，选择docker支持，生成一个dockerfile，上传项目到服务器上
 
@@ -4063,8 +4212,8 @@ Creating network "harbor_harbor" with the default driver
 如果需要修改Harbor的配置文件，修改完成之后需要重启运行harbor，因为Harbor是基于docker-compose服务编排的，我们可以使用docker-compose命令重启Harbor。docker-compose start | stop | restart，这边的命令需要在docker-compose.yml文件的路径下执行。
 
 ```bash
-#停止harbor -v移除卷
-[root@bluecusliyou harbor]# docker-compose down -v
+#停止harbor
+[root@bluecusliyou harbor]# docker-compose down
 Stopping harbor-jobservice ... done
 Stopping nginx             ... done
 Stopping harbor-core       ... done
@@ -4247,7 +4396,9 @@ registery:5000/bluecusliyou/nginx   0.1       f652ca386ed1   3 weeks ago   141MB
 
 微服务架构的应用系统一般包含若干个微服务，每个微服务一般都会部署多个实例，如果每个微服务都要手动启停，那么效率之低，维护量之大可想而知。
 
-Compose 是用于定义和运行多容器 Docker 应用程序的编排工具。通过 Compose可以轻松、高效的管理容器，您可以使用 YML 文件来配置应用程序需要的所有服务。然后使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。
+Compose 是用于定义和运行`多容器`Docker应用程序的编排工具。通过 Compose可以轻松、高效的管理容器，您可以使用 YML 文件来配置应用程序需要的所有服务。然后使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。
+
+Compose创建的容器是基于Docker的，所以可以使用Docker进行管理，但是推荐使用声明式管理方式，也就是通过修改配置文件来管理。
 
 ### 2、Docker compose安装
 
@@ -4306,6 +4457,12 @@ volumes: # 可选，相当于 docker volume create
 networks: # 可选，相当于 docker network create
 ```
 
+yaml基础知识：
+
+- 大小写敏感，缩进表示层级关系
+- 缩进空格数不重要，相同层级左侧对齐即可。（不允许使用 tab 缩进！）
+- 由冒号分隔的键值对表示对象；一组连词线开头的行，构成一个数组；字符串默认不使用引号
+
 #### （2）version配置指令
 
 YML文件版本兼容性 [详情请看官网文档](https://docs.docker.com/compose/compose-file/#reference-and-guidelines)
@@ -4328,61 +4485,152 @@ YML文件版本兼容性 [详情请看官网文档](https://docs.docker.com/comp
 | 2.1                     | 1.12.0+                   |
 | 2.0                     | 1.10.0+                   |
 
-#### （3）services配置指令
+#### （3）networks配置指令
 
-> container_name
+> 未显示声明网络，容器会被加入app_default网络中
 
-指定容器名称
+> 配置自定义网络
+
+```yaml
+version: '3'
+
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - front
+  db:
+    image: postgres
+    networks:
+      - back
+
+networks:
+  front:
+    driver: host
+  back:
+    driver: bridge
+```
+
+> 配置默认网络
+
+```yaml
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres
+
+networks:
+  default:
+    driver: overlay
+```
+
+> 使用已存在的网络
+
+```yaml
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres
+
+networks:
+  default:
+    external:
+      name: my-pre-existing-network
+```
+
+#### （4）volumes配置指令
+
+自定义卷供容器挂载使用
+
+```yaml
+version: '3'
+
+services:
+   db: 
+     volumes:
+       - db_data:/var/lib/mysql
+   wordpress:
+     volumes:
+       - wordpress_files:/var/www/html
+       
+volumes:
+  wordpress_files:
+  db_data:
+```
+
+### 4、Service配置指令详解
+
+#### container_name(指定容器名称)
 
 ```yaml
 version: "3"
-services:
 
+services:
   redis:
     image: redis:alpine
     container_name: redis_test
 ```
 
-> image
+#### image(指定为镜像名称或镜像ID)
 
-指定为镜像名称或镜像 ID。如果镜像在本地不存在，Compose 将会尝试拉取这个镜像。
+如果镜像在本地不存在，Compose 将会尝试拉取这个镜像。
 
 ```yaml
 version: "3"
-services:
 
+services:
   redis:
     image: redis:alpine
 ```
 
-> build
+#### build(指定Dockerfile文件夹路径)
 
-指定 Dockerfile 所在文件夹的路径（可以是绝对路径，或者相对 docker-compose.yml 文件的路径）。 Compose 将会利用它自动构建这个镜像，然后使用这个镜像。
+可以是绝对路径，或者相对docker-compose.yml文件的路径。 Compose将会自动构建镜像，然后使用镜像。
 
 ```yaml
 version: '3'
+
 services:
   webapp:    
     build: ./dir
 ```
 
-也可以使用 context 指令指定 Dockerfile 所在文件夹的路径（或者是git仓库的URL）。同时使用 dockerfile 指令指定 Dockerfile 文件名。
-
 如果同时指定了 image和 build，image 不在具有单独使用它的意义，而是指定了目前要构建的镜像的名称。
 
 ```yaml
 version: '3'
+
 services:
-   webapp:
-      image:imageName[:tag]
+  webapp:    
+    image: myimage
+    build: ./dir
+```
+
+#### context(指定 Dockerfile文件夹路径)
+
+也可以是到链接到git仓库的url，同时使用dockerfile指令指定Dockerfile文件名。
+
+```yaml
+version: '3'
+
+services:
+   webapp:       
       build:
         context: ./dir
         dockerfile: Dockerfile-name
 ```
 
-> command
-
-使用 command 可以覆盖容器启动后默认执行的命令。
+#### command(覆盖容器启动默认命令)
 
 ```yaml
 #写成shell形式
@@ -4391,9 +4639,9 @@ command: bundle exec thin -p 3000
 command: [bundle, exec, thin, -p, 3000]
 ```
 
-> depends_on
+#### depends_on(容器依赖)
 
-解决容器的依赖、启动先后的问题。
+解决容器的依赖、启动先后的问题，只有依赖的启动完成了才能启动当前的服务。
 
 ```yaml
 version: '3'
@@ -4404,11 +4652,13 @@ services:
     container_name: redis_test
     depends_on:
       - db
+   db:   
+     image: mysql:5.7
 ```
 
-> environment
+#### environment(设置环境变量)
 
-设置环境变量。可以使用数组或字典两种格式。只给定名称没有值的变量会自动获宿主机上的对应系统变量。
+可以使用数组或字典两种格式。只给定名称没有值的变量会自动获宿主机上的对应系统变量。
 
 ```yaml
 environment:
@@ -4422,15 +4672,13 @@ environment:
   - SESSION_SECRET
 ```
 
-如果变量名称或者值中用到 true|false，yes|no 等表达布尔含义的词汇，最好放到引号里，避免 YAML 自动解析某些内容为对应的布尔语义。这些特定词汇。
+如果变量名称或者值中用到 true|false，yes|no 等表达布尔含义的词汇，最好放到引号里，避免 YAML 自动解析某些内容为对应的布尔语义。
 
 ```yaml
 y|Y|yes|Yes|YES|n|N|no|No|NO|true|True|TRUE|false|False|FALSE|on|On|ON|off|Off|OFF
 ```
 
-> expose
-
-暴露端口，只有暴露的端口，才能被外部访问。
+#### expose(暴露端口)
 
 ```yaml
 expose:
@@ -4438,9 +4686,9 @@ expose:
  - "8000"
 ```
 
-> ports
+#### ports(映射端口信息)
 
-映射端口信息，宿主端口：容器端口的格式，或者仅仅指定容器的端口（宿主将会随机选择端口）。
+宿主端口：容器端口的格式，或者仅仅指定容器的端口，宿主将会随机选择端口。
 
 ```yaml
 ports:
@@ -4456,9 +4704,9 @@ ports:
 
 注意：当使用 HOST:CONTAINER 格式来映射端口时，如果你使用的容器端口小于 60 并且没放到引号里，可能会得到错误结果，因为 YAML 会自动解析 xx:yy 这种数字格式为 60 进制。为避免出现这种问题，建议数字串都采用引号包括起来的字符串格式。
 
-> extra_hosts
+#### extra_hosts(指定额外host映射)
 
-类似 Docker 中的 –add-host 参数，指定额外的 host 名称映射信息。会在启动后的服务容器中 /etc/hosts 文件中添加host映射信息。
+类似Docker中的–add-host参数，会在启动后的服务容器中/etc/hosts文件中添加host映射信息。
 
 ```yaml
 extra_hosts:
@@ -4466,45 +4714,60 @@ extra_hosts:
  - "otherhost:50.31.209.229"
 ```
 
-> networks
+#### dns(自定义DNS服务器)
 
-要加入的网络，使用顶级 networks 定义下的条目 。
+可以是一个值，也可以是一个列表。
 
 ```yaml
-services:
-  some-service:
-    networks:
-     - some-network
-     - other-network
-networks:
-  some-network:
-  other-network:
+dns：8.8.8.8
+dns：
+    - 8.8.8.8   
+      - 9.9.9.9
 ```
 
-> entrypoint
+#### links(链接到其它服务中的容器)
 
-指定服务容器启动后执行的入口文件。
+```yaml
+links:
+    - db
+    - db:database
+    - redis
+```
 
-> user
+#### net(设置网络模式)
 
-指定容器中运行应用的用户名。
+```yaml
+net: "bridge"
+net: "none"
+net: "host"
+```
 
-> working_dir
+#### pid(跟主机系统共享进程命名空间)
 
-指定容器中工作目录。
+将PID模式设置为hos模式，跟主机系统共享进程命名空间。容器使用pid标签将能够访问和操纵其他容器和宿主机的名称空间。
 
-> restart
+```bash
+pid: "host"
+```
 
-指定容器退出后的重启策略为始终重启。该命令对保持服务始终运行十分有效，在生产环境 中推荐配置为 always 或者 unless-stopped 。
+#### entrypoint(指定服务启动后执行的程序)
+
+#### user(指定容器中运行应用的用户名)
+
+#### working_dir(指定容器中工作目录)
+
+#### restart(指定容器退出后的重启策略)
+
+该命令对保持服务始终运行十分有效，在生产环境 中推荐配置为 always 或者 unless-stopped 。
 
 ```yaml
 restart: always
 ```
 
-> alias
+#### alias(网络上此服务的别名)
 
-网络上此服务的别名（备用主机名）。同一网络上的其他容器可以使用服务名称或此别名连接到其中一个服务的容器。由于aliases是网络范围的，因此相同的服务可以在不同的网络上具有不同的别名。
-注意：网络范围的别名可以由多个容器共享，甚至可以由多个服务共享。如果是，则无法保证名称解析为的容器。
+同一网络上的其他容器可以使用服务名称或此别名连接到其中一个服务的容器。由于aliases是网络范围的，因此相同的服务可以在不同的网络上具有不同的别名。
+注意：网络范围的别名可以多个容器共享，甚至可以多个服务共享。如果是，则无法保证名称解析到正确的容器。
 
 ```yaml
 services:
@@ -4519,121 +4782,34 @@ services:
          - alias2
 ```
 
-> volumes
+#### volumes(挂载宿主机路径到容器)
 
-挂载宿主机路径到容器。-v具名挂载需要添加顶级卷配置指令。
+挂载一个目录或者一个已存在的数据卷容器，可以直接使用 [HOST:CONTAINER]格式，或者使用[HOST:CONTAINER:ro]格式，后者对于容器来说，数据卷是只读的，可以有效保护宿主机的文件系统。
+Compose的数据卷指定路径可以是相对路径，使用 . 或者 .. 来指定相对目录。
 
 ```yaml
 volumes:
- - /var/lib/mysql
- - cache/:/tmp/cache
- - ~/configs:/etc/configs/:ro
+  // 只是指定一个路径，Docker 会自动在创建一个数据卷（这个路径是容器内部的）。
+  - /var/lib/mysql
+  // 使用绝对路径挂载数据卷
+  - /opt/data:/var/lib/mysql
+  // 以 Compose 配置文件为中心的相对路径作为数据卷挂载到容器。
+  - ./cache:/tmp/cache
+  // 使用用户的相对路径（~/ 表示的目录是 /home/<用户目录>/ 或者 /root/）。
+  - ~/configs:/etc/configs/:ro
+  // 已经存在的命名的数据卷。
+  - datavolume:/var/lib/mysql
 ```
 
-#### （4）networks配置指令
-
-> 未显式声明网络环境
-
-使用docker-compose up启动容器后，这些容器都会被加入app_default网络中。使用docker network ls可以查看网络列表，docker network inspect 可以查看对应网络的配置。
+#### volumes_from(从另一个服务或容器挂载)
 
 ```yaml
-version: '3'
-services:
-  web:
-    mage: nginx:latest
-    container_name: web
-    depends_on:
-      - db
-    ports:
-      - "9090:80"
-    links:
-      - db
-  db:
-    image: mysql
-    container_name: db
+volumes_from:
+   - service_name   
+     - container_name
 ```
 
-> 关键字指定自定义网络
-
-例如下面的docker-compose.yml文件，定义了front和back网络，实现了网络隔离。其中proxy和db之间只能通过app来实现通信。其中，custom-driver-1并不能直接使用，你应该替换为host, bridge, overlay等选项中的一种。
-
-```yaml
-version: '3'
-
-services:
-  proxy:
-    build: ./proxy
-    networks:
-      - front
-  app:
-    build: ./app
-    networks:
-      - front
-      - back
-  db:
-    image: postgres
-    networks:
-      - back
-
-networks:
-  front:
-    # Use a custom driver
-    driver: custom-driver-1
-  back:
-    # Use a custom driver which takes special options
-    driver: custom-driver-2
-    driver_opts:
-      foo: "1"
-      bar: "2"
-```
-
-> 配置默认网络
-
-```yaml
-version: '2'
-
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-  db:
-    image: postgres
-
-networks:
-  default:
-    driver: custom-driver-1
-```
-
-> 使用已存在的网络
-
-```yaml
-networks:
-  default:
-    external:
-      name: my-pre-existing-network
-```
-
-#### （5）volumes配置指令
-
-自定义卷供容器挂载使用，容器里面使用固定路径卷挂载的时候使用，自定义宿主机路径不需要使用顶级volumes指令。
-
-```yaml
-version: '3.3'           #compose文件版本
-
-services:
-   db:                 # 服务1：db     
-     volumes:
-       - db_data:/var/lib/mysql   # 数据持久化
-   wordpress:          # 服务2：wordpress     
-     volumes:
-       - wordpress_files:/var/www/html   # 数据持久化     
-volumes:
-  wordpress_files:
-  db_data:
-```
-
-### 4、Docker-Compose常用命令
+### 5、Docker-Compose常用命令
 
 ```bash
 [root@bluecusliyou image-save]# docker-compose --help
@@ -4682,37 +4858,219 @@ Commands:
 Run 'docker compose COMMAND --help' for more information on a command.
 ```
 
-#### （1）docker-compose up
+#### docker-compose up(启动服务)
 
 用于部署一个 Compose 应用。默认情况下该命令会读取名为 docker-compose.yml 或 docker-compose.yaml 的文件。当然用户也可以使用 -f 指定其他文件名。通常情况下，会使用 `-d` 参数令应用在后台启动。
 
 用`docker compose`创建的容器，名字都会加入一个对应文件夹的名字，比如我当前所在的文件夹叫做`test`,而我在`yaml`文件中起的名字是`my-wordpress`。最终容器的名字就是`test_my-wordpress_1`。这个前缀其实是可以改的，比如我们希望前缀加上`bluecusliyou`。就可以使用`-p`参数指定。
 
-#### （2）docker-compose stop
+```bash
+docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...]
+选项包括：
+-d 在后台运行服务容器
+-no-color 不是有颜色来区分不同的服务的控制输出
+-no-deps 不启动服务所链接的容器
+--force-recreate 强制重新创建容器，不能与-no-recreate同时使用
+–no-recreate 如果容器已经存在，则不重新创建，不能与–force-recreate同时使用
+–no-build 不自动构建缺失的服务镜像
+–build 在启动容器前构建服务镜像
+–abort-on-container-exit 停止所有容器，如果任何一个容器被停止，不能与-d同时使用
+-t, –timeout TIMEOUT 停止容器时候的超时（默认为10秒）
+–remove-orphans 删除服务中没有在compose文件中定义的容器
+```
 
-停止 Compose 应用相关的所有容器，但不会删除它们。被停止的应用可以很容易地通过 docker-compose restart 命令重新启动。
+#### docker-compose ps(列出服务)
 
-#### （3）docker-compose rm
+```bash
+[root@bluecusliyou ~]# docker-compose ps --help
+
+Usage:  docker compose ps [SERVICE...]
+
+List containers
+
+Options:
+  -a, --all                  Show all stopped containers (including those created by the run command)
+      --format string        Format the output. Values: [pretty | json] (default "pretty")
+  -q, --quiet                Only display IDs
+      --services             Display services
+      --status stringArray   Filter services by status. Values: [paused | restarting | removing | running | dead | created | exited]
+```
+
+#### docker-compose create(为服务创建容器)
+
+```bash
+docker-compose create [options] [SERVICE...]
+为服务创建容器。
+选项包括：
+–force-recreate：重新创建容器，即使配置和镜像没有改变，不兼容–no-recreate参数
+–no-recreate：如果容器已经存在，不需要重新创建，不兼容–force-recreate参数
+–no-build：不创建镜像，即使缺失
+–build：创建容器前，生成镜像
+```
+
+#### docker-compose run(在指定服务上执行命令)
+
+```bash
+docker-compose run [options] [-v VOLUME...] [-p PORT...] [-e KEY=VAL...] SERVICE [COMMAND] [ARGS...]
+在指定服务上执行命令。
+docker-compose run ubuntu ping www.baidu.com
+在指定容器上执行一个ping命令。
+```
+
+#### docker-compose scale(指定服务运行的容器个数)
+
+```bash
+docker-compose scale web=3 db=2
+指定服务运行的容器个数。通过service=num的参数来设置数量
+```
+
+#### docker-compose exec(进入服务的容器)
+
+```bash
+docker-compose exec [options] SERVICE COMMAND [ARGS...]
+选项包括：
+-d 分离模式，后台运行命令。
+–privileged 获取特权。
+–user USER 指定运行的用户。
+-T 禁用分配TTY，默认docker-compose exec分配TTY。
+–index=index，当一个服务拥有多个容器时，可通过该参数登陆到该服务下的任何容器，例如：docker-compose exec –index=1 web /bin/bash ，web服务中包含多个容器
+```
+
+#### docker-compose start(启动服务)
+
+#### docker-compose pause(暂停一个服务)
+
+#### docker-compose uppause(恢复暂停状态中的服务)
+
+#### docker-compose kill(强制停止服务)
+
+```bash
+docker-compose kill [options] [SERVICE...]
+通过发送SIGKILL信号来强制停止服务容器。
+支持通过-s参数来指定发送的信号，例如通过如下指令发送SIGINT信号：
+docker-compose kill -s SIGINT
+```
+
+#### docker-compose stop(停止服务)
+
+```bash
+docker-compose stop [options] [SERVICE...]
+选项包括
+-t, –timeout TIMEOUT 停止容器时候的超时（默认为10秒）
+docker-compose stop
+停止正在运行的容器，可以通过docker-compose start 再次启动
+```
+
+#### docker-compose restart(重启服务)
+
+如果用户在停止该应用后对其进行了变更，那么变更的内容不会反映在重启后的应用中，这时需要重新部署应用使变更生效。
+
+```bash
+docker-compose restart [options] [SERVICE...]
+重启项目中的服务。
+选项包括：
+-t, –timeout TIMEOUT，指定重启前停止容器的超时（默认为10秒）
+docker-compose restart
+重启项目中的服务
+```
+
+#### docker-compose down(停止并删除服务)
+
+```bash
+docker-compose down [options]
+停止和删除容器，它会删除容器和网络，但是不会删除卷和镜像。
+选项包括：
+–rmi type，删除镜像，类型必须是：all，删除compose文件中定义的所有镜像；local，删除镜像名为空的镜像
+-v, –volumes，删除已经在compose文件中定义的和匿名的附在容器上的数据卷
+–remove-orphans，删除服务中没有在compose中定义的容器
+docker-compose down
+停用移除所有容器以及网络相关
+```
+
+#### docker-compose rm(删除服务)
 
 用于删除已停止的 Compose 应用。它会删除容器和网络，但是不会删除卷和镜像。
 
-#### （4）docker-compose restart
+```bash
+docker-compose rm [options] [SERVICE...]
+删除所有（停止状态的）服务容器，它会删除容器和网络，但是不会删除卷和镜像。
+选项包括：
+–f, –force，强制直接删除，包括非停止状态的容器
+-v，删除容器所挂载的数据卷
+docker-compose rm
+删除所有（停止状态的）服务容器。推荐先执行docker-compose stop命令来停止容器。
+```
 
-重启已停止的 Compose 应用。如果用户在停止该应用后对其进行了变更，那么变更的内容不会反映在重启后的应用中，这时需要重新部署应用使变更生效。
+#### docker-compose pull(拉取服务依赖的镜像)
 
-#### （5）docker-compose ps
+```bash
+docker-compose pull [options] [SERVICE...]
+拉取服务依赖的镜像。
+选项包括：
+–ignore-pull-failures，忽略拉取镜像过程中的错误
+–parallel，多个镜像同时拉取
+–quiet，拉取镜像过程中不打印进度信息
+docker-compose pull
+拉取服务依赖的镜像
+```
 
-用于列出 Compose 应用中的各个容器。输出内容包括当前状态、容器运行的命令以及网络端口。
+#### docker-compose push(推送服务依赖的镜像)
 
-#### （6）docker-compose down
+```bash
+docker-compose push [options] [SERVICE...]
+推送服务依赖的镜像。
+选项包括：
+–ignore-push-failures 忽略推送镜像过程中的错误
+```
 
-停止并删除运行中的 Compose 应用。它会删除容器和网络，但是不会删除卷和镜像。指定-v会删除卷。
+#### docker-compose bulid(构建服务依赖的镜像)
 
-#### （7）docker-compose pull
+```bash
+docker-compose build [options] [--build-arg key=val...] [SERVICE...]
+构建服务依赖的镜像。
+选项包括：
+–compress 通过gzip压缩构建上下环境
+–force-rm 删除构建过程中的临时容器
+–no-cache 构建镜像过程中不使用缓存
+–pull 始终尝试通过拉取操作来获取更新版本的镜像
+-m, –memory MEM为构建的容器设置内存大小
+–build-arg key=val为服务设置build-time变量
+服务容器一旦构建后，将会带上一个标记名。可以随时在项目目录下运行docker-compose build来重新构建服务
+```
 
-这个容器启动的时间是很长的，因为如果本地没有镜像，就要去官网上进行拉去，这个占用了95%以上的时间。这时候可以先使用命令进行拉取镜像。
+#### docker-compose logs(查看应用容器日志)
 
-### 5、实战：wordpress
+```bash
+docker-compose logs [options] [SERVICE...]
+查看服务容器的输出。默认情况下，docker-compose将对不同的服务输出使用不同的颜色来区分。可以通过–no-color来关闭颜色。
+docker-compose logs
+查看服务容器的输出
+-f 跟踪日志输出
+```
+
+#### docker-compose config(查看compose文件配置)
+
+```
+docker-compose config [options]
+验证并查看compose文件配置。
+选项包括：
+–resolve-image-digests 将镜像标签标记为摘要
+-q, –quiet 只验证配置，不输出。 当配置正确时，不输出任何内容，当文件配置错误，输出错误信息
+–services 打印服务名，一行一个
+–volumes 打印数据卷名，一行一个
+```
+
+#### docker-compose port(显示容器端口映射的端口)
+
+```bash
+docker-compose port [options] SERVICE PRIVATE_PORT
+显示某个容器端口所映射的公共端口。
+选项包括：
+–protocol=proto，指定端口协议，TCP（默认值）或者UDP
+–index=index，如果同一服务存在多个容器，指定命令对象容器的序号（默认为1）
+```
+
+### 6、实战：wordpress
 
 #### （1）编写docker-compose.yaml文件
 
@@ -4781,25 +5139,51 @@ volumes:
 
 ### 1、Docker Swarm简介
 
-Docker Swarm 是 Docker 的集群管理工具，在之前我们只是在一台机器来进行docker的管理
+#### （1）Docker Swarm简介
 
-![1640084336072](assets/1640084336072.png)
+Docker Swarm 是 Docker 的集群管理工具，在之前我们只是在一台机器来进行docker的管理。
 
-但是有时容器并不一定都在一台主机上，如果是分布式的处于多台主机上，这时就可以借助于Swarm，Swarm是Docker自带的编排工具，只要你安装了Docker就会存在Docker Swarm工具
+但是有时容器并不一定都在一台主机上，如果是分布式的处于多台主机上，这时就可以借助于Swarm，Swarm是Docker自带的编排工具，自 Docker 1.12 版本之后，它已经完全集成在 Docker 引擎中，只要你安装了Docker就会存在Docker Swarm工具。
 
 ![1640084380594](assets/1640084380594.png)
 
-Swarm中的模式是有两大类节点，一类是manager节点，另一类是worker节点，manager节点相当于对服务的创建和调度，worker节点主要是运行容器服务，当然manager节点也是可以运行的
+#### （2）manager和worker节点
+
+Swarm中有两大类节点，一类是manager节点，另一类是worker节点，manager节点是对服务的创建和调度，worker节点主要是运行容器服务，当然manager节点也是可以运行的。
+
+manager节点状态、信息是用Raft consensus group的网络进行通信同步的，而worker之间的通信依靠的是Gossip network做到的。
+
+管理节点负责集群控制，进行诸如监控集群状态、分发任务至工作节点等操作。工作节点接收来自管理节点的任务并执行。
+
+Swarm 的配置和状态信息保存在一套位于所有管理节点上的分布式 etcd 数据库中。该数据库运行于内存中，并保持数据的最新状态。关于该数据库最棒的是，它几乎不需要任何配置，作为 Swarm 的一部分被安装，无须管理。  
 
 ![1640084634069](assets/1640084634069.png)
 
-manager节点状态、信息的同步根据Raft consensus group的网络进行通信同步的，而worker之间的通信依靠的是Gossip network做到的。
+#### （3）服务service
 
 另外一个重要的概念就是service，我们可以在一个manager节点上创建一个服务，但是可以根据这一个服务创建多个容器的任务，这些容器任务运行在不同的节点上。
 
 ![image-20211231220554305](assets/image-20211231220554305.png)
 
-那么如何进行Swarm集群的搭建呢？
+#### （4）单引擎模式和Swarm 模式
+
+不包含在任何 Swarm 中的 Docker 节点，称为运行于单引擎（Single-Engine）模式。一旦被加入 Swarm 集群，则切换为 Swarm 模式，如下图所示。
+
+在单引擎模式下的 Docker 主机上运行`docker swarm init`将其切换到 Swarm 模式，并创建一个新的 Swarm，将自身设置为 Swarm 的第一个管理节点。
+
+更多的节点可以作为管理节点或工作节点加入进来。这一操作也会将新加入的节点切换为 Swarm 模式。
+
+![Docker节点加入Swarm集群](assets/4-1Z41Q25041I0.gif)
+
+#### （5）集群安全性
+
+Swarm 默认内置有加密的分布式集群存储（encrypted distributed cluster store）、加密网络（Encrypted Network）、公用TLS（Mutual TLS）、安全集群接入令牌 Secure Cluster Join Token）以及一套简化数字证书管理的 PKI（Public Key Infrastructure）。
+
+  关于集群管理，最大的挑战在于保证其安全性。搭建 Swarm 集群时将不可避免地使用 TLS，因为它被 Swarm 紧密集成。
+
+Swarm 使用 TLS 进行通信加密、节点认证和角色授权。自动密钥轮换（Automatic Key Rotation）更是锦上添花！其在后台默默进行，用户甚至感知不到这一功能的存在。  
+
+#### （6）如何进行Swarm集群的搭建
 
 - 在swarm模式下初始化一个Swarm集群，并且将当前主机加入到该集群作为manager节点
 - 加入其它节点到该集群中
@@ -4807,7 +5191,7 @@ manager节点状态、信息的同步根据Raft consensus group的网络进行�
 
 ### 2、Docker Swarm集群搭建
 
-#### （1）集群创建命令说明
+#### （1）集群创建命令
 
 > 集群管理命令
 
@@ -4852,12 +5236,28 @@ Commands:
 Run 'docker node COMMAND --help' for more information on a command.
 ```
 
-#### （2）创建Manager节点
+#### （2）集群搭建前提
 
-docker swarm init 命令搭配参数`-–advertise-addr=本机IP`，可以初始化Manager节点，加入Swarm集群，并生成加入swarm的worker节点的token。
+每个节点都需要安装 Docker，并且能够与 Swarm 的其他节点通信。
+
+在网络方面，需要在路由器和防火墙中开放如下端口。
+
+- 2377/tcp：用于客户端与 Swarm 进行安全通信。
+- 7946/tcp 与 7946/udp：用于控制面 gossip 分发。
+- 4789/udp：用于基于 VXLAN 的覆盖网络。
+
+#### （3）初始化一个全新的Swarm集群
+
+  `docker swarm init`会通知 Docker 来初始化一个新的 Swarm，并将自身设置为第一个管理节点，作为leader。同时也会使该节点开启 Swarm 模式，且生成worker节点加入集群的命令。
+
+`--advertise-addr`指定其他节点用来连接到当前管理节点的 IP 和端口。这一属性是可选的，当节点上有多个 IP 时，可以用于指定使用哪个IP。此外，还可以用于指定一个节点上没有的 IP，比如一个负载均衡的 IP。
+
+`--listen-addr`指定用于承载 Swarm 流量的 IP 和端口。其设置通常与 --advertise-addr 相匹配，但是当节点上有多个 IP 的时候，可用于指定具体某个 IP。并且，如果 --advertise-addr 设置了一个远程 IP 地址（如负载均衡的IP地址），该属性也是需要设置的。建议执行命令时总是使用这两个属性来指定具体 IP 和端口。
+
+Swarm 模式下的操作默认运行于 2337 端口。虽然它是可配置的，但 2377/tcp 是用于客户端与 Swarm 进行安全（HTTPS）通信的约定俗成的端口配置。  
 
 ```bash
-[root@bluecusliyou ~]# docker swarm init --advertise-addr=192.168.0.108
+[root@manager1 ~]# docker swarm init --advertise-addr 192.168.0.108:2377
 Swarm initialized: current node (sz7bfcmk637qhqfvzqhdnk3t2) is now a manager.
 
 To add a worker to this swarm, run the following command:
@@ -4867,40 +5267,79 @@ To add a worker to this swarm, run the following command:
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 ```
 
-#### （3）创建worker节点
+#### （4）其他manager和worker节点加入集群
+
+初始化结束后，重新生成节点添加的token命令，后面的参数是manager就是生成manager节点添加的命令，worker就是生成worker节点添加的命令。
+
+工作节点和管理节点的接入命令中使用的接入 Token是不同的。因此，一个节点是作为工作节点还是管理节点接入，完全依赖于使用了哪个 Token。接入 Token 应该被妥善保管，因为这是将一个节点加入 Swarm 的唯一所需！
+
+```bash
+#给manager节点加入集群使用
+[root@manager1 ~]# docker swarm join-token manager
+To add a manager to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377
+#给worker节点加入集群使用
+[root@manager1 ~]# docker swarm join-token worker
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa4aa 192.168.0.108:2377
+```
+
+--advertise-addr 与 --listen-addr 属性是可选的。在网络配置方面，请尽量明确指定相关参数，这是一种好的实践。
 
 另外再开启worker1服务器，将这台机器加入到swarm中成为worker节点
 
 ```bash
-[root@worker1 ~]#docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377
+[root@worker1 ~]#docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377 --advertise-addr 192.168.0.109:2377
 This node joined a swarm as a worker.
 ```
 
 另外再开启worker2服务器，将这台机器加入到swarm中成为worker节点
 
 ```bash
-[root@worker2 ~]#docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377
+[root@worker2 ~]#docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377 --advertise-addr 192.168.0.110:2377
 This node joined a swarm as a worker.
 ```
 
-#### （4）查看节点状态
-
-注意的是查看节点状态只能在manager节点那台机器上查看，普通节点无法执行查看命令
+另外再开启manager2服务器，将这台机器加入到swarm中成为manager节点
 
 ```bash
-[root@bluecusliyou ~]# docker node ls
-ID                            HOSTNAME       STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
-rrttnv173y9ij6wrtrm70lxvu *   bluecusliyou   Ready     Active         Leader           20.10.12
-8dg18x7djsb35hj6bzlsiimio     worker1        Ready     Active                          20.10.12
-j9smzzygl0bu62yri6wx7h227     worker2        Ready     Active                          20.10.12
+[root@manager2 ~]#docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa4aa 192.168.0.108:2377 --advertise-addr 192.168.0.111:2377
+This node joined a swarm as a manager.
 ```
 
-#### （5）集群运行中移除worker节点
-
-> worker节点执行命令
+另外再开启manager3服务器，将这台机器加入到swarm中成为manager节点
 
 ```bash
-[root@worker2 ~]# docker swarm leave -f
+[root@manager3 ~]#docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa4aa 192.168.0.108:2377 --advertise-addr 192.168.0.112:2377
+This node joined a swarm as a manager.
+```
+
+#### （5）查看集群中的节点状态
+
+查看节点状态只能在manager节点机器上查看，普通节点无法执行查看，带*的就是本机。
+
+manager status是Leader和Reachable的是manager节点，其他没有值的是worker节点。
+
+```bash
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+4lzeh497bcpqlkd7hjwne8k0p *   manager1   Ready     Active         Leader           20.10.12
+oqvua8epbvhjl9ikqj0igsim9     manager2   Ready     Active         Reachable        20.10.12
+nllsbxz3sv5n3tn2zakoa07s0     manager3   Ready     Active         Reachable        20.10.12
+giv1k7vci8znkqizvakv899pc     worker1    Ready     Active                          20.10.12
+m9xdyriql28urfiep116ni6wj     worker2    Ready     Active                          20.10.12
+```
+
+### 3、Docker Swarm集群管理
+
+#### （1）集群中移除节点
+
+> 集群中的manager或worker节点执行命令
+
+```bash
+[root@worker1 ~]# docker swarm leave -f
 Node left the swarm.
 ```
 
@@ -4909,37 +5348,128 @@ Node left the swarm.
 worker节点执行完命令，节点的status会变成down，然后才能删除这个节点，状态是ready的节点无法删除
 
 ```bash
-[root@bluecusliyou ~]# docker node ls
-ID                            HOSTNAME       STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
-rrttnv173y9ij6wrtrm70lxvu *   bluecusliyou   Ready     Active         Leader           20.10.12
-8dg18x7djsb35hj6bzlsiimio     worker1        Ready     Active                          20.10.12
-j9smzzygl0bu62yri6wx7h227     worker2        Down      Active                          20.10.12
-[root@bluecusliyou ~]# docker node rm worker2
-worker2
-[root@bluecusliyou ~]# docker node ls
-ID                            HOSTNAME       STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
-rrttnv173y9ij6wrtrm70lxvu *   bluecusliyou   Ready     Active         Leader           20.10.12
-8dg18x7djsb35hj6bzlsiimio     worker1        Ready     Active                          20.10.12
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+w3o3qywuwjqcq64igexbln881 *   manager1   Ready     Active         Leader           20.10.12
+jfs3h490ikpc13i9hv55x29eg     manager2   Ready     Active         Reachable        20.10.12
+swa8o3cy7zg42tza0sy6gwl9i     manager3   Ready     Active         Reachable        20.10.12
+06rckc92r53ssksfjx46uskyi     worker1    Down      Active                          20.10.12
+mtny8rj6xkeqwabwsj4jhgok9     worker2    Ready     Active                          20.10.12
+[root@manager1 ~]# docker node rm worker1
+worker1
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+w3o3qywuwjqcq64igexbln881 *   manager1   Ready     Active         Leader           20.10.12
+jfs3h490ikpc13i9hv55x29eg     manager2   Ready     Active         Reachable        20.10.12
+swa8o3cy7zg42tza0sy6gwl9i     manager3   Ready     Active         Reachable        20.10.12
+mtny8rj6xkeqwabwsj4jhgok9     worker2    Ready     Active                          20.10.12
 ```
 
-#### （6）集群运行中添加worker节点
+#### （2）更新节点的可获得状态
 
-manager节点执行命令生成token，到worker节点上执行
+节点状态是Active，表示可以接受新的任务分配，如果是Drain，表示不接受新的任务分配，不影响集群的运行，集群的负载能力有所下降。扩展的节点会转移到其他节点上，保持运行的容器数量保持不变。
 
 ```bash
-[root@bluecusliyou ~]# docker swarm join-token manager
-To add a manager to this swarm, run the following command:
-
-    docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+w3o3qywuwjqcq64igexbln881 *   manager1   Ready     Active         Leader           20.10.12
+jfs3h490ikpc13i9hv55x29eg     manager2   Ready     Active         Reachable        20.10.12
+swa8o3cy7zg42tza0sy6gwl9i     manager3   Ready     Active         Reachable        20.10.12
+djjv90fb8n4qpjpu6cogfiinz     worker1    Ready     Active                          20.10.12
+mtny8rj6xkeqwabwsj4jhgok9     worker2    Ready     Active                          20.10.12
+[root@manager1 ~]# docker node update --availability drain worker1
+worker1
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+w3o3qywuwjqcq64igexbln881 *   manager1   Ready     Active         Leader           20.10.12
+jfs3h490ikpc13i9hv55x29eg     manager2   Ready     Active         Reachable        20.10.12
+swa8o3cy7zg42tza0sy6gwl9i     manager3   Ready     Active         Reachable        20.10.12
+djjv90fb8n4qpjpu6cogfiinz     worker1    Ready     Drain                           20.10.12
+mtny8rj6xkeqwabwsj4jhgok9     worker2    Ready     Active                          20.10.12
+[root@manager1 ~]# docker node update --availability active worker1
+worker1
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+w3o3qywuwjqcq64igexbln881 *   manager1   Ready     Active         Leader           20.10.12
+jfs3h490ikpc13i9hv55x29eg     manager2   Ready     Active         Reachable        20.10.12
+swa8o3cy7zg42tza0sy6gwl9i     manager3   Ready     Active         Reachable        20.10.12
+djjv90fb8n4qpjpu6cogfiinz     worker1    Ready     Active                          20.10.12
+mtny8rj6xkeqwabwsj4jhgok9     worker2    Ready     Active                          20.10.12
 ```
 
-### 3、Docker Swarm部署服务到集群中
+#### （3）Swarm 管理器高可用性（HA）
 
-#### （1）服务创建命令说明
+Swarm 的管理节点内置有对 HA 的支持。这意味着，即使一个或多个节点发生故障，剩余管理节点也会继续保证 Swarm 的运转。
 
-上面我们已经将节点创建好了，现在可以在这些节点上创建容器了，那么就需要看看docker service 的帮助信息，
+从技术上来说，Swarm 实现了一种主从方式的多管理节点的 HA。这意味着，即使你可能有多个管理节点，也总是仅有一个节点处于活动状态。
 
-可以看到有create这个命令，可以这样理解，docker service create 相当于docker run 就是创建容器，只不过在swarm中是不同的表现方式。
+通常处于活动状态的管理节点被称为“主节点”（leader），而主节点也是唯一一个会对 Swarm 发送控制命令的节点。也就是说，只有主节点才会变更配置，或发送任务到工作节点。如果一个备用（非活动）管理节点接收到了 Swarm 命令，则它会将其转发给主节点。
+
+![1642470490361](assets/1642470490361.png)
+
+> 锁定 Swarm
+
+一个旧的管理节点重新接入 Swarm 会自动解密并获得 Raft 数据库中长时间序列的访问权，这会带来安全隐患。
+
+进行备份恢复可能会抹掉最新的 Swarm 配置。为了规避以上问题，Docker 提供了自动锁机制来锁定 Swarm，这会强制要求重启的管理节点在提供一个集群解锁码之后才有权重新接入集群。  
+
+通过在执行 `docker swarm init` 命令来创建一个新的 Swarm 集群时传入 --autolock 参数可以直接启用锁。
+
+对于已经搭建的Swarm 集群，这时也可以使用 `docker swarm update` 命令来启用锁。在某个 Swarm 管理节点上运行如下命令。请确保将解锁码妥善保管在安全的地方！
+
+```bash
+[root@manager1 ~]# docker swarm update --autolock=true
+Swarm updated.
+To unlock a swarm manager after it restarts, run the `docker swarm unlock`
+command and provide the following key:
+
+    SWMKEY-1-UNq+ZHjM0DpBDSFDrAMrBhq/kDJZXohG3d6wxcH91dE
+
+Please remember to store this key in a password manager, since without it you
+will not be able to restart the manager.
+```
+
+重启某一个管理节点，尽管 Docker 服务已经重启，该管理节点仍然未被允许重新接入集群。如果重启的节点是Leader节点，Leader节点会自动转移到其他manager节点上。
+
+```bash
+[root@manager2 ~]# systemctl restart docker
+[root@manager2 ~]# docker node ls
+Error response from daemon: Swarm is encrypted and needs to be unlocked before it can be used. Please use "docker swarm unlock" to unlock it.
+```
+
+其他管理节点执行 `docker node ls` 命令，会发现重启的管理节点会显示 down 以及 unreachable。
+
+```bash
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+w3o3qywuwjqcq64igexbln881 *   manager1   Ready     Active         Leader           20.10.12
+jfs3h490ikpc13i9hv55x29eg     manager2   Down      Active         Unreachable      20.10.12
+swa8o3cy7zg42tza0sy6gwl9i     manager3   Ready     Active         Reachable        20.10.12
+djjv90fb8n4qpjpu6cogfiinz     worker1    Ready     Active                          20.10.12
+mtny8rj6xkeqwabwsj4jhgok9     worker2    Ready     Active                          20.10.12
+```
+
+重启的节点上执行 `docker swarm unlock` 命令来为重启的管理节点解锁 Swarm，需要提供解锁码。该节点将重新接入Swarm，并且再次执行 `docker node ls` 命令会显示 ready 和 reachable。
+
+```bash
+[root@manager2 ~]# docker swarm unlock
+Please enter unlock key: 
+[root@manager2 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+w3o3qywuwjqcq64igexbln881     manager1   Ready     Active         Leader           20.10.12
+jfs3h490ikpc13i9hv55x29eg *   manager2   Ready     Active         Reachable        20.10.12
+swa8o3cy7zg42tza0sy6gwl9i     manager3   Ready     Active         Reachable        20.10.12
+djjv90fb8n4qpjpu6cogfiinz     worker1    Ready     Active                          20.10.12
+mtny8rj6xkeqwabwsj4jhgok9     worker2    Ready     Active                          20.10.12
+```
+
+### 4、Docker Swarm集群服务搭建
+
+服务是自Docker1.12 后新引入的概念，并且仅适用于Swarm模式。
+
+使用服务仍能够配置大多数熟悉的容器属性，比如容器名、端口映射、接入网络和镜像。此外还增加了额外的特性，比如可以声明应用服务的期望状态，将其告知 Docker 后，Docker 会负责进行服务的部署和管理。 
+
+#### （1）服务创建命令
 
 ```bash
 [root@bluecusliyou ~]# docker service --help
@@ -4962,47 +5492,54 @@ Commands:
 Run 'docker service COMMAND --help' for more information on a command.
 ```
 
-#### （2）部署服务到集群中
+#### （2）创建一个新的服务
 
-> 创建一个新的service
+使用 `docker service create` 命令创建一个新的服务。  该命令与熟悉的 `docker run` 命令的许多参数是相同的。使用 --name 和 -p 定义服务的方式，与单机启动容器的定义方式是一样的。
 
-可以直接使用--replicas参数指定创建的服务数量
+`--name` 将服务名称设定为nginx_swarm。`-p`将每个节点上的8566端口映射到服务副本内部的80端口。`--replicas`告知 Docker应该总是有6个此服务的副本。
+
+主管理节点会在 Swarm 中实例化6个副本，管理节点也会作为工作节点运行。相关各工作节点或管理节点会拉取镜像，然后启动一个运行在8566端口上的容器。
+
+所有的服务都会被Swarm持续监控，Swarm 会在后台进行轮训检查（Reconciliation Loop），来持续比较服务的实际状态和期望状态是否一致。如果一致，则无须任何额外操作；如果不一致，Swarm 会使其一致。
+
+服务的默认复制模式（Replication Mode）是副本模式（replicated），这种模式会部署期望数量的服务副本，并尽可能均匀地将各个副本分布在整个集群中。另一种模式是全局模式（global），在这种模式下，每个节点上仅运行一个副本。可以通过给 `docker service create` 命令传递 --mode global 参数来设置。  
 
 ```bash
-[root@bluecusliyou ~]# docker service create --name nginx_swam -p 8566:80 nginx
-95ccdye350g66n9rji4gbri56
-overall progress: 1 out of 1 tasks 
-1/1: running   [==================================================>] 
+[root@manager1 ~]# docker service create -d --name nginx_swarm -p 8566:80 --replicas 6 nginx
+7px0w1u46bxuywuf3lq7gqvpa
+overall progress: 6 out of 6 tasks 
+1/6: running   [==================================================>] 
+2/6: running   [==================================================>] 
+3/6: running   [==================================================>] 
+4/6: running   [==================================================>] 
+5/6: running   [==================================================>] 
+6/6: running   [==================================================>] 
 verify: Service converged
 ```
 
 #### （3）查看服务部署情况
 
-> 查看sevice列表
-
 ```bash
-[root@bluecusliyou ~]# docker service ls
-ID             NAME         MODE         REPLICAS   IMAGE          PORTS
-xefys7u0s9vt   nginx_swam   replicated   1/1        nginx:latest   *:8566->80/tcp    
-```
+#查看集群中服务列表
+[root@manager1 ~]# docker service ls
+ID             NAME          MODE         REPLICAS   IMAGE          PORTS
+7px0w1u46bxu   nginx_swarm   replicated   6/6        nginx:latest   *:8566->80/tcp
+#查看具体服务的容器实例
+[root@manager1 ~]# docker service ps nginx_swarm
+ID             NAME            IMAGE          NODE       DESIRED STATE   CURRENT STATE           ERROR     PORTS
+j70a563za8da   nginx_swarm.1   nginx:latest   worker1    Running         Running 9 minutes ago             
+jb69xwxk8zxi   nginx_swarm.2   nginx:latest   worker2    Running         Running 9 minutes ago             
+4pre2ed32v0z   nginx_swarm.3   nginx:latest   manager2   Running         Running 9 minutes ago             
+6exvevlbaq0v   nginx_swarm.4   nginx:latest   manager3   Running         Running 9 minutes ago             
+y6aajhqpi6fc   nginx_swarm.5   nginx:latest   manager3   Running         Running 9 minutes ago             
+qskh35pqdrsd   nginx_swarm.6   nginx:latest   manager1   Running         Running 9 minutes ago
+#查看具体服务的详情信息，--pretty 参数，限制输出中仅包含最感兴趣的内容，并以易于阅读的格式打印出来
+[root@manager1 ~]# docker service inspect --pretty nginx_swarm
 
-> 查看service
-
-```bash
-[root@bluecusliyou ~]# docker service ps nginx_swam
-ID             NAME           IMAGE          NODE           DESIRED STATE   CURRENT STATE            ERROR     PORTS
-clxs5ocqrhf2   nginx_swam.1   nginx:latest   bluecusliyou   Running         Running 16 seconds ago
-```
-
-> 查看service具体信息
-
-```bash
-[root@bluecusliyou image-save]# docker service inspect --pretty nginx_swam
-
-ID:             xefys7u0s9vt6frwbme21iea4
-Name:           nginx_swam
+ID:             7px0w1u46bxuywuf3lq7gqvpa
+Name:           nginx_swarm
 Service Mode:   Replicated
- Replicas:      3
+ Replicas:      6
 Placement:
 UpdateConfig:
  Parallelism:   1
@@ -5025,174 +5562,666 @@ Ports:
  PublishedPort = 8566
   Protocol = tcp
   TargetPort = 80
-  PublishMode = ingress 
+  PublishMode = ingress
 ```
 
-#### （4）删除服务
+### 5、Docker Swarm集群服务管理
+
+#### （1）删除集群服务
+
+请谨慎使用 `docker service rm` 命令，因为它在删除所有服务副本时并不会进行确认。
 
 ```bash
-[root@bluecusliyou ~]# docker service rm nginx_swam
+[root@bluecusliyou ~]# docker service rm nginx_swarm
 nginx_swam
 [root@bluecusliyou ~]# docker service ls
 ID        NAME      MODE      REPLICAS   IMAGE     PORTS
 ```
 
-### 4、Docker Swarm集群管理
+#### （2）服务的扩缩容
 
-#### （1）扩展集群服务
-
-> 水平扩展多个Service
-
-和创建的时候指定--replicas参数数量效果一样
+服务副本在各个节点上是均衡分布的，在底层实现上，Swarm 执行了一个调度算法，默认将副本尽量均衡分配给 Swarm 中的所有节点。各节点分配的副本数是平均分配的，并未将 CPU 负载等指标考虑在内。
 
 ```bash
-[root@bluecusliyou ~]# docker service scale nginx_swam=3
-nginx_swam scaled to 3
+#开启一个服务，三个副本
+[root@manager1 ~]# docker service create --name nginx_swarm -p 8566:80 --replicas 3 nginx
+cfx1kn6ogu9fk9lt5xkl5xqmb
 overall progress: 3 out of 3 tasks 
 1/3: running   [==================================================>] 
 2/3: running   [==================================================>] 
 3/3: running   [==================================================>] 
 verify: Service converged 
-```
-
-> 查看sevice列表
-
-```bash
-[root@bluecusliyou ~]# docker service ls
-ID             NAME         MODE         REPLICAS   IMAGE          PORTS
-xefys7u0s9vt   nginx_swam   replicated   3/3        nginx:latest   *:8566->80/tcp 
-```
-
-> 具体看这个service，容器分别在不同的节点服务器上
-
-```bash
-[root@bluecusliyou ~]# docker service ps nginx_swam
-ID             NAME           IMAGE          NODE           DESIRED STATE   CURRENT STATE            ERROR     PORTS
-clxs5ocqrhf2   nginx_swam.1   nginx:latest   bluecusliyou   Running         Running 13 minutes ago             
-7pxlj298dy6b   nginx_swam.2   nginx:latest   worker1        Running         Running 37 seconds ago             
-qwp07dul5y73   nginx_swam.3   nginx:latest   worker2        Running         Running 37 seconds ago
-```
-
-> 每台节点服务器都可以自己查看自己目前运行的容器
-
-```bash
-[root@bluecusliyou ~]# docker ps -a
-CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS                   PORTS                                            NAMES
-04247c5206fd   nginx:latest          "/docker-entrypoint.…"   15 minutes ago   Up 15 minutes            80/tcp                                           nginx_swam.1.clxs5ocqrhf2m6q8ng2anv4p3
-```
-
-```bash
-[root@worker1 ~]# docker ps -a
-CONTAINER ID   IMAGE                                COMMAND                  CREATED         STATUS                    PORTS                                   NAMES
-002de6ea2919   nginx:latest                         "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes              80/tcp                                  nginx_swam.2.7pxlj298dy6bz7mngkk75yks0
-```
-
-```bash
-[root@worker2 ~]# docker ps -a
-CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS          PORTS                                       NAMES
-6d45ed621056   nginx:latest   "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes    80/tcp                                      nginx_swam.3.qwp07dul5y73lcoqano433qf7
-```
-
-#### （2）服务自动修复
-
-scale在swarm中除了水平扩展外，还有一个作用，那就是修复作用，比如将某一个节点中的容器删除掉，那么很快swarm中发觉并进行修复，数量保持原先的样子。
-
-> 现在删除worker1中的一个容器
-
-```bash
-[root@worker1 ~]# docker rm -f nginx_swam.2.7pxlj298dy6bz7mngkk75yks0
-nginx_swam.2.7pxlj298dy6bz7mngkk75yks0
-```
-
-> 在manager节点中查看容器情况，worker1节点容器被删除又补上了一个，保持了整个系统的稳定性
-
-```bash
-[root@bluecusliyou ~]# docker service ps nginx_swam
-ID             NAME               IMAGE          NODE           DESIRED STATE   CURRENT STATE            ERROR                         PORTS
-clxs5ocqrhf2   nginx_swam.1       nginx:latest   bluecusliyou   Running         Running 19 minutes ago                                 
-d229hsbcb4t7   nginx_swam.2       nginx:latest   worker1        Running         Running 27 seconds ago                                 
-7pxlj298dy6b    \_ nginx_swam.2   nginx:latest   worker1        Shutdown        Failed 33 seconds ago    "task: non-zero exit (137)"   
-qwp07dul5y73   nginx_swam.3       nginx:latest   worker2        Running         Running 6 minutes ago
-```
-
-#### （3）服务滚动升级
-
-> 先创建redis3.0.6版本的集群
-
-```bash
-[root@bluecusliyou image-save]# docker service create --replicas 3 --name redis_swam redis:3.0.6
-j0i822rzuokodz14yaupjccev
-overall progress: 3 out of 3 tasks 
-1/3: running   [==================================================>] 
-2/3: running   [==================================================>] 
-3/3: running   [==================================================>] 
+#查看具体服务的容器实例
+[root@manager1 ~]# docker service ps nginx_swarm
+ID             NAME            IMAGE          NODE       DESIRED STATE   CURRENT STATE                ERROR     PORTS
+idg8nh6gtevo   nginx_swarm.1   nginx:latest   manager2   Running         Running about a minute ago             
+lfyb0hfcgd0s   nginx_swarm.2   nginx:latest   manager3   Running         Running about a minute ago             
+ug2c06495cv6   nginx_swarm.3   nginx:latest   worker2    Running         Running about a minute ago
+#扩容到6个副本
+[root@manager1 ~]# docker service scale nginx_swarm=6
+nginx_swarm scaled to 6
+overall progress: 6 out of 6 tasks 
+1/6: running   [==================================================>] 
+2/6: running   [==================================================>] 
+3/6: running   [==================================================>] 
+4/6: running   [==================================================>] 
+5/6: running   [==================================================>] 
+6/6: running   [==================================================>] 
 verify: Service converged 
-[root@bluecusliyou image-save]# docker service ps redis_swam
-ID             NAME           IMAGE         NODE           DESIRED STATE   CURRENT STATE                ERROR     PORTS
-9gqudugdgxl7   redis_swam.1   redis:3.0.6   worker1        Running         Running about a minute ago             
-y83bokl65v2j   redis_swam.2   redis:3.0.6   worker2        Running         Running about a minute ago             
-jr6hlixu49at   redis_swam.3   redis:3.0.6   bluecusliyou   Running         Running about a minute ago 
-```
-
-> 滚动升级redis版本到3.0.7
-
-```bash
-[root@bluecusliyou image-save]# docker service update --image redis:3.0.7 redis_swam
-redis_swam
-overall progress: 3 out of 3 tasks 
-1/3: running   [==================================================>] 
-2/3: running   [==================================================>] 
-3/3: running   [==================================================>] 
-verify: Service converged 
-[root@bluecusliyou image-save]# docker service ps redis_swam
-ID             NAME               IMAGE         NODE           DESIRED STATE   CURRENT STATE                 ERROR     PORTS
-r2zk3wz2xbsd   redis_swam.1       redis:3.0.7   worker1        Running         Running 46 seconds ago                  
-9gqudugdgxl7    \_ redis_swam.1   redis:3.0.6   worker1        Shutdown        Shutdown about a minute ago             
-tqwlqeho50on   redis_swam.2       redis:3.0.7   worker2        Running         Running 21 seconds ago                  
-y83bokl65v2j    \_ redis_swam.2   redis:3.0.6   worker2        Shutdown        Shutdown 36 seconds ago                 
-xa2mfkori7mu   redis_swam.3       redis:3.0.7   bluecusliyou   Running         Running 38 seconds ago                  
-jr6hlixu49at    \_ redis_swam.3   redis:3.0.6   bluecusliyou   Shutdown        Shutdown 44 seconds ago 
-```
-
-#### （4）停止某个节点接收新任务
-
-节点状态是Active，表示可以接受新的任务分配，如果是Drain，表示不接受新的任务分配，不影响集群的运行，集群的负载能力有所下降。扩展的节点会转移到其他节点上，保持运行的容器数量保持不变。
-
-```bash
-[root@bluecusliyou image-save]# docker node update --availability drain worker1
-worker1
-[root@bluecusliyou image-save]# docker node ls
-ID                            HOSTNAME       STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
-rrttnv173y9ij6wrtrm70lxvu *   bluecusliyou   Ready     Active         Leader           20.10.12
-8dg18x7djsb35hj6bzlsiimio     worker1        Ready     Drain                           20.10.12
-j9smzzygl0bu62yri6wx7h227     worker2        Ready     Active                          20.10.12
-[root@bluecusliyou image-save]# docker service ps nginx_swam
-ID             NAME               IMAGE          NODE           DESIRED STATE   CURRENT STATE            ERROR                         PORTS
-clxs5ocqrhf2   nginx_swam.1       nginx:latest   bluecusliyou   Running         Running 5 hours ago                                    
-zeaww3g80vpi   nginx_swam.2       nginx:latest   bluecusliyou   Running         Running 4 minutes ago                                  
-d229hsbcb4t7    \_ nginx_swam.2   nginx:latest   worker1        Shutdown        Shutdown 4 minutes ago                                 
-7pxlj298dy6b    \_ nginx_swam.2   nginx:latest   worker1        Shutdown        Failed 5 hours ago       "task: non-zero exit (137)"   
-qwp07dul5y73   nginx_swam.3       nginx:latest   worker2        Running         Running 5 hours ago                              
-```
-
-#### （5）重新激活节点接受新任务
-
-```bash
-[root@bluecusliyou image-save]# docker service scale nginx_swam=4
-nginx_swam scaled to 4
+[root@manager1 ~]# docker service ps nginx_swarm
+ID             NAME            IMAGE          NODE       DESIRED STATE   CURRENT STATE            ERROR     PORTS
+idg8nh6gtevo   nginx_swarm.1   nginx:latest   manager2   Running         Running 3 minutes ago              
+lfyb0hfcgd0s   nginx_swarm.2   nginx:latest   manager3   Running         Running 3 minutes ago              
+ug2c06495cv6   nginx_swarm.3   nginx:latest   worker2    Running         Running 3 minutes ago              
+bfse0t7ho5e6   nginx_swarm.4   nginx:latest   worker1    Running         Running 20 seconds ago             
+4pbw6cmvb879   nginx_swarm.5   nginx:latest   worker1    Running         Running 20 seconds ago             
+evcun2vt3a5i   nginx_swarm.6   nginx:latest   manager1   Running         Running 21 seconds ago #缩容回4个副本           
+[root@manager1 ~]# docker service scale nginx_swarm=4
+nginx_swarm scaled to 4
 overall progress: 4 out of 4 tasks 
 1/4: running   [==================================================>] 
 2/4: running   [==================================================>] 
 3/4: running   [==================================================>] 
 4/4: running   [==================================================>] 
 verify: Service converged 
-[root@bluecusliyou image-save]# docker service ps nginx_swam
-ID             NAME               IMAGE          NODE           DESIRED STATE   CURRENT STATE             ERROR                         PORTS
-clxs5ocqrhf2   nginx_swam.1       nginx:latest   bluecusliyou   Running         Running 6 hours ago                                     
-zeaww3g80vpi   nginx_swam.2       nginx:latest   bluecusliyou   Running         Running 36 minutes ago                                  
-d229hsbcb4t7    \_ nginx_swam.2   nginx:latest   worker1        Shutdown        Shutdown 36 minutes ago                                 
-7pxlj298dy6b    \_ nginx_swam.2   nginx:latest   worker1        Shutdown        Failed 5 hours ago        "task: non-zero exit (137)"   
-qwp07dul5y73   nginx_swam.3       nginx:latest   worker2        Running         Running 6 hours ago                                     
-wgiwr5te6css   nginx_swam.4       nginx:latest   worker1        Running         Running 41 seconds ago      
+[root@manager1 ~]# docker service ps nginx_swarm
+ID             NAME            IMAGE          NODE       DESIRED STATE   CURRENT STATE            ERROR     PORTS
+idg8nh6gtevo   nginx_swarm.1   nginx:latest   manager2   Running         Running 3 minutes ago              
+lfyb0hfcgd0s   nginx_swarm.2   nginx:latest   manager3   Running         Running 3 minutes ago              
+ug2c06495cv6   nginx_swarm.3   nginx:latest   worker2    Running         Running 3 minutes ago              
+bfse0t7ho5e6   nginx_swarm.4   nginx:latest   worker1    Running         Running 45 seconds ago
+```
+
+#### （3）服务自动修复
+
+Scale在swarm中除了扩缩容外，还有修复作用，比如将某一个节点中的容器stop掉，那么很快swarm中发觉并进行修复，数量保持原先的样子。
+
+> 现在停掉节点中的一个容器
+
+```bash
+[root@worker2 ~]# docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS     NAMES
+7b2e42d0faab   nginx:latest   "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes   80/tcp    nginx_swarm.3.ug2c06495cv6hz0kzq2hmm4em
+[root@worker2 ~]# docker stop nginx_swarm.3.ug2c06495cv6hz0kzq2hmm4em
+nginx_swarm.3.ug2c06495cv6hz0kzq2hmm4em
+```
+
+> 在manager节点中查看容器数量情况，自动又补上了一个，保持了整个系统的稳定性
+
+```bash
+[root@manager1 ~]# docker service ps nginx_swarm
+ID             NAME                IMAGE          NODE       DESIRED STATE   CURRENT STATE                     ERROR     PORTS
+idg8nh6gtevo   nginx_swarm.1       nginx:latest   manager2   Running         Running 9 minutes ago                       
+lfyb0hfcgd0s   nginx_swarm.2       nginx:latest   manager3   Running         Running 9 minutes ago                       
+yf36djugxz0c   nginx_swarm.3       nginx:latest   manager1   Running         Starting less than a second ago             
+ug2c06495cv6    \_ nginx_swarm.3   nginx:latest   worker2    Shutdown        Complete 5 seconds ago                      
+bfse0t7ho5e6   nginx_swarm.4       nginx:latest   worker1    Running         Running 6 minutes ago     
+```
+
+#### （4）服务滚动升级
+
+可以采用如下的 `docker service update` 命令来完成滚动升级。该命令通过变更该服务期望状态的方式来更新运行中的服务。`--image`声明升级镜像版本，`--update-parallelism`声明每次更新副本数量，`--update-delay`声明每次升级有20s的延迟。
+
+对服务执行 `docker service inspect --pretty` 命令，会发现更新时对并行和延迟的设置已经成为服务定义的一部分。之后的更新操作将会自动使用这些设置，直到再次使用 `docker service update` 命令覆盖它们。  
+
+```bash
+#先创建redis3.0.6版本的集群服务
+[root@manager1 ~]# docker service create --replicas 5 --name redis_swarm redis:3.0.6
+g1k5zrnc0j78h5yeus297q1c4
+overall progress: 5 out of 5 tasks 
+1/5: running   [==================================================>] 
+2/5: running   [==================================================>] 
+3/5: running   [==================================================>] 
+4/5: running   [==================================================>] 
+5/5: running   [==================================================>] 
+verify: Service converged 
+[root@manager1 ~]# docker service ps redis_swarm
+ID             NAME            IMAGE         NODE       DESIRED STATE   CURRENT STATE                ERROR     PORTS
+y1k9a26s2ynj   redis_swarm.1   redis:3.0.6   manager3   Running         Running about a minute ago             
+zprcqg933uex   redis_swarm.2   redis:3.0.6   manager1   Running         Running about a minute ago             
+7l7knsjkx3fw   redis_swarm.3   redis:3.0.6   worker2    Running         Running about a minute ago             
+iyz9y4zn9q85   redis_swarm.4   redis:3.0.6   worker1    Running         Running about a minute ago             
+r3ny1fehq7mr   redis_swarm.5   redis:3.0.6   manager2   Running         Running about a minute ago
+#滚动升级redis版本到3.0.7服务集群
+[root@manager1 ~]# docker service update --image redis:3.0.7 --update-parallelism 2 --update-delay 20s redis_swarm
+redis_swarm
+overall progress: 5 out of 5 tasks 
+1/5: running   [==================================================>] 
+2/5: running   [==================================================>] 
+3/5: running   [==================================================>] 
+4/5: running   [==================================================>] 
+5/5: running   [==================================================>] 
+verify: Service converged 
+[root@manager1 ~]# docker service ps redis_swarm
+ID             NAME                IMAGE         NODE       DESIRED STATE   CURRENT STATE                 ERROR     PORTS
+pohkqzmc8b0i   redis_swarm.1       redis:3.0.7   manager3   Running         Running about a minute ago              
+y1k9a26s2ynj    \_ redis_swarm.1   redis:3.0.6   manager3   Shutdown        Shutdown about a minute ago             
+huibhseqmb8f   redis_swarm.2       redis:3.0.7   manager1   Running         Running 38 seconds ago                  
+zprcqg933uex    \_ redis_swarm.2   redis:3.0.6   manager1   Shutdown        Shutdown 45 seconds ago                 
+snele4vxak24   redis_swarm.3       redis:3.0.7   worker2    Running         Running about a minute ago              
+7l7knsjkx3fw    \_ redis_swarm.3   redis:3.0.6   worker2    Shutdown        Shutdown about a minute ago             
+gbleodcf9sgf   redis_swarm.4       redis:3.0.7   worker1    Running         Running about a minute ago              
+iyz9y4zn9q85    \_ redis_swarm.4   redis:3.0.6   worker1    Shutdown        Shutdown about a minute ago             
+2o3u88asoioh   redis_swarm.5       redis:3.0.7   manager2   Running         Running about a minute ago              
+r3ny1fehq7mr    \_ redis_swarm.5   redis:3.0.6   manager2   Shutdown        Shutdown about a minute ago
+#查看服务详情
+[root@manager1 ~]# docker service inspect --pretty redis_swarm
+ID:             g1k5zrnc0j78h5yeus297q1c4
+Name:           redis_swarm
+Service Mode:   Replicated
+ Replicas:      5
+UpdateStatus:
+ State:         completed
+ Started:       28 minutes ago
+ Completed:     26 minutes ago
+ Message:       update completed
+Placement:
+UpdateConfig:
+ Parallelism:   2
+ Delay:         20s
+ On failure:    pause
+ Monitoring Period: 5s
+ Max failure ratio: 0
+ Update order:      stop-first
+RollbackConfig:
+ Parallelism:   1
+ On failure:    pause
+ Monitoring Period: 5s
+ Max failure ratio: 0
+ Rollback order:    stop-first
+ContainerSpec:
+ Image:         redis:3.0.7@sha256:730b765df9fe96af414da64a2b67f3a5f70b8fd13a31e5096fee4807ed802e20
+ Init:          false
+Resources:
+Endpoint Mode:  vip
+```
+
+### 6、Docker Swarm服务发布模式
+
+#### （1）两种服务发布模式区别
+
+两种模式均保证服务从集群外可访问。
+
+- Ingress模式（默认）。
+- Host模式。
+
+通过 Ingress 模式发布的服务，可以保证从 Swarm 集群内任一节点（即使没有运行服务的副本）都能访问该服务；以 Host 模式发布的服务只能通过运行服务副本的节点来访问。下图展示了两种模式的区别。
+
+![Ingress模式与Host模式](assets/4-1Z419112GO08.gif)
+
+#### （2）Host模式发布服务
+
+Ingress 模式是默认方式，使用简单格式即可配置`-p 8567:80`，如果需要以 Host 模式发布服务，则读者需要使用 --publish 参数的完整格式`--publish published=8567,target=80,mode=host`。    
+
+- published=8567 表示服务通过端口8567提供外部服务。
+
+- target=80 表示发送到 published 端口8567的请求，会映射到服务副本的 80 端口之上。
+- mode=host 表示只有外部请求发送到运行了服务副本的节点才可以访问该服务。
+
+Host 模式发布的服务只能通过运行服务副本的节点访问，所以没有运行副本的节点访问失败，有运行副本的节点访问成功。所以只有worker1节点能访问成功。
+
+```bash
+[root@manager1 ~]# docker service create -d --name nginx_swarm_host --publish published=8567,target=80,mode=host nginx
+x4vgmlo4zkoiczprijeou8rj6
+[root@manager1 ~]# docker service ps nginx_swarm_host
+ID             NAME                 IMAGE          NODE      DESIRED STATE   CURRENT STATE            ERROR     PORTS
+tid2yzqijqdx   nginx_swarm_host.1   nginx:latest   worker1   Running         Running 24 seconds ago             *:8567->80/tcp,*:8567->80/tcp
+```
+
+#### （3）Ingress模式发布服务
+
+通常使用 Ingress 模式。在底层，Ingress 模式采用名为 Service Mesh 或者 Swarm Mode Service Mesh 的四层路由网络来实现。
+
+使用Ingress模式发布服务的集群，会自动创建一个overlay类型的Ingress 网络，Swarm全部节点都接入了 Ingress 网络。入站流量可能访问Swarm节点中的任意一个，都会通过Ingress网络路由到有服务副本的那个节点上，所有的节点都会访问成功。如果存在多个运行的副本，流量会平均到每个副本。
+
+```bash
+[root@manager1 ~]# docker service create -d --name nginx_swarm_ingress --publish published=8568,target=80 nginx
+a0bbxe346nv3bf8g5ydlkm6on
+[root@manager1 ~]# docker service ps nginx_swarm_ingress
+ID             NAME                    IMAGE          NODE      DESIRED STATE   CURRENT STATE           ERROR     PORTS
+ng9303ty5o6h   nginx_swarm_ingress.1   nginx:latest   worker1   Running         Running 7 seconds ago
+[root@manager1 ~]# docker network ls
+NETWORK ID     NAME              DRIVER    SCOPE
+...
+th1jayy9x342   ingress           overlay   swarm
+...
+```
+
+### 7、Docker Swarm集群服务日志
+
+Docker Swarm 服务的日志可以通过执行 `docker service logs` 命令来查看，然而并非所有的日志驱动（Logging Driver）都支持该命令。
+
+Docker 节点默认的配置是，服务使用 json-file 日志驱动，其他的驱动还有 journald（仅用于运行有 systemd 的 Linux 主机）、syslog、splunk 和 gelf。json-file 和 journald 是较容易配置的，二者都可用于 `docker service logs` 命令。 
+
+若使用第三方日志驱动，那么就需要用相应日志平台的原生工具来查看日志。
+
+通过在执行 `docker service create` 命令时传入 --logdriver 和 --log-opts 参数可以强制某服务使用一个不同的日志驱动，这会覆盖 daemon.json 中的配置。
+
+对于查看日志命令，可以使用 --follow 进行跟踪、使用 --tail 显示最近的日志，并使用 --details 获取额外细节。 
+
+```bash
+[root@manager1 ~]# docker service logs redis_swarm
+redis_swarm.2.zprcqg933uex@manager1    | 1:C 18 Jan 05:45:48.073 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis_swarm.2.zprcqg933uex@manager1    |                 _._                                                  
+redis_swarm.2.zprcqg933uex@manager1    |            _.-``__ ''-._                                             
+redis_swarm.2.zprcqg933uex@manager1    |       _.-``    `.  `_.  ''-._           Redis 3.0.6 (00000000/0) 64 bit
+redis_swarm.2.zprcqg933uex@manager1    |   .-`` .-```.  ```\/    _.,_ ''-._                                   
+redis_swarm.2.zprcqg933uex@manager1    |  (    '      ,       .-`  | `,    )     Running in standalone mode
+redis_swarm.2.zprcqg933uex@manager1    |  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+redis_swarm.2.zprcqg933uex@manager1    |  |    `-._   `._    /     _.-'    |     PID: 1
+redis_swarm.2.zprcqg933uex@manager1    |   `-._    `-._  `-./  _.-'    _.-'                                   
+redis_swarm.2.zprcqg933uex@manager1    |  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+redis_swarm.2.zprcqg933uex@manager1    |  |    `-._`-._        _.-'_.-'    |           http://redis.io        
+redis_swarm.2.zprcqg933uex@manager1    |   `-._    `-._`-.__.-'_.-'    _.-'                                   
+redis_swarm.2.zprcqg933uex@manager1    |  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+redis_swarm.2.zprcqg933uex@manager1    |  |    `-._`-._        _.-'_.-'    |                                  
+redis_swarm.2.zprcqg933uex@manager1    |   `-._    `-._`-.__.-'_.-'    _.-'                                   
+redis_swarm.2.zprcqg933uex@manager1    |       `-._    `-.__.-'    _.-'                                       
+redis_swarm.2.zprcqg933uex@manager1    |           `-._        _.-'                                           
+redis_swarm.2.zprcqg933uex@manager1    |               `-.__.-'                                               
+redis_swarm.2.zprcqg933uex@manager1    | 
+...
+```
+
+### 8、Docker overlay覆盖网络
+
+在现实世界中，容器间通信的可靠性和安全性相当重要，即使容器分属于不同网络中的不同主机。这也是覆盖网络大展拳脚的地方，它允许创建扁平的、安全的二层网络来连接多个主机，容器可以连接到覆盖网络并互相通信。
+
+![1642555595867](assets/1642555595867.png)
+
+#### （1）初始化一个swarm集群
+
+```bash
+[root@manager1 ~]# docker swarm init --advertise-addr 192.168.0.108:2377
+Swarm initialized: current node (sz7bfcmk637qhqfvzqhdnk3t2) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+```
+
+集群中加入一个worker节点
+
+```bash
+[root@worker1 ~]#docker swarm join --token SWMTKN-1-0zzpk3xqq2ykb5d5jcd6hqeimckhrg5qu82xs7nw2wwnwyjmzg-9tmof9880m9r92vz5rygaa42e 192.168.0.108:2377 --advertise-addr 192.168.0.109:2377
+This node joined a swarm as a worker.
+```
+
+集群中有一个manager节点和一个worker节点
+
+```bash
+[root@manager1 ~]# docker node ls
+ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+3mo8nt1otbn9uibulj4qi1nu3 *   manager1   Ready     Active         Leader           20.10.12
+ye94i4sxnhlvakspxu8svn3e8     worker1    Ready     Active                          20.10.12
+```
+
+#### （2）创建一个覆盖网络
+
+创建崭新的覆盖网络，能连接 Swarm 集群内的所有主机，并且该网络还包括一个 TLS 加密的控制层！如果还想对数据层加密的话，只需在命令中增加 -o encrypted 参数。
+
+```bash
+[root@manager1 ~]# docker network create -d overlay myoverlaynet
+usw79xsf1lp0y794922u40msa
+[root@manager1 ~]# docker network ls
+NETWORK ID     NAME              DRIVER    SCOPE
+083de6e47320   bridge            bridge    local
+c48bbcc5c882   docker_gwbridge   bridge    local
+9697f77248e1   host              host      local
+ug21bjpmptdf   ingress           overlay   swarm
+usw79xsf1lp0   myoverlaynet      overlay   swarm
+abc08bbf4c8b   none              null      local
+```
+
+在worker1节点上无法看到myoverlaynet网络，这是因为只有当运行中的容器连接到覆盖网络的时候，该网络才变为可用状态。这种延迟生效策略通过减少网络梳理，提升了网络的扩展性。
+
+```bash
+[root@worker1 ~]# docker network ls
+NETWORK ID     NAME              DRIVER    SCOPE
+e1fa76d56b00   bridge            bridge    local
+5751e9e9f8b0   docker_gwbridge   bridge    local
+bcfac75c67eb   harbor_harbor     bridge    local
+c852370b55e1   host              host      local
+ug21bjpmptdf   ingress           overlay   swarm
+df18d3322d54   none              null      local
+```
+
+#### （3）将服务连接到覆盖网络
+
+将服务连接到覆盖网络，服务会包含两个副本，一个运行manager1节点上，一个运行在worker1节点上。两个容器副本自动加入到myoverlaynet网络当中。此时worker1节点就能看到myoverlaynet网络了。
+
+目前已经成功在两个由物理网络连接的节点上创建了新的覆盖网络，同时还将两个容器连接到了该网络当中。  
+
+```bash
+[root@manager1 ~]# docker service create -d --name nginx_swarm_overlay -p 8569:80 --network myoverlaynet --replicas 2 nginx
+npq5d4rfn0sh5oijx3ligod2y
+[root@manager1 ~]# docker service ps nginx_swarm_overlay
+ID             NAME                    IMAGE          NODE       DESIRED STATE   CURRENT STATE            ERROR     PORTS
+d6zccckkmmtj   nginx_swarm_overlay.1   nginx:latest   worker1    Running         Running 17 seconds ago             
+t92hguhiypy1   nginx_swarm_overlay.2   nginx:latest   manager1   Running         Running 16 seconds ago
+[root@worker1 ~]#  docker network ls
+NETWORK ID     NAME              DRIVER    SCOPE
+e1fa76d56b00   bridge            bridge    local
+5751e9e9f8b0   docker_gwbridge   bridge    local
+bcfac75c67eb   harbor_harbor     bridge    local
+c852370b55e1   host              host      local
+ug21bjpmptdf   ingress           overlay   swarm
+usw79xsf1lp0   myoverlaynet      overlay   swarm
+df18d3322d54   none              null      local
+```
+
+#### （4）测试覆盖网络
+
+```bash
+#查看网络详情
+[root@manager1 ~]# docker network inspect myoverlaynet
+[
+    {
+        "Name": "myoverlaynet",
+        "Id": "usw79xsf1lp0y794922u40msa",
+        "Created": "2022-01-18T18:34:40.779699867+08:00",
+        "Scope": "swarm",
+        "Driver": "overlay",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "10.0.1.0/24",
+                    "Gateway": "10.0.1.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "996637f32621c17806947c050790ee55720e25ca6472110a9e9a803b8c0c9826": {
+                "Name": "nginx_swarm_overlay.2.t92hguhiypy1fq4jglu390k0x",
+                "EndpointID": "86acca9356da1e95a9137176f167029ce794695966521241e176a928f6ff3bbd",
+                "MacAddress": "02:42:0a:00:01:04",
+                "IPv4Address": "10.0.1.4/24",
+                "IPv6Address": ""
+            },
+            "lb-myoverlaynet": {
+                "Name": "myoverlaynet-endpoint",
+                "EndpointID": "5aa3481b71fa9044afa17197bbd0af8c7aa2bff65d9b6c402c662a0b7a99e1cd",
+                "MacAddress": "02:42:0a:00:01:06",
+                "IPv4Address": "10.0.1.6/24",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {
+            "com.docker.network.driver.overlay.vxlanid_list": "4097"
+        },
+        "Labels": {},
+        "Peers": [
+            {
+                "Name": "bd2e94d02380",
+                "IP": "47.93.238.134"
+            },
+            {
+                "Name": "f28881a12924",
+                "IP": "150.158.80.231"
+            }
+        ]
+    }
+]
+#查看容器ID，判断manager1上的副本IP是10.0.1.4
+[root@manager1 ~]# docker ps -l
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS     NAMES
+996637f32621   nginx:latest   "/docker-entrypoint.…"   18 minutes ago   Up 18 minutes   80/tcp    nginx_swarm_overlay.2.t92hguhiypy1fq4jglu390k0x
+#进入容器，请求另一台服务器，请求成功
+[root@manager1 ~]# docker exec -it nginx_swarm_overlay.2.t92hguhiypy1fq4jglu390k0x /bin/bash
+root@996637f32621:/# curl 10.0.1.6
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+## 十一、Docker Stack
+
+### 1、Docker Stack简介
+
+Docker Stack 通过提供期望状态、滚动升级、简单易用、扩缩容、健康检查等特性简化了大规模场景下的多服务部署和管理，这些功能都封装在一个完美的声明式模型当中。
+
+Stack 能够在单个声明文件docker-stack.yml中定义复杂的多服务应用，然后通过 docker stack deploy 命令完成部署和管理。Stack 是基于 Docker Swarm 之上来完成应用的部署。因此诸如安全等高级特性，其实都是来自 Swarm。简单的说是Stack=Compose+Swarm。
+
+Stack创建的容器是基于Docker的，所以可以使用Docker进行管理，但是推荐使用声明式管理方式，也就是通过修改配置文件来管理。
+
+### 2、Docker Stack和Docker Compose区别
+
+- Docker stack会忽略了“构建”指令，无法使用stack命令构建新镜像，它是需要镜像是预先已经构建好的。 所以docker-compose更适合于开发场景。
+- Docker Compose是一个Python项目，在内部，它使用Docker API规范来操作容器。使用Docker -compose需要安装，Docker Stack功能包含在Docker引擎中不需要额外安装，docker stacks 只是swarm mode的一部分。
+- Docker stack不支持基于第2版写的docker-compose.yml ，也就是version版本至少为3。然而Docker Compose对版本为2和3的 文件仍然可以处理。
+- docker stack把docker compose的所有工作都做完了，因此docker stack将占主导地位。同时，对于大多数用户来说，切换到使用docker stack既不困难，也不需要太多的开销。如果您是Docker新手，或正在选择用于新项目的技术，推荐使用docker stack。
+
+### 3、Docker Stack命令说明
+
+```bash
+[root@manager1 ~]# docker stack --help
+
+Usage:  docker stack [OPTIONS] COMMAND
+
+Manage Docker stacks
+
+Options:
+      --orchestrator string   Orchestrator to use (swarm|kubernetes|all)
+
+Commands:
+  deploy      Deploy a new stack or update an existing stack
+  ls          List stacks
+  ps          List the tasks in the stack
+  rm          Remove one or more stacks
+  services    List the services in the stack
+
+Run 'docker stack COMMAND --help' for more information on a command.
+```
+
+#### （1）docker stack deploy(部署服务)
+
+```bash
+[root@manager1 ~]# docker stack deploy --help
+
+Usage:  docker stack deploy [OPTIONS] STACK
+
+Deploy a new stack or update an existing stack
+
+Aliases:
+  deploy, up
+
+Options:
+  -c, --compose-file strings   Path to a Compose file, or "-" to read from stdin
+      --orchestrator string    Orchestrator to use (swarm|kubernetes|all)
+      --prune                  Prune services that are no longer referenced
+      --resolve-image string   Query the registry to resolve image digest and supported platforms ("always"|"changed"|"never") (default "always")
+      --with-registry-auth     Send registry authentication details to Swarm agents
+```
+
+#### （2）docker stack ls(查看服务列表)
+
+#### （3）docker stack services(查看service列表)
+
+```bash
+[root@manager1 ~]# docker stack services --help
+
+Usage:  docker stack services [OPTIONS] STACK
+
+List the services in the stack
+
+Options:
+  -f, --filter filter         Filter output based on conditions provided
+      --format string         Pretty-print services using a Go template
+      --orchestrator string   Orchestrator to use (swarm|kubernetes|all)
+  -q, --quiet                 Only display IDs
+```
+
+#### （4）docker stack ps(查看服务详情)
+
+```bash
+[root@manager1 ~]# docker stack ps --help
+
+Usage:  docker stack ps [OPTIONS] STACK
+
+List the tasks in the stack
+
+Options:
+  -f, --filter filter         Filter output based on conditions provided
+      --format string         Pretty-print tasks using a Go template
+      --no-resolve            Do not map IDs to Names
+      --no-trunc              Do not truncate output
+      --orchestrator string   Orchestrator to use (swarm|kubernetes|all)
+  -q, --quiet                 Only display task IDs
+```
+
+#### （5）docker stack rm(删除服务)
+
+### 4、Docker Stack应用部署和管理
+
+#### （1）初始化 Swarm集群，添加节点
+
+#### （2）创建Stack文件docker-stack.yml
+
+#### （3）通过`docker stack deploy -c stack文件名 服务名` 部署服务
+
+#### （4）通过`docker stack ls`查看服务列表
+
+#### （5）通过`docker stack services`查看service列表
+
+#### （6）通过`docker stack ps 服务名`查看服务详情
+
+#### （7）修改stack文件，重新`docker stack deploy`部署服务
+
+#### （8）通过`docker stack rm 服务名`删除服务
+
+案例项目：[https://github.com/dockersamples/atsea-sample-shop-app.git](https://github.com/dockersamples/atsea-sample-shop-app.git)
+
+```yaml
+version: "3.2"
+
+services:
+  reverse_proxy:
+    image: dockersamples/atseasampleshopapp_reverse_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    secrets:
+      - source: revprox_cert
+        target: revprox_cert
+      - source: revprox_key
+        target: revprox_key
+    networks:
+      - front-tier
+
+  database:
+    image: dockersamples/atsea_db
+    environment:
+      POSTGRES_USER: gordonuser
+      POSTGRES_DB_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_DB: atsea
+    networks:
+      - back-tier
+    secrets:
+      - postgres_password
+    deploy:
+      placement:
+        constraints:
+          - 'node.role == worker'
+
+  appserver:
+    image: dockersamples/atsea_app
+    networks:
+      - front-tier
+      - back-tier
+      - payment
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+        failure_action: rollback
+      placement:
+        constraints:
+          - 'node.role == worker'
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    secrets:
+      - postgres_password
+
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8001:8080"
+    stop_grace_period: 1m30s
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      update_config:
+        failure_action: rollback
+      placement:
+        constraints:
+          - 'node.role == manager'
+
+  payment_gateway:
+    image: dockersamples/atseasampleshopapp_payment_gateway
+    secrets:
+      - source: staging_token
+        target: payment_token
+    networks:
+      - payment
+    deploy:
+      update_config:
+        failure_action: rollback
+      placement:
+        constraints:
+          - 'node.role == worker'
+          - 'node.labels.pcidss == yes'
+
+networks:
+  front-tier:
+  back-tier:
+  payment:
+    driver: overlay
+    driver_opts:
+      encrypted: 'yes'
+
+secrets:
+  postgres_password:
+    external: true
+  staging_token:
+    external: true
+  revprox_key:
+    external: true
+  revprox_cert:
+    external: true
 ```
 
