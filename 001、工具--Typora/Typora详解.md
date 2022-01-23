@@ -365,12 +365,12 @@ Markdown 还没有办法指定图片的高度与宽度，如果你需要的话�
 ```bash
 ![alt 属性文本](图片地址 "可选标题")
 
-![这是一张图片](https://gitee.com/bluecusliyou2/picrep/raw/master/202201231616454.png "图片的标题")
+![这是一张图片](https://gitee.com/bluecusliyou2/picrep/raw/master/202201231616454.png )
 ```
 
 效果：
 
-![这是一张图片](https://gitee.com/bluecusliyou2/picrep/raw/master/202201231616454.png "图片的标题")
+![这是一张图片](https://gitee.com/bluecusliyou2/picrep/raw/master/202201231616454.png)
 
 ---
 
