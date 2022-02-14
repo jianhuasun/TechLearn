@@ -1072,6 +1072,27 @@ docker run -it --cpu-period=50000 --cpu-quota=25000 ubuntu:16.04 /bin/bash
 docker run -it -m 500M --memory-reservation 200M ubuntu:16.04 /bin/bash
 ```
 
+> privileged参数
+
+大约在0.6版，privileged被引入docker。使用该参数，container内的root拥有真正的root权限。否则，container内的root只是宿主机的一个普通用户权限。privileged启动的容器，可以看到很多host上的设备，并且可以执行mount，甚至允许你在docker容器中启动docker容器。
+
+```bash
+#默认是--privileged=false，不能挂载
+[root@bluecusliyou ~]# docker run -t -i centos:latest bash
+[root@b29ab618a011 /]# mkdir /home/test/
+[root@b29ab618a011 /]# mkdir /home/test2/
+[root@b29ab618a011 /]# mount -o bind /home/test  /home/test2
+mount: /home/test2: permission denied.
+[root@b29ab618a011 /]# exit
+exit
+#设定了--privileged=true,
+[root@bluecusliyou ~]# docker run -t -i --privileged=true centos:latest bash
+[root@3238a6df6a3a /]# mkdir /home/test/
+[root@3238a6df6a3a /]# mkdir /home/test2/
+[root@3238a6df6a3a /]# mount -o bind /home/test  /home/test2
+[root@3238a6df6a3a /]# 
+```
+
 #### docker ps(列出所有运行的容器)
 
 ```bash
