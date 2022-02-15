@@ -1,4 +1,4 @@
-# 工具--MarkDown+Typora详解
+# 工具--Typora详解
 
 ## [零、文章目录](https://blog.csdn.net/liyou123456789/article/details/119715435)
 
