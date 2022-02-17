@@ -130,7 +130,7 @@ docker ps -a
 
 > SSMS连接测试
 
-![image-20211020215144367](assets/image-20211020215144367.png)
+![image-20211020215144367](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171446056.png)
 
 ## 三、数据库设计
 
@@ -163,19 +163,19 @@ docker ps -a
 
 > 创建项目，填写项目名称，选择保存目录
 
-![1633658947738](assets/1633658947738.png)
+![1633658947738](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171446489.png)
 
-![1633659427197](assets/1633659427197.png)
+![1633659427197](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171446264.png)
 
 > 创建模型文件
 
-![1633660013519](assets/1633660013519.png)
+![1633660013519](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171446089.png)
 
-![1633660046582](assets/1633660046582.png)
+![1633660046582](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171446673.png)
 
-![1633660096957](assets/1633660096957.png)
+![1633660096957](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447598.png)
 
-![1633660352881](assets/1633660352881.png)
+![1633660352881](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447540.png)
 
 
 
@@ -183,29 +183,29 @@ docker ps -a
 
 > 创建表，添加字段
 
-![1633660655515](assets/1633660655515.png)
+![1633660655515](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447843.png)
 
 可以显示字段说明
 
-![1633660718073](assets/1633660718073.png)
+![1633660718073](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447323.png)
 
 
 
 > 生成物理数据模型
 
-![1633673806133](assets/1633673806133.png)
+![1633673806133](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447745.png)
 
-![1633673855417](assets/1633673855417.png)
+![1633673855417](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447288.png)
 
 
 
-![1633673901347](assets/1633673901347.png)
+![1633673901347](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447723.png)
 
 > 生成SQL脚本
 
-![1633674007482](assets/1633674007482.png)
+![1633674007482](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171447587.png)
 
-![1633674084980](assets/1633674084980.png)
+![1633674084980](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171448565.png)
 
 
 
@@ -213,27 +213,27 @@ docker ps -a
 
 > 创建模型，选择数据库类型
 
-![1633679565646](assets/1633679565646.png)
+![1633679565646](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171448406.png)
 
-![1633679596556](assets/1633679596556.png)
+![1633679596556](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171448828.png)
 
 > 配置数据库连接导出模型
 
-![1633679663995](assets/1633679663995.png)
+![1633679663995](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171448764.png)
 
-![1633679708273](assets/1633679708273.png)
-
-
-
-![1633679731489](assets/1633679731489.png)
+![1633679708273](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171449791.png)
 
 
 
-![1633680817135](assets/1633680817135.png)
+![1633679731489](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171449130.png)
 
 
 
-![1633681052263](assets/1633681052263.png)
+![1633680817135](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171449596.png)
+
+
+
+![1633681052263](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171449931.png)
 
 #### （4）PD数据类型说明
 
@@ -1572,17 +1572,17 @@ drop view UserInfor_View;
 
 > 配置服务器可以远程访问
 
-![image-20211027223803486](assets/image-20211027223803486.png)
+![image-20211027223803486](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171450626.png)
 
-![image-20211027223930667](assets/image-20211027223930667.png)
+![image-20211027223930667](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171450588.png)
 
-![image-20211027224134540](assets/image-20211027224134540.png)
+![image-20211027224134540](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171450526.png)
 
 
 
 > 创建一个写主库，两个读库，数据表
 
-![image-20211107193908618](assets/image-20211107193908618.png)
+![image-20211107193908618](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171450195.png)
 
 ```sql
 USE [DbTestWrite]
@@ -1605,71 +1605,71 @@ GO
 
 > 创建快照文件夹共享
 
-![image-20211107194042970](assets/image-20211107194042970.png)
+![image-20211107194042970](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171450810.png)
 
 #### （2）配置分发服务器
 
 如果是首次配置读写分离，需要配置分发服务器，后续不再配置。 如果不想用之前的分发服务器，可以右键复制，禁用分发服务器，然后重新配置。
 
-![image-20211025073927215](assets/image-20211025073927215.png)
+![image-20211025073927215](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171450882.png)
 
-![image-20211025074137750](assets/image-20211025074137750.png)
+![image-20211025074137750](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171450400.png)
 
-![image-20211025074244689](assets/image-20211025074244689.png)
+![image-20211025074244689](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451898.png)
 
-![image-20211027222619057](assets/image-20211027222619057.png)
+![image-20211027222619057](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451963.png)
 
-![image-20211027222708690](assets/image-20211027222708690.png)
+![image-20211027222708690](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451545.png)
 
-![image-20211027222732862](assets/image-20211027222732862.png)
+![image-20211027222732862](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451431.png)
 
-![image-20211027222839160](assets/image-20211027222839160.png)
+![image-20211027222839160](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451161.png)
 
 #### （3）新建本地发布
 
-![image-20211027224251057](assets/image-20211027224251057.png)
+![image-20211027224251057](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451024.png)
 
-![image-20211107154600890](assets/image-20211107154600890.png)
+![image-20211107154600890](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451761.png)
 
-![image-20211107154645393](assets/image-20211107154645393.png)
+![image-20211107154645393](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171451006.png)
 
-![image-20211107154929796](assets/image-20211107154929796.png)
+![image-20211107154929796](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171452112.png)
 
-![image-20211107155012779](assets/image-20211107155012779.png)
+![image-20211107155012779](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171452493.png)
 
-![image-20211107160608196](assets/image-20211107160608196.png)
+![image-20211107160608196](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171452719.png)
 
-![image-20211107165516392](assets/image-20211107165516392.png)
+![image-20211107165516392](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171452659.png)
 
-![image-20211107165654458](assets/image-20211107165654458.png)
+![image-20211107165654458](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171452926.png)
 
-![image-20211107165803133](assets/image-20211107165803133.png)
+![image-20211107165803133](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171452456.png)
 
 
 
 #### （4）创建订阅
 
-![image-20211107170007973](assets/image-20211107170007973.png)
+![image-20211107170007973](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453628.png)
 
-![image-20211107170128012](assets/image-20211107170128012.png)
+![image-20211107170128012](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453694.png)
 
-![image-20211107191222072](assets/image-20211107191222072.png)
+![image-20211107191222072](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453833.png)
 
-![image-20211107191351246](assets/image-20211107191351246.png)
+![image-20211107191351246](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453507.png)
 
-![image-20211107191426068](assets/image-20211107191426068.png)
+![image-20211107191426068](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453687.png)
 
-![image-20211107191446131](assets/image-20211107191446131.png)
+![image-20211107191446131](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453317.png)
 
-![image-20211107191509342](assets/image-20211107191509342.png)
+![image-20211107191509342](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453448.png)
 
-![image-20211107191929061](assets/image-20211107191929061.png)
+![image-20211107191929061](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453116.png)
 
-![image-20211107191955725](assets/image-20211107191955725.png)
+![image-20211107191955725](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453769.png)
 
 #### （5）创建完成
 
-![image-20211107192549748](assets/image-20211107192549748.png)
+![image-20211107192549748](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453964.png)
 
 #### （6）往主库插一条数据，查看同步监控和结果
 
@@ -1692,11 +1692,11 @@ INSERT INTO [dbo].[User]
 GO
 ```
 
-![image-20211107195031043](assets/image-20211107195031043.png)
+![image-20211107195031043](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171453092.png)
 
-![image-20211107200924858](assets/image-20211107200924858.png)
+![image-20211107200924858](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454247.png)
 
-![image-20211107195346846](assets/image-20211107195346846.png)
+![image-20211107195346846](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454923.png)
 
 ## 十一、分库，分表，分区
 
@@ -1788,25 +1788,25 @@ SQlserver自己带的功能； 自己去维护如何保存数据库；自己去�
 
 #### （1）创建文件组
 
-![image-20211107215219945](assets/image-20211107215219945.png)
+![image-20211107215219945](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454429.png)
 
-![image-20211107215351953](assets/image-20211107215351953.png)
+![image-20211107215351953](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454112.png)
 
 #### （2）添加文件
 
-![image-20211107215621619](assets/image-20211107215621619.png)
+![image-20211107215621619](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454712.png)
 
 #### （3）创建分区
 
-![image-20211107215821905](assets/image-20211107215821905.png)
+![image-20211107215821905](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454301.png)
 
-![image-20211107215948290](assets/image-20211107215948290.png)
+![image-20211107215948290](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454475.png)
 
-![image-20211107220047999](assets/image-20211107220047999.png)
+![image-20211107220047999](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171454539.png)
 
-![image-20211107221151457](assets/image-20211107221151457.png)
+![image-20211107221151457](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171455512.png)
 
-![image-20211107222027298](assets/image-20211107222027298.png)
+![image-20211107222027298](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171455249.png)
 
 生成的脚本执行一下就完成了分区
 
@@ -1836,7 +1836,7 @@ COMMIT TRANSACTION
 
 #### （4）分区查看
 
-![image-20211108215959485](assets/image-20211108215959485.png)
+![image-20211108215959485](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171455726.png)
 
 #### （5）代码实现
 
@@ -1978,7 +1978,7 @@ CREATE TABLE dt(
 - 取数据->内存（缓存）Redis->数据库->硬盘
 - 存数据->数据库->硬盘->内存（缓存）Redis
 
-![image-20211108210512457](assets/image-20211108210512457.png)
+![image-20211108210512457](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171455131.png)
 
 ### 2、数据库存储机制
 
@@ -2017,11 +2017,11 @@ dbcc flushprocindb（db_id）
 
 > 查看预估执行计划
 
-![image-20211108214817593](assets/image-20211108214817593.png)
+![image-20211108214817593](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171455103.png)
 
 连线越粗表示扫描影响的行数愈多，性能越差。
 
-![image-20210921110714077](assets/image-20210921110714077.png)
+![image-20210921110714077](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171455487.png)
 
 #### （3）常见场景
 
