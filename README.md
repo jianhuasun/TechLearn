@@ -16,7 +16,7 @@
 
 ### [Git详解](https://blog.csdn.net/liyou123456789/article/details/121411053)
 
-### [MarkDown+Typora详解](https://blog.csdn.net/liyou123456789/article/details/122657783)
+### [Typora详解](https://blog.csdn.net/liyou123456789/article/details/122657783)
 
 >003、C#高级
 
