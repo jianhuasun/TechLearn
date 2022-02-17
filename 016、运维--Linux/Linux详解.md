@@ -34,7 +34,7 @@ Linux 能运行主要的 UNIX 工具软件、应用程序和网络协议。它�
 
 Linux 的发行版说简单点就是将 Linux 内核与应用软件做一个打包。
 
-![1511849829609658](assets\1511849829609658.jpg)
+![1511849829609658](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171036271.jpg)
 
 
 
@@ -65,7 +65,7 @@ Linux 的发行版说简单点就是将 Linux 内核与应用软件做一个打�
 
 #### （4）虚拟机可以进行克隆
 
-![1635852953428](assets/1635852953428.png)
+![1635852953428](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171036990.png)
 
 ### 2、虚拟机安装Linux
 
@@ -81,15 +81,15 @@ Linux 的发行版说简单点就是将 Linux 内核与应用软件做一个打�
 
 > 编辑->虚拟网络编辑器
 
-![image-20211010205112298](assets/image-20211010205112298.png)
+![image-20211010205112298](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171037111.png)
 
 > 修改宿主机Vmnet8网卡配置
 
-![image-20211010205950898](assets/image-20211010205950898.png)
+![image-20211010205950898](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171037859.png)
 
 #### （2）配置虚拟机网络
 
-![image-20211011222344126](assets/image-20211011222344126.png)
+![image-20211011222344126](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171037922.png)
 
 #### （3）配置虚拟机网卡信息
 
@@ -230,7 +230,7 @@ PING 192.168.1.227 (192.168.1.227) 56(84) bytes of data.
 
 #### （5）虚拟机网络通信原理
 
-![image-20211012074709522](assets/image-20211012074709522.png)https://mirrors.aliyun.com/centos/8.4.2105/isos/x86_64/)
+![image-20211012074709522](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171037607.png)https://mirrors.aliyun.com/centos/8.4.2105/isos/x86_64/)
 
 ### 4、购买云服务器
 
@@ -248,21 +248,21 @@ PING 192.168.1.227 (192.168.1.227) 56(84) bytes of data.
 
 > 获取服务器公网IP
 
-![1626242612035](assets\1626242612035.png)
+![1626242612035](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171037916.png)
 
 #### （3）修改服务器登录密码
 
 点击蓝色实例名，进入实例详情，可以重置密码，也可以修改主机名
 
-![1626242708181](assets\1626242708181.png)
+![1626242708181](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171037536.png)
 
 #### （4）配置安全组开放端口号
 
-![1626242868155](assets\1626242868155.png)
+![1626242868155](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038027.png)
 
 授权对象 0000表示授权给所有人
 
-![1626242999444](assets\1626242999444.png)
+![1626242999444](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038707.png)
 
 ### 5、宝塔面板安装
 
@@ -282,13 +282,13 @@ PING 192.168.1.227 (192.168.1.227) 56(84) bytes of data.
 
 下载地址：https://www.netsarang.com/zh/free-for-home-school/
 
-![1626241267784](assets\1626241267784.png)
+![1626241267784](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038092.png)
 
-![1626241347845](assets\1626241347845.png)
+![1626241347845](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038390.png)
 
 #### （3）FTP上传工具
 
-![1635852672681](assets/1635852672681.png)
+![1635852672681](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038773.png)
 
 ## 三、Linux基础
 
@@ -362,7 +362,7 @@ ls --help  查看ls的帮助
 - ssh登录
 - 图形界面登录
 
-![bg2013081706](assets/bg2013081706.png)
+![bg2013081706](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038279.png)
 
 #### （2）关机
 
@@ -406,7 +406,7 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  s
 
 #### （2）目录结构说明
 
-![d0c50-linux2bfile2bsystem2bhierarchy](assets\d0c50-linux2bfile2bsystem2bhierarchy.jpg)
+![d0c50-linux2bfile2bsystem2bhierarchy](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171040724.jpg)
 
 - ==**/bin**：bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。==
 - **/boot：**这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。
@@ -1368,7 +1368,7 @@ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错�
 
 ### 2、VIM键盘图
 
-![b7886b96e7c1c4097d5cc76db5d979c8](assets/b7886b96e7c1c4097d5cc76db5d979c8.gif)
+![b7886b96e7c1c4097d5cc76db5d979c8](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171041678.gif)
 
 ### 3、三种命令模式
 
@@ -1384,13 +1384,13 @@ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错�
 
 是执行保存、退出等指令用。
 
-![61f84794a56b208bbc83092670e384e5](assets/61f84794a56b208bbc83092670e384e5.png)
+![61f84794a56b208bbc83092670e384e5](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171041571.png)
 
 ```bash
 vim filename
 ```
 
-![1637572297414](assets/1637572297414.png)
+![1637572297414](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171041483.png)
 
 ### 4、命令模式说明
 
@@ -1841,11 +1841,11 @@ lrwxrwxrwx.   1 root root    7 May 11  2019 bin -> usr/bin
 
 #### （2）文件基本属性说明
 
-![file-llls22](assets/file-llls22.jpg)
+![file-llls22](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171044165.jpg)
 
 > 每个文件的属性由左边第一部分的 10 个字符来确定。
 
-![363003_1227493859FdXT](assets/363003_1227493859FdXT.png)
+![363003_1227493859FdXT](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171044712.png)
 
 > 在 Linux 中第一个字符代表这个文件类型。
 
