@@ -274,7 +274,7 @@ PING 192.168.1.227 (192.168.1.227) 56(84) bytes of data.
 ### 6、常用连接工具
 
 - FinalShell：[http://www.hostbuf.com/](http://www.hostbuf.com/)
-- MobaXterm：https://mobaxterm.mobatek.net/
+- MobaXterm：[https://mobaxterm.mobatek.net/](https://mobaxterm.mobatek.net/)
 
 ## 三、Linux基础
 
