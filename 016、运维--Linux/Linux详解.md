@@ -271,24 +271,10 @@ PING 192.168.1.227 (192.168.1.227) 56(84) bytes of data.
 
 教程地址：[https://www.bt.cn/bbs/thread-19376-1-1.html](https://www.bt.cn/bbs/thread-19376-1-1.html)
 
-### 6、连接服务器
+### 6、常用连接工具
 
-#### （1）常用工具
-
-- 连接Linux工具有：XShell、FinalShell、SecureCRT 
-- Linux的FTP上传下载工具有：WinSCP、XFtp (XShell安装后自动安装的)、FinalShell
-
-#### （2）远程连接工具
-
-下载地址：https://www.netsarang.com/zh/free-for-home-school/
-
-![1626241267784](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038092.png)
-
-![1626241347845](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038390.png)
-
-#### （3）FTP上传工具
-
-![1635852672681](https://gitee.com/bluecusliyou2/picrep/raw/master/202202171038773.png)
+- FinalShell：[http://www.hostbuf.com/](http://www.hostbuf.com/)
+- MobaXterm：https://mobaxterm.mobatek.net/
 
 ## 三、Linux基础
 
