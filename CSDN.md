@@ -9,7 +9,7 @@
 ## 文章地址
 
 - CSDN地址：[https://blog.csdn.net/liyou123456789](https://blog.csdn.net/liyou123456789)
-- 掘金地址：[https://juejin.cn/user/3069492196290206](https://juejin.cn/user/3069492196290206)
+- GiteePages个人博客:[http://bluecusliyou.gitee.io/techlearn](http://bluecusliyou.gitee.io/techlearn)
 
 ## 文章目录
 
@@ -18,6 +18,12 @@
 [Git详解](https://blog.csdn.net/liyou123456789/article/details/121411053)
 
 [Typora详解](https://blog.csdn.net/liyou123456789/article/details/122657783)
+
+### 计算机基础
+
+[Linux详解](https://blog.csdn.net/liyou123456789/article/details/121548156)
+
+[网络详解](https://blog.csdn.net/liyou123456789/article/details/122731144) 
 
 ### C#高级
 
@@ -45,12 +51,9 @@
 
 ### Net框架
 
-[NET跨平台基础01](https://blog.csdn.net/liyou123456789/article/details/119714802)
+[Net5基础](https://blog.csdn.net/liyou123456789/article/details/119714802)
 
-### 运维
-
-[Linux详解](https://blog.csdn.net/liyou123456789/article/details/121548156)
+### 微服务
 
 [Docker详解](https://blog.csdn.net/liyou123456789/article/details/122292877) 
 
-[网络详解](https://blog.csdn.net/liyou123456789/article/details/122731144) 
