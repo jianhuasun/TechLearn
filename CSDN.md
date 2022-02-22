@@ -51,7 +51,7 @@
 
 ### Net框架
 
-[Net5基础](https://blog.csdn.net/liyou123456789/article/details/119714802)
+[AspNetCore5基础](https://blog.csdn.net/liyou123456789/article/details/119714802)
 
 ### 微服务
 

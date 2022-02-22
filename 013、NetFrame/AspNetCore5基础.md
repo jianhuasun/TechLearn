@@ -1,6 +1,6 @@
 
 
-# NET5基础
+# AspNetCore5基础
 
 ## 一、.NET概述
 
