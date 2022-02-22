@@ -9,3 +9,4 @@
 ## 文章地址
 
 - CSDN地址：[https://blog.csdn.net/liyou123456789](https://blog.csdn.net/liyou123456789)
+- GiteePages个人博客:[http://bluecusliyou.gitee.io/techlearn](http://bluecusliyou.gitee.io/techlearn)
