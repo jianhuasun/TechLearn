@@ -35,7 +35,7 @@ nssm是一个服务封装程序，它可以将普通exe程序封装成服务，�
 **配置项说明：**
 
 - Path：运行应用程序的程序
-- Startup directory：应用程序的目录
+- Startup directory：应用程序所在的目录
 
 - Arguments：应用运行的参数
 
@@ -62,18 +62,78 @@ nssm是一个服务封装程序，它可以将普通exe程序封装成服务，�
 
 这里演示将net6的web项目制作成windows服务
 
-应用的启动命令是：`dotnet WebApplication_Nginx.dll --urls=http://*:8888/ --port=8888`
+应用的启动命令是：`dotnet WebApplication_nssm.dll --urls=http://*:8888/ --port=8888`
 
-应用的所在目录是：`D:\NetDemos\WebApplication_Nginx\bin\Debug\net6.0`
+### 2、安装服务
 
-### 2、配置参数，安装服务
+```bash
+nssm install
+```
 
-- Path：C:\Program Files\dotnet\dotnet.exe
-- Startup directory：D:\NetDemos\WebApplication_Nginx\bin\Debug\net6.0
-- Arguments：WebApplication_Nginx.dll --urls=http://*:8888/ --port=8888
-- Service name：webappservice8888
+- Path：`C:\Program Files\dotnet\dotnet.exe`
+- Startup directory：`D:\TechLearn\001、Tools--nssm\WebApplication_nssm\bin\Debug\net6.0`
+- Arguments：`WebApplication_nssm.dll --urls=http://*:8888/ --port=8888`
+- Service name：`webapp8888`
 
 最后点击install service 完成windows服务安装，在windows服务列表就能看到创建的服务了。
 
-![image-20220219170928113](https://gitee.com/bluecusliyou2/picrep/raw/master/202202191709187.png)
+![image-20220223155047231](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231550350.png)
 
+![image-20220223160017209](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231600257.png)
+
+### 3、管理服务
+
+#### （1）启动服务
+
+```bash
+D:\nssm-2.24\win64>nssm start webapp8888
+webapp8888: START: 操作成功完成。
+```
+
+![image-20220223160348039](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231603081.png)
+
+![image-20220223160319928](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231603964.png)
+
+#### （2）关闭服务
+
+```bash
+D:\nssm-2.24\win64>nssm stop webapp8888
+webapp8888: STOP: 操作成功完成。
+```
+
+![image-20220223160954390](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231609425.png)
+
+#### （3）重启服务
+
+如果服务未启动就会直接启动，启动的会重启。
+
+```bash
+D:\nssm-2.24\win64>nssm restart webapp8888
+webapp8888: STOP: 服务尚未启动。
+webapp8888: START: 操作成功完成。
+
+D:\nssm-2.24\win64>nssm restart webapp8888
+webapp8888: STOP: 操作成功完成。
+webapp8888: START: 操作成功完成。
+```
+
+#### （4）修改服务
+
+输入命令，修改配置，不能修改服务名
+
+```bash
+D:\nssm-2.24\win64>nssm edit webapp8888
+```
+
+![image-20220223163535494](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231635547.png)
+
+#### （5）删除服务
+
+删除有二次确认，删除之后服务就找不到了，需要重新安装
+
+```bash
+D:\nssm-2.24\win64>nssm remove webapp8888
+Service "webapp8888" removed successfully!
+```
+
+![image-20220223163705348](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231637397.png)

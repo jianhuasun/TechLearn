@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 * [001、Tools--Git](/001、Tools--Git/Git详解.md)
+* [001、Tools--nssm](/001、Tools--nssm/nssm详解.md)
 * [001、Tools--Typora](/001、Tools--Typora/Typora详解.md)
 * [002、Base--Linux](/002、Base--Linux/Linux详解.md)
 * [002、Base--网络协议](/002、Base--网络协议/网络详解.md)
