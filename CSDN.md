@@ -17,6 +17,8 @@
 
 [Git详解](https://blog.csdn.net/liyou123456789/article/details/121411053)
 
+[nssm详解](https://blog.csdn.net/liyou123456789/article/details/123094277)
+
 [Typora详解](https://blog.csdn.net/liyou123456789/article/details/122657783)
 
 ### 计算机基础
