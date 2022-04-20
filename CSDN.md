@@ -1,11 +1,5 @@
 # 技术文章目录
 
-## 文章和代码仓库
-
-- Gitee地址：[https://gitee.com/bluecusliyou/TechLearn](https://gitee.com/bluecusliyou/TechLearn)
-- Github地址：[https://github.com/bluecusliyou/TechLearn](https://github.com/bluecusliyou/TechLearn)
-- 技术学习文档和代码，喜欢请==Star==
-
 ## 文章地址
 
 - 个人博客-CSDN地址：[https://blog.csdn.net/liyou123456789](https://blog.csdn.net/liyou123456789)
@@ -58,4 +52,8 @@
 ### 微服务
 
 [Docker详解](https://blog.csdn.net/liyou123456789/article/details/122292877) 
+
+### 代码技巧
+
+[设计模式之美](https://blog.csdn.net/liyou123456789/article/details/124300895) 
 
