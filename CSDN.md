@@ -9,6 +9,8 @@
 
 ### 工具
 
+[docsify详解](https://blog.csdn.net/liyou123456789/article/details/124504727)
+
 [Git详解](https://blog.csdn.net/liyou123456789/article/details/121411053)
 
 [nssm详解](https://blog.csdn.net/liyou123456789/article/details/123094277)

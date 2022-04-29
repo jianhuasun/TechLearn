@@ -623,7 +623,7 @@ window上主要是日常博客的编写，然后用git来管理，上传到gitee
 
 生成的giteePages地址是[https://bluecusliyou.gitee.io/techlearn](https://bluecusliyou.gitee.io/techlearn)
 
-![image-20220226155259088](https://gitee.com/bluecusliyou2/picrep/raw/master/202202261552168.png)
+![image-20220429215828321](https://gitee.com/bluecusliyou2/picrep/raw/master/202204292158465.png)
 
 ### 4、页面修改更新
 
