@@ -22,15 +22,15 @@ nssm是一个服务封装程序，它可以将普通exe程序封装成服务，�
 
 ### 2、解压压缩包，根据系统位数选择64或32位程序
 
-![image-20220219094605675](https://gitee.com/bluecusliyou2/picrep/raw/master/202202190946710.png)
+![image-20220219094605675](http://rc4mudd0q.hd-bkt.clouddn.com/202202190946710.png)
 
-![image-20220219095328967](https://gitee.com/bluecusliyou2/picrep/raw/master/202202190953016.png)
+![image-20220219095328967](http://rc4mudd0q.hd-bkt.clouddn.com/202202190953016.png)
 
 ### 3、打开命令行，运行nssm程序
 
 管理员权限打开命令行工具，切换到nssm.exe所在路径，运行 nssm install，打开程序配置界面
 
-![image-20220219095803811](https://gitee.com/bluecusliyou2/picrep/raw/master/202202190958882.png)
+![image-20220219095803811](http://rc4mudd0q.hd-bkt.clouddn.com/202202190958882.png)
 
 **配置项说明：**
 
@@ -77,9 +77,9 @@ nssm install
 
 最后点击install service 完成windows服务安装，在windows服务列表就能看到创建的服务了。
 
-![image-20220223155047231](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231550350.png)
+![image-20220223155047231](http://rc4mudd0q.hd-bkt.clouddn.com/202202231550350.png)
 
-![image-20220223160017209](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231600257.png)
+![image-20220223160017209](http://rc4mudd0q.hd-bkt.clouddn.com/202202231600257.png)
 
 ### 3、管理服务
 
@@ -90,9 +90,9 @@ D:\nssm-2.24\win64>nssm start webapp8888
 webapp8888: START: 操作成功完成。
 ```
 
-![image-20220223160348039](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231603081.png)
+![image-20220223160348039](http://rc4mudd0q.hd-bkt.clouddn.com/202202231603081.png)
 
-![image-20220223160319928](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231603964.png)
+![image-20220223160319928](http://rc4mudd0q.hd-bkt.clouddn.com/202202231603964.png)
 
 #### （2）关闭服务
 
@@ -101,7 +101,7 @@ D:\nssm-2.24\win64>nssm stop webapp8888
 webapp8888: STOP: 操作成功完成。
 ```
 
-![image-20220223160954390](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231609425.png)
+![image-20220223160954390](http://rc4mudd0q.hd-bkt.clouddn.com/202202231609425.png)
 
 #### （3）重启服务
 
@@ -125,7 +125,7 @@ webapp8888: START: 操作成功完成。
 D:\nssm-2.24\win64>nssm edit webapp8888
 ```
 
-![image-20220223163535494](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231635547.png)
+![image-20220223163535494](http://rc4mudd0q.hd-bkt.clouddn.com/202202231635547.png)
 
 #### （5）删除服务
 
@@ -136,4 +136,4 @@ D:\nssm-2.24\win64>nssm remove webapp8888
 Service "webapp8888" removed successfully!
 ```
 
-![image-20220223163705348](https://gitee.com/bluecusliyou2/picrep/raw/master/202202231637397.png)
+![image-20220223163705348](http://rc4mudd0q.hd-bkt.clouddn.com/202202231637397.png)

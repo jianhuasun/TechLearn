@@ -31,7 +31,7 @@ docsify 可以快速帮你生成文档网站。不同于 GitBook、Hexo 的地�
 
 官网地址：[https://nodejs.org/en/](https://nodejs.org/en/)
 
-![image-20220224154043147](https://gitee.com/bluecusliyou2/picrep/raw/master/202202241540214.png)
+![image-20220224154043147](http://rc4mudd0q.hd-bkt.clouddn.com/202202241540214.png)
 
 #### （2）验证安装
 
@@ -68,7 +68,7 @@ docsify init .
 - `README.md` 会做为主页内容渲染
 - `.nojekyll` 用于阻止 GitHub Pages 忽略掉下划线开头的文件
 
-![image-20220420213225360](https://gitee.com/bluecusliyou2/picrep/raw/master/202204202132493.png)
+![image-20220420213225360](http://rc4mudd0q.hd-bkt.clouddn.com/202204202132493.png)
 
 如果不喜欢 npm 或者觉得安装工具太麻烦，我们可以直接手动创建一个 `index.html` 文件
 
@@ -101,7 +101,7 @@ docsify init .
 docsify serve -p 80 .
 ```
 
-![image-20220420213417980](https://gitee.com/bluecusliyou2/picrep/raw/master/202204202134029.png)
+![image-20220420213417980](http://rc4mudd0q.hd-bkt.clouddn.com/202204202134029.png)
 
 ### 5、Loading 提示
 
@@ -130,7 +130,7 @@ docsify serve -p 80 .
 
 服务器启动，渲染的就是`README.md`的内容，要改变页面内容，只需要修改它，语法就是MarkDown语法，保存就会自动渲染刷新，不需要重启服务。
 
-![image-20220420214446208](https://gitee.com/bluecusliyou2/picrep/raw/master/202204202144263.png)
+![image-20220420214446208](http://rc4mudd0q.hd-bkt.clouddn.com/202204202144263.png)
 
 ### 2、定制多页面
 
@@ -180,17 +180,17 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 创建文件夹first，里面添加first.md，再创建文件夹guide，文件guide.md
 
-![image-20220420222713983](https://gitee.com/bluecusliyou2/picrep/raw/master/202204202227044.png)
+![image-20220420222713983](http://rc4mudd0q.hd-bkt.clouddn.com/202204202227044.png)
 
 > 默认显示主页，点击各页面显示各页面
 
-![image-20220420222820984](https://gitee.com/bluecusliyou2/picrep/raw/master/202204202228056.png)
+![image-20220420222820984](http://rc4mudd0q.hd-bkt.clouddn.com/202204202228056.png)
 
 
 
 
 
-![image-20220420222909923](https://gitee.com/bluecusliyou2/picrep/raw/master/202204202229966.png)
+![image-20220420222909923](http://rc4mudd0q.hd-bkt.clouddn.com/202204202229966.png)
 
 #### （2）嵌套的侧边栏
 
@@ -204,19 +204,19 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 * [首页2](first/first2)
 ```
 
-![image-20220423151325087](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231513170.png)
+![image-20220423151325087](http://rc4mudd0q.hd-bkt.clouddn.com/202204231513170.png)
 
 > 默认显示主目录，点击首页进入首页文件夹目录，点击指南，还是显示主目录。
 
-![image-20220423151438485](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231514558.png)
+![image-20220423151438485](http://rc4mudd0q.hd-bkt.clouddn.com/202204231514558.png)
 
-![image-20220423151517197](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231515277.png)
-
-
+![image-20220423151517197](http://rc4mudd0q.hd-bkt.clouddn.com/202204231515277.png)
 
 
 
-![image-20220423151927526](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231519570.png)
+
+
+![image-20220423151927526](http://rc4mudd0q.hd-bkt.clouddn.com/202204231519570.png)
 
 
 
@@ -233,13 +233,13 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 * [指南](guide/guide "最牛逼的指南")
 ```
 
-![image-20220423152845850](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231528918.png)
+![image-20220423152845850](http://rc4mudd0q.hd-bkt.clouddn.com/202204231528918.png)
 
 #### （4）页面显示目录层级设置
 
 > 首页内容如下，内容有4层目录级别
 
-![image-20220423153608214](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231536323.png)
+![image-20220423153608214](http://rc4mudd0q.hd-bkt.clouddn.com/202204231536323.png)
 
 > 在`index.html`种配置参数`subMaxLevel`为2
 
@@ -254,13 +254,13 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 默认显示主目录，点击首页进入首页文件夹目录，显示两层内容级别
 
-![image-20220423154128769](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231541842.png)
+![image-20220423154128769](http://rc4mudd0q.hd-bkt.clouddn.com/202204231541842.png)
 
-![image-20220423154107689](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231541751.png)
+![image-20220423154107689](http://rc4mudd0q.hd-bkt.clouddn.com/202204231541751.png)
 
 > 在`index.html`种配置参数`subMaxLevel`为4，首页显示全部4层级别目录
 
-![image-20220423154327471](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231543558.png)
+![image-20220423154327471](http://rc4mudd0q.hd-bkt.clouddn.com/202204231543558.png)
 
 #### （5）设置不显示目录
 
@@ -297,7 +297,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 导航点击效果和侧边栏效果差不多，跳转到对应页面
 
-![image-20220423160918576](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231609652.png)
+![image-20220423160918576](http://rc4mudd0q.hd-bkt.clouddn.com/202204231609652.png)
 
 #### （2）通过配置文件来配置
 
@@ -345,7 +345,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 显示效果如下
 
-![image-20220423162536303](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231625362.png)
+![image-20220423162536303](http://rc4mudd0q.hd-bkt.clouddn.com/202204231625362.png)
 
 #### （4）导航中用emoji表情
 
@@ -383,7 +383,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 效果如下
 
-![image-20220423164413478](https://gitee.com/bluecusliyou2/picrep/raw/master/202204231644601.png)
+![image-20220423164413478](http://rc4mudd0q.hd-bkt.clouddn.com/202204231644601.png)
 
 
 
@@ -431,7 +431,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 效果如下
 
-![image-20220423203237518](https://gitee.com/bluecusliyou2/picrep/raw/master/202204232032756.png)
+![image-20220423203237518](http://rc4mudd0q.hd-bkt.clouddn.com/202204232032756.png)
 
 #### （2）自定义背景
 
@@ -511,7 +511,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 效果如下
 
-![image-20220427074756836](https://gitee.com/bluecusliyou2/picrep/raw/master/202204270748961.png)
+![image-20220427074756836](http://rc4mudd0q.hd-bkt.clouddn.com/202204270748961.png)
 
 ### 2、搜索插件
 
@@ -542,7 +542,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 效果如下
 
-![image-20220428220220569](https://gitee.com/bluecusliyou2/picrep/raw/master/202204282202714.png)
+![image-20220428220220569](http://rc4mudd0q.hd-bkt.clouddn.com/202204282202714.png)
 
 ### 3、剪贴板插件
 
@@ -556,7 +556,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 效果如下
 
-![image-20220428223022825](https://gitee.com/bluecusliyou2/picrep/raw/master/202204282230900.png)
+![image-20220428223022825](http://rc4mudd0q.hd-bkt.clouddn.com/202204282230900.png)
 
 ### 4、分页导航插件
 
@@ -568,7 +568,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 > 效果如下
 
-![image-20220428223317942](https://gitee.com/bluecusliyou2/picrep/raw/master/202204282233857.png)
+![image-20220428223317942](http://rc4mudd0q.hd-bkt.clouddn.com/202204282233857.png)
 
 
 
@@ -595,7 +595,7 @@ window.$docsify = {
 
 > 效果如下
 
-![image-20220428224128755](https://gitee.com/bluecusliyou2/picrep/raw/master/202204282241860.png)
+![image-20220428224128755](http://rc4mudd0q.hd-bkt.clouddn.com/202204282241860.png)
 
 
 
@@ -605,7 +605,7 @@ window.$docsify = {
 
 window上主要是日常博客的编写，然后用git来管理，上传到gitee后，可以配置生成GiteePages。具体的git操作和配置可以参考[git详解文章](https://blog.csdn.net/liyou123456789/article/details/121411053)，这里创建了一个gitee仓库，专门用来做个人网站。下面红框框出来的是docsify生成的几个配置文件。
 
-![image-20220226154353324](https://gitee.com/bluecusliyou2/picrep/raw/master/202202261544599.png)
+![image-20220226154353324](http://rc4mudd0q.hd-bkt.clouddn.com/202202261544599.png)
 
 
 
@@ -615,21 +615,21 @@ window上主要是日常博客的编写，然后用git来管理，上传到gitee
 
 部署选择你要部署的分支，部署的目录就是docsify对应仓库中的目录，我这边是整个仓库作为docsify目录，建议强制使用https勾选，然后就可以启动。
 
-![image-20220226154808159](https://gitee.com/bluecusliyou2/picrep/raw/master/202202261548225.png)
+![image-20220226154808159](http://rc4mudd0q.hd-bkt.clouddn.com/202202261548225.png)
 
-![image-20220226154932118](https://gitee.com/bluecusliyou2/picrep/raw/master/202202261549171.png)
+![image-20220226154932118](http://rc4mudd0q.hd-bkt.clouddn.com/202202261549171.png)
 
 ### 3、页面效果请参考
 
 生成的giteePages地址是[https://bluecusliyou.gitee.io/techlearn](https://bluecusliyou.gitee.io/techlearn)
 
-![image-20220429215828321](https://gitee.com/bluecusliyou2/picrep/raw/master/202204292158465.png)
+![image-20220429215828321](http://rc4mudd0q.hd-bkt.clouddn.com/202204292158465.png)
 
 ### 4、页面修改更新
 
 如果页面内容有修改更新到仓库了，可以点击更新个人页面
 
-![image-20220226155356585](https://gitee.com/bluecusliyou2/picrep/raw/master/202202261553662.png)
+![image-20220226155356585](http://rc4mudd0q.hd-bkt.clouddn.com/202202261553662.png)
 
 
 
