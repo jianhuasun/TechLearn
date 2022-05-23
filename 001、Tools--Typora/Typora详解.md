@@ -610,7 +610,7 @@ Typora其实就是伪装成文本编辑器的浏览器，Typora主题本质就�
 
 Typora本身没有云同步功能，不同电脑之间想要共享比较麻烦，借助版本管理工具可以实现机器之间的文件同步。Typora写的md文档是文本文件，非常适合使用版本管理工具来进行管理备份追踪每次修改的内容。
 
-## 三、Typora+PicGo+Gitee实现高效图床
+## 三、Typora+PicGo实现高效图床
 
 > 为什么要用图床存储图片？
 
@@ -634,7 +634,11 @@ Typora打开文件->偏好进入配置页面，设置成插入图片时上传图
 
 
 
-### 3、Gitee配置
+### 3、Gitee图床配置（不推荐，gitee已禁用图床）
+
+#### （1）创建gitee图床仓库
+
+官网地址：[https://gitee.com/](https://gitee.com/)
 
 > 创建一个新的仓库
 
@@ -646,7 +650,7 @@ Typora打开文件->偏好进入配置页面，设置成插入图片时上传图
 
 ![image-20220122215304013](http://rc4mudd0q.hd-bkt.clouddn.com/202201222154517.png)
 
-
+#### （2）生成gitee私人令牌
 
 > 生成私人令牌，生成的文本保存好
 
@@ -656,11 +660,9 @@ Typora打开文件->偏好进入配置页面，设置成插入图片时上传图
 
 ![image-20220122214311068](http://rc4mudd0q.hd-bkt.clouddn.com/202201222155724.png)
 
-### 4、PicGo配置
+#### （3）PicGo配置Gitee
 
-> 插件设置
-
-安装gitee上传插件
+> PicGo安装gitee上传插件
 
 ![image-20220123125019873](http://rc4mudd0q.hd-bkt.clouddn.com/202201231250920.png)
 
@@ -676,6 +678,36 @@ Typora打开文件->偏好进入配置页面，设置成插入图片时上传图
 
 ![image-20220123125404386](http://rc4mudd0q.hd-bkt.clouddn.com/202201231254439.png)
 
+### 4、七牛云图床配置
+
+#### （1）创建对象存储
+
+官网：[https://portal.qiniu.com](https://portal.qiniu.com)
+
+> 创建对象存储
+
+![image-20220523103358204](http://rc4mudd0q.hd-bkt.clouddn.com/202205231033305.png)
+
+> 创建空间，设置名称，存储区域就近，访问控制公开
+
+![image-20220523103552013](http://rc4mudd0q.hd-bkt.clouddn.com/202205231035107.png)
+
+> 创建完成就可以上传文件，域名就是文件访问域名
+
+![image-20220523103842586](http://rc4mudd0q.hd-bkt.clouddn.com/202205231038668.png)
+
+#### （2）获取秘钥
+
+![image-20220523103929225](http://rc4mudd0q.hd-bkt.clouddn.com/202205231039285.png)
+
+![image-20220523110759846](http://rc4mudd0q.hd-bkt.clouddn.com/202205231107932.png)
+
+#### （3）PicGo配置七牛云
+
+其中AccessKey 和 SecretKey就是个人中心的秘钥信息，存储空间名为你刚设置的名字，访问网址为 文件管理中的外链域名(加上http://)，存储区域可选（华东：z0, 华北：z1, 华南：z2，北美：na0, 东南亚：as0），网址后缀可不选，存储路径自己填
+
+![image-20220523112131399](http://rc4mudd0q.hd-bkt.clouddn.com/202205231121470.png)
+
 ### 5、验证功能
 
-在Typora 中插入一张图片，然后去gitee 仓库中查看是否有新的文件，成功上传并显示。
+在Typora 中插入一张图片，然后去图床中查看是否有新的文件成功上传，本地图片连接能正常显示。
