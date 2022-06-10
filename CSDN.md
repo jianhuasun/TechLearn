@@ -47,6 +47,10 @@
 
 [SqlServer详解](https://blog.csdn.net/liyou123456789/article/details/121217959)
 
+### 常用组件
+
+[AutoMapper详解](https://blog.csdn.net/liyou123456789/article/details/125222690)
+
 ### Net框架
 
 [AspNetCore5基础](https://blog.csdn.net/liyou123456789/article/details/119714802)
