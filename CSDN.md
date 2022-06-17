@@ -50,6 +50,7 @@
 ### 常用组件
 
 [AutoMapper详解](https://blog.csdn.net/liyou123456789/article/details/125222690)
+[Autofac详解](https://blog.csdn.net/liyou123456789/article/details/125331813)
 
 ### Net框架
 
