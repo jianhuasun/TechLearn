@@ -8,6 +8,10 @@
 
 简单来说，AutoMapper是以.NET(C#)语言开发的一个轻量的处理一个实体对象到另一个实体对象之间映射关系的组件库。开发人员需要做的是通过AutoMapper配置两个实体对象之间的一些映射关系。就可以直接实现映射关系的复用，提高开发效率，减少重复代码。
 
+官网地址：[http://automapper.org/](http://automapper.org/)
+
+文档地址：[https://docs.automapper.org/en/latest/](https://docs.automapper.org/en/latest/)
+
 #### （2）为什么要做对象之间的映射
 
 为了降低现代开发框架的复杂度，往往需要做代码分层，分层之后，必然出现不同的数据承载对象VO、BO、Entity ，从设计的角度来说，VO、BO、Entity 的设计思路并不违反 DRY 原则，为了分层清晰、减少耦合，多维护几个类的成本也并不是不能接受的，对于代码重复的问题，我们可以通过继承或者组合来解决。
