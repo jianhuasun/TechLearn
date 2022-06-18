@@ -70,7 +70,7 @@ IContainer container = containerBuilder.Build();
 ITeacher teacher = container.Resolve<ITeacher>();
 ```
 
-![image-20220615171348335](http://rc4mudd0q.hd-bkt.clouddn.com/202206151713394.png)
+![image-20220615171348335](http://cdn.bluecusliyou.com/202206151713394.png)
 
 ### 4、三种注入方式
 
@@ -87,7 +87,7 @@ IContainer container = containerBuilder.Build();
 ITeacher teacher = container.Resolve<ITeacher>();
 ```
 
-![image-20220507144924795](http://rc4mudd0q.hd-bkt.clouddn.com/202206101644974.png)
+![image-20220507144924795](http://cdn.bluecusliyou.com/202206101644974.png)
 
 #### （2）全部属性注入
 
@@ -102,7 +102,7 @@ IContainer container = containerBuilder.Build();
 ITeacher teacher = container.Resolve<ITeacher>();
 ```
 
-![image-20220507145543126](http://rc4mudd0q.hd-bkt.clouddn.com/202206101644016.png)
+![image-20220507145543126](http://cdn.bluecusliyou.com/202206101644016.png)
 
 #### （3）标记特性的属性注入
 
@@ -128,7 +128,7 @@ public class CustomPropertySelector : IPropertySelector
 }
 ```
 
-![image-20220507151030788](http://rc4mudd0q.hd-bkt.clouddn.com/202206101644054.png)
+![image-20220507151030788](http://cdn.bluecusliyou.com/202206101644054.png)
 
 #### （4）方法注入
 
@@ -147,7 +147,7 @@ IContainer container = containerBuilder.Build();
 ITeacher teacher = container.Resolve<ITeacher>();
 ```
 
-![image-20220507154431887](http://rc4mudd0q.hd-bkt.clouddn.com/202206101644009.png)
+![image-20220507154431887](http://cdn.bluecusliyou.com/202206101644009.png)
 
 ### 5、对象生命周期
 
@@ -572,9 +572,9 @@ public class AutofacModule : Module
 
 #### （7）运行结果
 
-![image-20220617130527205](http://rc4mudd0q.hd-bkt.clouddn.com/202206171305410.png)
+![image-20220617130527205](http://cdn.bluecusliyou.com/202206171305410.png)
 
-![image-20220509140121017](http://rc4mudd0q.hd-bkt.clouddn.com/202206101644744.png)
+![image-20220509140121017](http://cdn.bluecusliyou.com/202206101644744.png)
 
 
 
@@ -587,7 +587,7 @@ using (var container = host.Services.CreateScope())
 }
 ```
 
-![image-20220617131016831](http://rc4mudd0q.hd-bkt.clouddn.com/202206171310893.png)
+![image-20220617131016831](http://cdn.bluecusliyou.com/202206171310893.png)
 
 #### （9）单抽象多实现集成到框架
 
@@ -657,4 +657,4 @@ public class FifthController : Controller
 
 > 运行结果
 
-![image-20220510102820041](http://rc4mudd0q.hd-bkt.clouddn.com/202206101644999.png) 
+![image-20220510102820041](http://cdn.bluecusliyou.com/202206101644999.png) 

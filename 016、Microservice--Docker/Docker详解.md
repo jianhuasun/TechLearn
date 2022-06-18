@@ -44,13 +44,13 @@ Docker在容器的基础上，进行了进一步的封装，从文件系统、�
 - Docker有着比虚拟机更少的抽象层。
 - Docker利用的是宿主机的内核，而不需要Guest OS。  
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122005665.png)
+![](http://cdn.bluecusliyou.com/202202122005665.png)
 
 由于Docker不需要Hypervisor实现硬件资源虚拟化，运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在CPU、内存利用率上docker有明显优势。 
 
 当新建一个 容器时，docker不需要和虚拟机一样重新加载一个操作系统内核。当新建一个虚拟机时，虚拟机软件需要加载GuestOS，整个新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统，省略了这个复杂的过程，因此新建一个docker容器只需要几秒钟。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122005573.png)
+![](http://cdn.bluecusliyou.com/202202122005573.png)
 
 > Kubernetes
 
@@ -145,7 +145,7 @@ Server: Docker Engine - Community
 
 Docker采用 C/S架构 Docker daemon 作为服务端接受来自客户的请求，并处理这些请求（创建、运行、分发容器）。 客户端和服务端既可以运行在一个机器上。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122005620.gif)
+![](http://cdn.bluecusliyou.com/202202122005620.gif)
 
 当使用 Docker 命令行工具执行命令时，Docker 客户端会将其转换为合适的 API 格式，并发送到正确的 API 端点。
 
@@ -217,7 +217,7 @@ Linux的命名空间 (namespaces) 可以为我们提供用于隔离进程树、�
 
 Linux的Namespace实现的隔离性种类有六种，进程、网络、IPC、文件系统、UTS和用户。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122006206.png)
+![](http://cdn.bluecusliyou.com/202202122006206.png)
 
 #### （2）查看宿主机和容器的进程和网络完全不同
 
@@ -345,7 +345,7 @@ Linux的命名空间 (namespaces) 可以为我们提供的用于分离进程树�
 
 #### （1）对资源的配额和度量
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122006327.png)
+![](http://cdn.bluecusliyou.com/202202122006327.png)
 
 cgroups 实现了对资源的配额和度量。
 
@@ -493,7 +493,7 @@ Linux 的命名空间和控制组分别解决了不同资源隔离的问题，�
 
 Docker 支持了不同的存储驱动，包括 `aufs`、`devicemapper`、`overlay2`、`zfs` 和 `vfs` 等等，在最新的 Docker 中，`overlay2` 取代了 `aufs` 成为了推荐的存储驱动，但是在没有 `overlay2` 驱动的机器上仍然会使用 `aufs` 作为 Docker 的默认驱动。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122006402.png)
+![](http://cdn.bluecusliyou.com/202202122006402.png)
 
 ```bash
 #通过命令可以查看当前机器的文件系统
@@ -505,7 +505,7 @@ UnionFS（联合文件系统）其实是一种为 Linux 操作系统设计的用
 
 OverlayFS 也是一种与 AUFS 类似的联合文件系统，同样属于文件级的存储驱动，包含了最初的Overlay 和更新更稳定的 overlay2。Overlay 只有两层：upper 层和 Lower 层。Lower 层代表镜像层，upper 层代表容器可写层。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122007536.png)
+![](http://cdn.bluecusliyou.com/202202122007536.png)
 
 ```bash
 #创建4个文件夹
@@ -543,11 +543,11 @@ CMD python /app/app.py
 
 上述的 Dockerfile 文件会构建一个拥有四层 layer 的镜像。每一个镜像层都是建立在另一个镜像层之上的，同时所有的镜像层都是只读的，当镜像被 `docker run` 命令创建时就会在镜像的最上层添加一个可写的层，也就是容器层，所有对于运行时容器的修改其实都是对这个容器读写层的修改。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122009322.png)
+![](http://cdn.bluecusliyou.com/202202122009322.png)
 
 容器的本质也是一个文件，容器和镜像的区别就在于，所有的镜像都是只读的，而每一个容器其实等于镜像加上一个可读写的层，也就是同一个镜像可以对应多个容器。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122009510.png)
+![](http://cdn.bluecusliyou.com/202202122009510.png)
 
 ```bash
 #可以查看镜像详情，看到文件存储的位置
@@ -573,7 +573,7 @@ CMD python /app/app.py
 
 每一个镜像层都是建立在另一个镜像层之上的，同时所有的镜像层都是只读的，只有每个容器最顶层的容器层才可以被用户直接读写，所有的容器都建立在一些底层服务（Kernel）上，包括命名空间、控制组、rootfs 等等。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122009391.png)
+![](http://cdn.bluecusliyou.com/202202122009391.png)
 
 > 正常安装的CentOS都是好几个G，为什么Docker的Centos镜像才200M？
 
@@ -585,7 +585,7 @@ centos       latest    5d0da3dc9764   2 months ago   231MB
 
 典型的 Linux 文件系统组成包含`Bootfs（boot file system） `和`rootfs （root file system）`  
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122009167.png)
+![](http://cdn.bluecusliyou.com/202202122009167.png)
 
 boots(boot file system）主要包含 bootloader和 Kernel，bootloader主要是引导加 kernel，Linux刚启动时会加bootfs文件系统，当boot加载完成之后整个内核就都在内存中了，此时内存的使用权已由 bootfs转交给内核，此时系统也会卸载bootfs。
 
@@ -730,7 +730,7 @@ rm -rf /var/lib/docker
 
 #### （3）配置镜像加速
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122010233.png)
+![](http://cdn.bluecusliyou.com/202202122010233.png)
 
 ```bash
 sudo mkdir -p /etc/docker
@@ -749,7 +749,7 @@ sudo systemctl restart docker
 
 官方命令说明：[https://docs.docker.com/engine/reference/commandline/docker/](https://docs.docker.com/engine/reference/commandline/docker/)
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122010127.jpeg)
+![](http://cdn.bluecusliyou.com/202202122010127.jpeg)
 
 ```bash
 docker version            #显示docker的版本信息
@@ -943,11 +943,11 @@ Commercial support is available at
 
 > docker run执行流程
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122010494.png)
+![](http://cdn.bluecusliyou.com/202202122010494.png)
 
 > 端口暴露示意图
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122010184.png)
+![](http://cdn.bluecusliyou.com/202202122010184.png)
 
 > 容器重启策略
 
@@ -2225,7 +2225,7 @@ e379e8aedd4d: Mounted from library/nginx
 
 **tmpfs mounts：**挂载存储在宿主机系统的内存中，不会写入宿主机的文件系统。容器关闭重启数据丢失。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122011112.png)
+![](http://cdn.bluecusliyou.com/202202122011112.png)
 
 ### 3、三种挂载方式适用场景
 
@@ -2826,11 +2826,11 @@ f0afabacbf2e580c311b05fd2ec1ce5fda8f533abe8fddd1d69a6df0a0f7ab19
 
 #### （2）客户端连接数据库，添加数据库表数据
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122011488.png)
+![](http://cdn.bluecusliyou.com/202202122011488.png)
 
 宿主机上文件已经生成
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122011683.png)
+![](http://cdn.bluecusliyou.com/202202122011683.png)
 
 #### （3）删除容器，宿主机文件还在
 
@@ -2839,7 +2839,7 @@ f0afabacbf2e580c311b05fd2ec1ce5fda8f533abe8fddd1d69a6df0a0f7ab19
 mysqlserver
 ```
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122012112.png)
+![](http://cdn.bluecusliyou.com/202202122012112.png)
 
 #### （4）重新运行容器，数据持久化成功
 
@@ -2848,7 +2848,7 @@ mysqlserver
 2bf89cba601dbcc6a297ec7446a98b8cd6435e514b20d50334101fb286f3c6e0
 ```
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122012250.png)
+![](http://cdn.bluecusliyou.com/202202122012250.png)
 
 ## 六、Docker网络
 
@@ -2919,7 +2919,7 @@ abc08bbf4c8b   none      null      local
 
 bridge模式是Docker默认的网络模式，此模式会为每一个容器分配独立的Network Namespace。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122012237.png)
+![](http://cdn.bluecusliyou.com/202202122012237.png)
 
 #### （1）实现原理
 
@@ -3402,7 +3402,7 @@ CMD /usr/sbin/nginx
 
 ### 3、DockerFile指令详解
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122012479.jpg)
+![](http://cdn.bluecusliyou.com/202202122012479.jpg)
 
 #### 基础知识
 
@@ -3954,9 +3954,9 @@ Docker Hub公共仓库就类似于GitHub，这是一个公共的共享的镜像�
 
 注册完成登录之后就可以创建一个Repository，可以创建公有仓库，也可以创建私有仓库。免费版本只能创建一个私有库。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122013995.png)
+![](http://cdn.bluecusliyou.com/202202122013995.png)
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122013774.png)
+![](http://cdn.bluecusliyou.com/202202122013774.png)
 
 #### （2）客户端上登录dockerhub账号
 
@@ -4202,7 +4202,7 @@ Clearing the configuration file: /config/portal/nginx.conf
 ...
 ```
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122013284.png)
+![](http://cdn.bluecusliyou.com/202202122013284.png)
 
 #### （2）安装仓库
 
@@ -4298,20 +4298,20 @@ Created symlink /etc/systemd/system/multi-user.target.wants/harbor.service → /
 
 > Harbor的管理平台登录页面
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122013442.png)
+![](http://cdn.bluecusliyou.com/202202122013442.png)
 
 > 新建项目
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122013729.png)
+![](http://cdn.bluecusliyou.com/202202122013729.png)
 
 > 添加一个管理账号
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122014077.png)
+![](http://cdn.bluecusliyou.com/202202122014077.png)
 
 > 为测试项目添加创建的管理员
 >
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122014204.png)
+![](http://cdn.bluecusliyou.com/202202122014204.png)
 
 #### （4）客户端修改本地域名文件
 
@@ -4385,7 +4385,7 @@ c9fcd9c6ced8: Pushed
 
 图形界面查看上传的镜像
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122014101.png)
+![](http://cdn.bluecusliyou.com/202202122014101.png)
 
 #### （8）另一台客户端下载镜像
 
@@ -5140,19 +5140,19 @@ volumes:
 
 #### （3）首次配置界面
 
-地址：`IP:8000`![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122014395.png)
+地址：`IP:8000`![](http://cdn.bluecusliyou.com/202202122014395.png)
 
 #### （4）后台管理界面
 
 地址：`IP:8000/wp-admin/`
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122014124.png)
+![](http://cdn.bluecusliyou.com/202202122014124.png)
 
 #### （5）前端界面
 
 地址：`IP:8000`
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122015421.png)
+![](http://cdn.bluecusliyou.com/202202122015421.png)
 
 ## 十、Docker Swarm
 
@@ -5164,7 +5164,7 @@ Docker Swarm 是 Docker 的集群管理工具，在之前我们只是在一台�
 
 但是有时容器并不一定都在一台主机上，如果是分布式的处于多台主机上，这时就可以借助于Swarm，Swarm是Docker自带的编排工具，自 Docker 1.12 版本之后，它已经完全集成在 Docker 引擎中，只要你安装了Docker就会存在Docker Swarm工具。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122015269.png)
+![](http://cdn.bluecusliyou.com/202202122015269.png)
 
 #### （2）manager和worker节点
 
@@ -5176,13 +5176,13 @@ manager节点状态、信息是用Raft consensus group的网络进行通信同�
 
 Swarm 的配置和状态信息保存在一套位于所有管理节点上的分布式 etcd 数据库中。该数据库运行于内存中，并保持数据的最新状态。关于该数据库最棒的是，它几乎不需要任何配置，作为 Swarm 的一部分被安装，无须管理。  
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122015370.png)
+![](http://cdn.bluecusliyou.com/202202122015370.png)
 
 #### （3）服务service
 
 另外一个重要的概念就是service，我们可以在一个manager节点上创建一个服务，但是可以根据这一个服务创建多个容器的任务，这些容器任务运行在不同的节点上。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122015521.png)
+![](http://cdn.bluecusliyou.com/202202122015521.png)
 
 #### （4）单引擎模式和Swarm 模式
 
@@ -5192,7 +5192,7 @@ Swarm 的配置和状态信息保存在一套位于所有管理节点上的分�
 
 更多的节点可以作为管理节点或工作节点加入进来。这一操作也会将新加入的节点切换为 Swarm 模式。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122015597.gif)
+![](http://cdn.bluecusliyou.com/202202122015597.gif)
 
 #### （5）集群安全性
 
@@ -5424,7 +5424,7 @@ Swarm 的管理节点内置有对 HA 的支持。这意味着，即使一个或�
 
 通常处于活动状态的管理节点被称为“主节点”（leader），而主节点也是唯一一个会对 Swarm 发送控制命令的节点。也就是说，只有主节点才会变更配置，或发送任务到工作节点。如果一个备用（非活动）管理节点接收到了 Swarm 命令，则它会将其转发给主节点。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122015787.png)
+![](http://cdn.bluecusliyou.com/202202122015787.png)
 
 > 锁定 Swarm
 
@@ -5766,7 +5766,7 @@ Endpoint Mode:  vip
 
 通过 Ingress 模式发布的服务，可以保证从 Swarm 集群内任一节点（即使没有运行服务的副本）都能访问该服务；以 Host 模式发布的服务只能通过运行服务副本的节点来访问。下图展示了两种模式的区别。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122016771.gif)
+![](http://cdn.bluecusliyou.com/202202122016771.gif)
 
 #### （2）Host模式发布服务
 
@@ -5846,7 +5846,7 @@ redis_swarm.2.zprcqg933uex@manager1    |
 
 在现实世界中，容器间通信的可靠性和安全性相当重要，即使容器分属于不同网络中的不同主机。这也是覆盖网络大展拳脚的地方，它允许创建扁平的、安全的二层网络来连接多个主机，容器可以连接到覆盖网络并互相通信。
 
-![](http://rc4mudd0q.hd-bkt.clouddn.com/202202122016575.png)
+![](http://cdn.bluecusliyou.com/202202122016575.png)
 
 #### （1）初始化一个swarm集群
 

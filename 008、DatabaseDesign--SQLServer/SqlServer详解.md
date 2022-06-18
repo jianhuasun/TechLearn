@@ -128,7 +128,7 @@ docker ps -a
 
 > SSMS连接测试
 
-![image-20211020215144367](http://rc4mudd0q.hd-bkt.clouddn.com/202202171446056.png)
+![image-20211020215144367](http://cdn.bluecusliyou.com/202202171446056.png)
 
 ## 三、数据库设计
 
@@ -161,19 +161,19 @@ docker ps -a
 
 > 创建项目，填写项目名称，选择保存目录
 
-![1633658947738](http://rc4mudd0q.hd-bkt.clouddn.com/202202171446489.png)
+![1633658947738](http://cdn.bluecusliyou.com/202202171446489.png)
 
-![1633659427197](http://rc4mudd0q.hd-bkt.clouddn.com/202202171446264.png)
+![1633659427197](http://cdn.bluecusliyou.com/202202171446264.png)
 
 > 创建模型文件
 
-![1633660013519](http://rc4mudd0q.hd-bkt.clouddn.com/202202171446089.png)
+![1633660013519](http://cdn.bluecusliyou.com/202202171446089.png)
 
-![1633660046582](http://rc4mudd0q.hd-bkt.clouddn.com/202202171446673.png)
+![1633660046582](http://cdn.bluecusliyou.com/202202171446673.png)
 
-![1633660096957](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447598.png)
+![1633660096957](http://cdn.bluecusliyou.com/202202171447598.png)
 
-![1633660352881](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447540.png)
+![1633660352881](http://cdn.bluecusliyou.com/202202171447540.png)
 
 
 
@@ -181,29 +181,29 @@ docker ps -a
 
 > 创建表，添加字段
 
-![1633660655515](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447843.png)
+![1633660655515](http://cdn.bluecusliyou.com/202202171447843.png)
 
 可以显示字段说明
 
-![1633660718073](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447323.png)
+![1633660718073](http://cdn.bluecusliyou.com/202202171447323.png)
 
 
 
 > 生成物理数据模型
 
-![1633673806133](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447745.png)
+![1633673806133](http://cdn.bluecusliyou.com/202202171447745.png)
 
-![1633673855417](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447288.png)
+![1633673855417](http://cdn.bluecusliyou.com/202202171447288.png)
 
 
 
-![1633673901347](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447723.png)
+![1633673901347](http://cdn.bluecusliyou.com/202202171447723.png)
 
 > 生成SQL脚本
 
-![1633674007482](http://rc4mudd0q.hd-bkt.clouddn.com/202202171447587.png)
+![1633674007482](http://cdn.bluecusliyou.com/202202171447587.png)
 
-![1633674084980](http://rc4mudd0q.hd-bkt.clouddn.com/202202171448565.png)
+![1633674084980](http://cdn.bluecusliyou.com/202202171448565.png)
 
 
 
@@ -211,27 +211,27 @@ docker ps -a
 
 > 创建模型，选择数据库类型
 
-![1633679565646](http://rc4mudd0q.hd-bkt.clouddn.com/202202171448406.png)
+![1633679565646](http://cdn.bluecusliyou.com/202202171448406.png)
 
-![1633679596556](http://rc4mudd0q.hd-bkt.clouddn.com/202202171448828.png)
+![1633679596556](http://cdn.bluecusliyou.com/202202171448828.png)
 
 > 配置数据库连接导出模型
 
-![1633679663995](http://rc4mudd0q.hd-bkt.clouddn.com/202202171448764.png)
+![1633679663995](http://cdn.bluecusliyou.com/202202171448764.png)
 
-![1633679708273](http://rc4mudd0q.hd-bkt.clouddn.com/202202171449791.png)
-
-
-
-![1633679731489](http://rc4mudd0q.hd-bkt.clouddn.com/202202171449130.png)
+![1633679708273](http://cdn.bluecusliyou.com/202202171449791.png)
 
 
 
-![1633680817135](http://rc4mudd0q.hd-bkt.clouddn.com/202202171449596.png)
+![1633679731489](http://cdn.bluecusliyou.com/202202171449130.png)
 
 
 
-![1633681052263](http://rc4mudd0q.hd-bkt.clouddn.com/202202171449931.png)
+![1633680817135](http://cdn.bluecusliyou.com/202202171449596.png)
+
+
+
+![1633681052263](http://cdn.bluecusliyou.com/202202171449931.png)
 
 #### （4）PD数据类型说明
 
@@ -1570,17 +1570,17 @@ drop view UserInfor_View;
 
 > 配置服务器可以远程访问
 
-![image-20211027223803486](http://rc4mudd0q.hd-bkt.clouddn.com/202202171450626.png)
+![image-20211027223803486](http://cdn.bluecusliyou.com/202202171450626.png)
 
-![image-20211027223930667](http://rc4mudd0q.hd-bkt.clouddn.com/202202171450588.png)
+![image-20211027223930667](http://cdn.bluecusliyou.com/202202171450588.png)
 
-![image-20211027224134540](http://rc4mudd0q.hd-bkt.clouddn.com/202202171450526.png)
+![image-20211027224134540](http://cdn.bluecusliyou.com/202202171450526.png)
 
 
 
 > 创建一个写主库，两个读库，数据表
 
-![image-20211107193908618](http://rc4mudd0q.hd-bkt.clouddn.com/202202171450195.png)
+![image-20211107193908618](http://cdn.bluecusliyou.com/202202171450195.png)
 
 ```sql
 USE [DbTestWrite]
@@ -1603,71 +1603,71 @@ GO
 
 > 创建快照文件夹共享
 
-![image-20211107194042970](http://rc4mudd0q.hd-bkt.clouddn.com/202202171450810.png)
+![image-20211107194042970](http://cdn.bluecusliyou.com/202202171450810.png)
 
 #### （2）配置分发服务器
 
 如果是首次配置读写分离，需要配置分发服务器，后续不再配置。 如果不想用之前的分发服务器，可以右键复制，禁用分发服务器，然后重新配置。
 
-![image-20211025073927215](http://rc4mudd0q.hd-bkt.clouddn.com/202202171450882.png)
+![image-20211025073927215](http://cdn.bluecusliyou.com/202202171450882.png)
 
-![image-20211025074137750](http://rc4mudd0q.hd-bkt.clouddn.com/202202171450400.png)
+![image-20211025074137750](http://cdn.bluecusliyou.com/202202171450400.png)
 
-![image-20211025074244689](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451898.png)
+![image-20211025074244689](http://cdn.bluecusliyou.com/202202171451898.png)
 
-![image-20211027222619057](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451963.png)
+![image-20211027222619057](http://cdn.bluecusliyou.com/202202171451963.png)
 
-![image-20211027222708690](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451545.png)
+![image-20211027222708690](http://cdn.bluecusliyou.com/202202171451545.png)
 
-![image-20211027222732862](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451431.png)
+![image-20211027222732862](http://cdn.bluecusliyou.com/202202171451431.png)
 
-![image-20211027222839160](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451161.png)
+![image-20211027222839160](http://cdn.bluecusliyou.com/202202171451161.png)
 
 #### （3）新建本地发布
 
-![image-20211027224251057](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451024.png)
+![image-20211027224251057](http://cdn.bluecusliyou.com/202202171451024.png)
 
-![image-20211107154600890](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451761.png)
+![image-20211107154600890](http://cdn.bluecusliyou.com/202202171451761.png)
 
-![image-20211107154645393](http://rc4mudd0q.hd-bkt.clouddn.com/202202171451006.png)
+![image-20211107154645393](http://cdn.bluecusliyou.com/202202171451006.png)
 
-![image-20211107154929796](http://rc4mudd0q.hd-bkt.clouddn.com/202202171452112.png)
+![image-20211107154929796](http://cdn.bluecusliyou.com/202202171452112.png)
 
-![image-20211107155012779](http://rc4mudd0q.hd-bkt.clouddn.com/202202171452493.png)
+![image-20211107155012779](http://cdn.bluecusliyou.com/202202171452493.png)
 
-![image-20211107160608196](http://rc4mudd0q.hd-bkt.clouddn.com/202202171452719.png)
+![image-20211107160608196](http://cdn.bluecusliyou.com/202202171452719.png)
 
-![image-20211107165516392](http://rc4mudd0q.hd-bkt.clouddn.com/202202171452659.png)
+![image-20211107165516392](http://cdn.bluecusliyou.com/202202171452659.png)
 
-![image-20211107165654458](http://rc4mudd0q.hd-bkt.clouddn.com/202202171452926.png)
+![image-20211107165654458](http://cdn.bluecusliyou.com/202202171452926.png)
 
-![image-20211107165803133](http://rc4mudd0q.hd-bkt.clouddn.com/202202171452456.png)
+![image-20211107165803133](http://cdn.bluecusliyou.com/202202171452456.png)
 
 
 
 #### （4）创建订阅
 
-![image-20211107170007973](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453628.png)
+![image-20211107170007973](http://cdn.bluecusliyou.com/202202171453628.png)
 
-![image-20211107170128012](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453694.png)
+![image-20211107170128012](http://cdn.bluecusliyou.com/202202171453694.png)
 
-![image-20211107191222072](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453833.png)
+![image-20211107191222072](http://cdn.bluecusliyou.com/202202171453833.png)
 
-![image-20211107191351246](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453507.png)
+![image-20211107191351246](http://cdn.bluecusliyou.com/202202171453507.png)
 
-![image-20211107191426068](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453687.png)
+![image-20211107191426068](http://cdn.bluecusliyou.com/202202171453687.png)
 
-![image-20211107191446131](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453317.png)
+![image-20211107191446131](http://cdn.bluecusliyou.com/202202171453317.png)
 
-![image-20211107191509342](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453448.png)
+![image-20211107191509342](http://cdn.bluecusliyou.com/202202171453448.png)
 
-![image-20211107191929061](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453116.png)
+![image-20211107191929061](http://cdn.bluecusliyou.com/202202171453116.png)
 
-![image-20211107191955725](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453769.png)
+![image-20211107191955725](http://cdn.bluecusliyou.com/202202171453769.png)
 
 #### （5）创建完成
 
-![image-20211107192549748](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453964.png)
+![image-20211107192549748](http://cdn.bluecusliyou.com/202202171453964.png)
 
 #### （6）往主库插一条数据，查看同步监控和结果
 
@@ -1690,11 +1690,11 @@ INSERT INTO [dbo].[User]
 GO
 ```
 
-![image-20211107195031043](http://rc4mudd0q.hd-bkt.clouddn.com/202202171453092.png)
+![image-20211107195031043](http://cdn.bluecusliyou.com/202202171453092.png)
 
-![image-20211107200924858](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454247.png)
+![image-20211107200924858](http://cdn.bluecusliyou.com/202202171454247.png)
 
-![image-20211107195346846](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454923.png)
+![image-20211107195346846](http://cdn.bluecusliyou.com/202202171454923.png)
 
 ## 十一、分库，分表，分区
 
@@ -1786,25 +1786,25 @@ SQlserver自己带的功能； 自己去维护如何保存数据库；自己去�
 
 #### （1）创建文件组
 
-![image-20211107215219945](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454429.png)
+![image-20211107215219945](http://cdn.bluecusliyou.com/202202171454429.png)
 
-![image-20211107215351953](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454112.png)
+![image-20211107215351953](http://cdn.bluecusliyou.com/202202171454112.png)
 
 #### （2）添加文件
 
-![image-20211107215621619](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454712.png)
+![image-20211107215621619](http://cdn.bluecusliyou.com/202202171454712.png)
 
 #### （3）创建分区
 
-![image-20211107215821905](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454301.png)
+![image-20211107215821905](http://cdn.bluecusliyou.com/202202171454301.png)
 
-![image-20211107215948290](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454475.png)
+![image-20211107215948290](http://cdn.bluecusliyou.com/202202171454475.png)
 
-![image-20211107220047999](http://rc4mudd0q.hd-bkt.clouddn.com/202202171454539.png)
+![image-20211107220047999](http://cdn.bluecusliyou.com/202202171454539.png)
 
-![image-20211107221151457](http://rc4mudd0q.hd-bkt.clouddn.com/202202171455512.png)
+![image-20211107221151457](http://cdn.bluecusliyou.com/202202171455512.png)
 
-![image-20211107222027298](http://rc4mudd0q.hd-bkt.clouddn.com/202202171455249.png)
+![image-20211107222027298](http://cdn.bluecusliyou.com/202202171455249.png)
 
 生成的脚本执行一下就完成了分区
 
@@ -1834,7 +1834,7 @@ COMMIT TRANSACTION
 
 #### （4）分区查看
 
-![image-20211108215959485](http://rc4mudd0q.hd-bkt.clouddn.com/202202171455726.png)
+![image-20211108215959485](http://cdn.bluecusliyou.com/202202171455726.png)
 
 #### （5）代码实现
 
@@ -1976,7 +1976,7 @@ CREATE TABLE dt(
 - 取数据->内存（缓存）Redis->数据库->硬盘
 - 存数据->数据库->硬盘->内存（缓存）Redis
 
-![image-20211108210512457](http://rc4mudd0q.hd-bkt.clouddn.com/202202171455131.png)
+![image-20211108210512457](http://cdn.bluecusliyou.com/202202171455131.png)
 
 ### 2、数据库存储机制
 
@@ -2015,11 +2015,11 @@ dbcc flushprocindb（db_id）
 
 > 查看预估执行计划
 
-![image-20211108214817593](http://rc4mudd0q.hd-bkt.clouddn.com/202202171455103.png)
+![image-20211108214817593](http://cdn.bluecusliyou.com/202202171455103.png)
 
 连线越粗表示扫描影响的行数愈多，性能越差。
 
-![image-20210921110714077](http://rc4mudd0q.hd-bkt.clouddn.com/202202171455487.png)
+![image-20210921110714077](http://cdn.bluecusliyou.com/202202171455487.png)
 
 #### （3）常见场景
 

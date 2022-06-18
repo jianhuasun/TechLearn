@@ -139,7 +139,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest02>(new Src02() { NameSrc = "zhangsan" });
 ```
 
-![image-20220511172330749](http://rc4mudd0q.hd-bkt.clouddn.com/202205111723858.png)
+![image-20220511172330749](http://cdn.bluecusliyou.com/202205111723858.png)
 
 #### （5）映射时匹配前缀或后缀
 
@@ -156,7 +156,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest03>(new Src03() { Nameafter = "zhangsan", beforeAge = 18 });
 ```
 
-![image-20220512101442414](http://rc4mudd0q.hd-bkt.clouddn.com/202205121014324.png)
+![image-20220512101442414](http://cdn.bluecusliyou.com/202205121014324.png)
 
 > Automapper默认匹配了Get前缀，如果不需要可以清除
 
@@ -220,7 +220,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest01>(new Src01() { Name = "zhangsan", Age = 18 });
 ```
 
-![image-20220512102857657](http://rc4mudd0q.hd-bkt.clouddn.com/202205121028725.png)
+![image-20220512102857657](http://cdn.bluecusliyou.com/202205121028725.png)
 
 #### （3）字段不同要手动配置映射
 
@@ -236,7 +236,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest02>(new Src02() { NameSrc = "zhangsan" });
 ```
 
-![image-20220512102945919](http://rc4mudd0q.hd-bkt.clouddn.com/202205121029986.png)
+![image-20220512102945919](http://cdn.bluecusliyou.com/202205121029986.png)
 
 #### （4）内部类嵌套类映射
 
@@ -275,7 +275,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestOuter>(new SrcOuter(){OutName = "zhangsan",OutAge = 18,Inner = new SrcInner() { Name = "lisi", Age = 20 }});
 ```
 
-![image-20220512103220439](http://rc4mudd0q.hd-bkt.clouddn.com/202205121032508.png)
+![image-20220512103220439](http://cdn.bluecusliyou.com/202205121032508.png)
 
 > 内部类作为一个属性需要配置映射，不能直接在容器类映射内部类的属性，属性类的字段映射还是需要在属性类本身配置
 
@@ -322,7 +322,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestOuterComplex>(new SrcOuterComplex() { NameSrc = "zhangsan", AgeSrc = 18, InnerSrc = new SrcInnerComplex() { NameSrc = "lisi", AgeSrc = 20 } });
 ```
 
-![image-20220512132145017](http://rc4mudd0q.hd-bkt.clouddn.com/202205121321103.png)
+![image-20220512132145017](http://cdn.bluecusliyou.com/202205121321103.png)
 
 #### （5）映射继承和多态
 
@@ -371,7 +371,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestChild>(new SrcChild() { Name = "zhangsan", ChildName = "zhangsanchild", Age = 35, ChildAge = 3 });
 ```
 
-![image-20220512110715719](http://rc4mudd0q.hd-bkt.clouddn.com/202205121107801.png)
+![image-20220512110715719](http://cdn.bluecusliyou.com/202205121107801.png)
 
 #### （6）构造函数映射
 
@@ -400,7 +400,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestCtor>(new SrcCtor() { Name = "zhangsan" });
 ```
 
-![image-20220512134543231](http://rc4mudd0q.hd-bkt.clouddn.com/202205121345302.png)
+![image-20220512134543231](http://cdn.bluecusliyou.com/202205121345302.png)
 
 > 如果dest构造函数的入参名和src的某个member不一致，需要手动配置映射
 
@@ -414,7 +414,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestCtor02>(new SrcCtor02() { Name = "zhangsan" });
 ```
 
-![image-20220512135242903](http://rc4mudd0q.hd-bkt.clouddn.com/202205121352984.png)
+![image-20220512135242903](http://cdn.bluecusliyou.com/202205121352984.png)
 
 > 也可以禁用构造函数映射
 
@@ -443,7 +443,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestSimple>(new SrcComplex() { Customer =new Customer() { Name= "zhangsan" }});
 ```
 
-![image-20220512142058402](http://rc4mudd0q.hd-bkt.clouddn.com/202205121420482.png)
+![image-20220512142058402](http://cdn.bluecusliyou.com/202205121420482.png)
 
 > 可以禁用这种自动映射
 
@@ -497,7 +497,7 @@ var dest = mapper.Map<DestSimple02>(new SrcComplex02()
 });
 ```
 
-![image-20220512152122915](http://rc4mudd0q.hd-bkt.clouddn.com/202205121521997.png)
+![image-20220512152122915](http://cdn.bluecusliyou.com/202205121521997.png)
 
 #### （8）映射反转
 
@@ -557,7 +557,7 @@ src.Age = 18;
 var dest = mapper.Map<Dest01>(src);
 ```
 
-![image-20220512170034283](http://rc4mudd0q.hd-bkt.clouddn.com/202205121700365.png)
+![image-20220512170034283](http://cdn.bluecusliyou.com/202205121700365.png)
 
 #### （11）泛型映射
 
@@ -581,7 +581,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestGeneric<int>>(new SrcGeneric<int>() { TValue = 18 });
 ```
 
-![image-20220512171841888](http://rc4mudd0q.hd-bkt.clouddn.com/202205121718974.png)
+![image-20220512171841888](http://cdn.bluecusliyou.com/202205121718974.png)
 
 #### （12）Dictonary到普通类型映射
 
@@ -596,7 +596,7 @@ dic.Add("Age",18);
 var dest = mapper.Map<Dest01>(dic);
 ```
 
-![image-20220513130521860](http://rc4mudd0q.hd-bkt.clouddn.com/202205131305950.png)
+![image-20220513130521860](http://cdn.bluecusliyou.com/202205131305950.png)
 
 ### 5、映射进阶
 
@@ -639,7 +639,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestConverter>(src);
 ```
 
-![image-20220512181153395](http://rc4mudd0q.hd-bkt.clouddn.com/202205121811483.png)
+![image-20220512181153395](http://cdn.bluecusliyou.com/202205121811483.png)
 
 #### （2）自定义值解析
 
@@ -678,7 +678,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestResolver>(new SrcResolver() { Name = "zhangsan", Age = 18 });
 ```
 
-![image-20220512190115817](http://rc4mudd0q.hd-bkt.clouddn.com/202205121901906.png)
+![image-20220512190115817](http://cdn.bluecusliyou.com/202205121901906.png)
 
 > `ITypeConverter`、`IValueConverter`、`IValueResolver`、`IMemberValueResover`比较
 >
@@ -711,7 +711,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<DestCondition>(new SrcCondition() { Name = "zhangsan", Age = 18 });
 ```
 
-![image-20220512192749459](http://rc4mudd0q.hd-bkt.clouddn.com/202205121927558.png)
+![image-20220512192749459](http://cdn.bluecusliyou.com/202205121927558.png)
 
 #### （4）空值处理
 
@@ -727,7 +727,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest01>(new Src01() { Age = 18 });
 ```
 
-![image-20220512193615084](http://rc4mudd0q.hd-bkt.clouddn.com/202205121936172.png)
+![image-20220512193615084](http://cdn.bluecusliyou.com/202205121936172.png)
 
 #### （5）类型映射处理
 
@@ -744,7 +744,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest01>(new Src01() { Name = "zhangsan",Age=17 });
 ```
 
-![image-20220513094812182](http://rc4mudd0q.hd-bkt.clouddn.com/202205130948267.png)
+![image-20220513094812182](http://cdn.bluecusliyou.com/202205130948267.png)
 
 #### （6）映射前后干点事
 
@@ -763,7 +763,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest01>(new Src01() { Name = "zhangsan" });
 ```
 
-![image-20220513104353197](http://rc4mudd0q.hd-bkt.clouddn.com/202205131043298.png)
+![image-20220513104353197](http://cdn.bluecusliyou.com/202205131043298.png)
 
 > 映射关系转换时配置
 
@@ -782,7 +782,7 @@ var dest = mapper.Map<Src01,Dest01>(src, opt => {
 });
 ```
 
-![image-20220513105759467](http://rc4mudd0q.hd-bkt.clouddn.com/202205131057544.png)
+![image-20220513105759467](http://cdn.bluecusliyou.com/202205131057544.png)
 
 #### （7）忽略某字段的映射
 
@@ -798,7 +798,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest01>(new Src01() { Name = "zhangsan",Age=18 });
 ```
 
-![image-20220513111247047](http://rc4mudd0q.hd-bkt.clouddn.com/202205131112140.png)
+![image-20220513111247047](http://cdn.bluecusliyou.com/202205131112140.png)
 
 > 忽略属性和字段
 
@@ -813,7 +813,7 @@ var mapper = configuration.CreateMapper();
 var dest = mapper.Map<Dest01>(new Src01() { Name = "zhangsan", Age = 18 });
 ```
 
-![image-20220513112320300](http://rc4mudd0q.hd-bkt.clouddn.com/202205131123393.png)
+![image-20220513112320300](http://cdn.bluecusliyou.com/202205131123393.png)
 
 #### （8）多个源映射到一个目标
 
@@ -867,7 +867,7 @@ dest=mapper.Map(srcPartB,dest);
 dest=mapper.Map(srcPartC,dest);
 ```
 
-![image-20220513135115911](http://rc4mudd0q.hd-bkt.clouddn.com/202205131351018.png)
+![image-20220513135115911](http://cdn.bluecusliyou.com/202205131351018.png)
 
 ### 6、性能测试
 
@@ -1052,7 +1052,7 @@ services.AddTransient<IUserRepository, UserRepository>();
 
 #### （5）运行效果
 
-![image-20220513152702540](http://rc4mudd0q.hd-bkt.clouddn.com/202205131527646.png)
+![image-20220513152702540](http://cdn.bluecusliyou.com/202205131527646.png)
 
 
 
