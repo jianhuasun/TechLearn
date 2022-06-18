@@ -454,7 +454,9 @@ Markdown 使用了很多特殊符号来表示特定的意义，如果需要显�
 
 Typora是一款轻便简洁的Markdown编辑器，支持即时渲染技术，这也是与其他Markdown编辑器最显著的区别。即时渲染使得你写Markdown就想是写Word文档一样流畅自如。
 
-正式版本现已收费，beta版本是不收费的，但是[官网地址](https://typora.com.cn/)下载极慢。Beta免费版本百度网盘地址](https://pan.baidu.com/s/1F6bRpOLGoiBqnIlBIAdv2A) 提取码：1234。
+官网地址：[https://typora.com.cn/](https://typora.com.cn/)
+
+正式版本现已收费，有兴趣的可以支持下，送上免费版百度网盘链接：[https://pan.baidu.com/s/1F6bRpOLGoiBqnIlBIAdv2A](https://pan.baidu.com/s/1F6bRpOLGoiBqnIlBIAdv2A)提取码：1234。
 
 ### 2、Typora常用功能
 
