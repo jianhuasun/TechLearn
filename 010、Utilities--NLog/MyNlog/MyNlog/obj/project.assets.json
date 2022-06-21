@@ -930,11 +930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\MyNlog\\MyNlog.csproj",
+      "projectUniqueName": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\MyNlog\\MyNlog.csproj",
       "projectName": "MyNlog",
-      "projectPath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\MyNlog\\MyNlog.csproj",
+      "projectPath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\MyNlog\\MyNlog.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\MyNlog\\obj\\",
+      "outputPath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\MyNlog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

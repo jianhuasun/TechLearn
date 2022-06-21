@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rAITfbguVJbbXtaVJNTAba5lLLXuUZxVsGe2dv5DmU/3YgZKuh0Hep66Cq6xfc3l+4Algv8Gw7ZyK1nYX7jreA==",
+  "dgSpecHash": "sYgoOuog3Y0j5F0+hY//eL4lSNFbiYpAWBDOsxq7TW3EHTxMFJMhLaHJSOFcqzTzEqVCSoN/qd4mP9I8Kc21Sg==",
   "success": true,
-  "projectFilePath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\MyNlog\\MyNlog.csproj",
+  "projectFilePath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\MyNlog\\MyNlog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",

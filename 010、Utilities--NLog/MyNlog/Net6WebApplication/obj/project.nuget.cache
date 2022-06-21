@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "djwDqXbujKmtjB2ueqLQ5aOS31Vh0jVpn2idwZ+SprHvjtn5OmIgk0oS5HwHKkl+Bwt7J4yhL3S/K5RNb3mh6g==",
+  "dgSpecHash": "CkAYWY9IhdRLn4oMH86rrBjK9bjWyLuzXX1S+HqJ3V7H65ApY05GE7H9DunBjr/GMKSqiVrZYugT/ziMEmFLTw==",
   "success": true,
-  "projectFilePath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj",
+  "projectFilePath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",

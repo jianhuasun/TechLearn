@@ -29,8 +29,10 @@ var logfile = new NLog.Targets.FileTarget("logfile") { FileName = $"logs/{DateTi
 config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
 //配置文件生效
 LogManager.Configuration = config;
-//创建日志记录对象
-Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+//创建日志记录对象方式1
+Logger Logger = LogManager.GetCurrentClassLogger();
+//创建日志记录对象方式2，手动命名
+Logger Logger2 = LogManager.GetLogger("MyLogger");
 //打出日志
 Logger.Debug("我打出了Nlog日志！");
 ```
@@ -48,7 +50,35 @@ NLog
 NLog.Config  配置文件
 ```
 
-#### （2）配置文件
+#### （2）配置文件路径
+
+NLog 启动时会在某些标准路径查找配置文件，进行自动配置：
+
+- 对于 **stand-alone \*.exe** 应用程序，以下路径会被查询：
+
+- - 标准的应用程序配置文件(通常是applicationname.exe.config)
+  - 应用程序目录下的applicationname.exe.nlog 文件
+  - 应用程序目录下的 NLog.config 文件 (Name sensitive; using docker dotnet core)
+  - NLog.dll 所在目录下的 NLog.dll.nlog 文件(only if NLog isn't installed in the GAC)
+
+- 对于 **[http://ASP.NET](https://link.zhihu.com/?target=http%3A//ASP.NET)** 应用程序，以下文件会被查询：
+
+- - 标准 web 应用程序文件 web.config
+  - web.config 所在目录下的 web.nlog 文件
+  - 应用程序目录下的 NLog.config 文件
+  - NLog.dll 所在目录下的 NLog.dll.nlog 文件(only if NLog isn't installed in the GAC)
+
+- 对于 **.NET Compact Framework** 项目，应用程序配置文件(*.exe.config)和环境变量均不能被识别。因此，NLog 仅在以下路径查询：
+
+- - 应用程序目录下的 applicationname.exe.nlog 文件
+  - 应用程序目录下的 NLog.config 文件
+  - NLog.dll 所在目录下的 NLog.dll.nlog 文件(only if NLog isn't installed in the GAC)
+
+- 对于 **Xamarin Android** 项目，assert 文件夹中的 NLog.config 文件会被自动加载。如果配置文件名有所不同，可以执行以下命令：
+
+- - LogManager.Configuration = new XmlLoggingConfiguration(“assets/someothername.config");
+
+#### （3）配置文件
 
 > 引入NLog.Config之后，项目会自动添加一个NLog.Config配置文件，这个是默认的配置文件，这个文件不在项目文件夹下需要复制过来，配置文件右键属性一定要设置成`始终复制`。
 >
@@ -120,7 +150,7 @@ NLog.Config  配置文件
 </nlog>
 ```
 
-#### （3）代码实现
+#### （4）代码实现
 
 ```C#
 //创建日志记录对象
@@ -129,7 +159,7 @@ Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 Logger.Debug("我打出了Nlog日志！");
 ```
 
-#### （4）运行结果
+#### （5）运行结果
 
 ![image-20220619152433357](http://cdn.bluecusliyou.com/202206191524420.png)
 
@@ -439,7 +469,6 @@ $ {iis-site-name} - IIS网站的名称。 NLog.Web NLog.Web.AspNetCore
 		<target name="c"
 			  xsi:type="Console"
 			  layout="${longdate} ${uppercase:${level}} ${message}" />
-
 		<!--输出到csv文件-->
 		<target name="e" xsi:type="File" fileName="D:/logs/Nlog/${shortdate}/nlog.csv">
 			<layout xsi:type="CSVLayout">
@@ -573,7 +602,74 @@ Logger.Debug("我打出了Nlog日志！");
 
 ![image-20220621145850481](http://cdn.bluecusliyou.com/202206211458670.png)
 
-### 7、集成到Asp.NetCore5框架
+### 7、最佳实践
+
+#### （1）`NLog.Logger` 应为类的静态变量
+
+新建 `NLog.Logger` 对象消耗一定的开销，例如需要获取锁或者分配对象。因此推荐以下方式创建`NLog.Logger`
+
+```csharp
+public class MyClass
+{
+   private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+}
+```
+
+#### （2）应由 `NLog.Logger` 格式化日志
+
+尽量避免直接使用字符串进行格式化。例如，
+
+```csharp
+var message = "Hello" + "Earch";
+logger.Info(message);
+```
+
+推荐使用 `NLog.Logger` 对象进行格式化。例如，
+
+```csharp
+logger.Info("Hello {0}", "Earth");
+```
+
+`NLog.Logger` 对象可以推迟执行格式化操作的时机，从而减少开销。
+
+#### （3）应将异常对象传递给 `NLog.Logger`
+
+避免将异常作为字符串格式化的参数，而是显示的将异常作为参数传递给函数。例如，
+
+```csharp
+try
+{
+}
+catch (Exception ex)
+{
+    logger.Error(ex, "Something bad happened");
+}
+```
+
+#### （4）开启配置文件的有效性验证
+
+默认情况下，NLog 屏蔽了自身的所有异常，因此 NLog 出错时不会使应用程序崩溃。对于大多数应用程序，建议在 `nlog` 元素增加 `throwConfigExceptions="true"` 属性开启初始化配置时的异常捕获功能，以验证配置文件的有效性。
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      throwConfigExceptions="true">
+</nlog>
+```
+
+⚠️注意：还有一个名为 `throwExceptions` 的属性，不应在生产环境中使用。它是为了单元测试和本地调试设计的。
+
+#### （5）别忘了 Flush 日志信息
+
+默认情况下，NLog 在程序关闭时会自动 flush。 Windows 限定 .NET 应用程序在程序终止前一定时间内进行关闭操作(一般是 2 秒)。如果 NLog 的 `target` 依赖于网络传输(例如 Http, Mail, Tcp)，那么建议手动执行 Flush/Shutdown 操作。
+Mono/Linux 上运行的 .NET 应用程序在关闭前需要停止 Thread/Timer。如果未能完成这些操作，则会引发未处理异常、段错误以及其他难以预料的行为，同样建议手动执行 Flush/Shutdown 操作。
+
+```csharp
+NLog.LogManager.Shutdown(); // Flush and close down internal threads and timers
+```
+
+### 8、集成到Asp.NetCore5框架
 
 #### （1）Nuget引入程序集
 
@@ -607,7 +703,6 @@ NLog.Web.AspNetCore  集成框架
 		<logger name="*" minlevel="Debug" writeTo="f" />
 	</rules>
 </nlog>
-
 ```
 
 #### （3）Program添加对Nlog支持
@@ -668,7 +763,7 @@ public class FirstController : Controller
 
 ![image-20220621154208469](http://cdn.bluecusliyou.com/202206211542542.png)
 
-### 8、集成到Asp.NetCore6框架
+### 9、集成到Asp.NetCore6框架
 
 #### （1）Nuget引入程序集
 

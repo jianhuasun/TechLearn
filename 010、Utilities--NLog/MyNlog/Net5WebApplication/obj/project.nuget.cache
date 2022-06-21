@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ggTctYHDL6pznKT5N61pzp+4xb0LielHH0Ignchyp/dRKI9u+OSLQiKnE8t2mNop8XgYwDJ3jr7apvXonw1swg==",
+  "dgSpecHash": "96yUeyiBePlzj7raR4q+GFvEyBarzySP/iRgU4wt+ROr+riupV2vWHpi22kU3YyZ6SvqxcjxM7lcX3eAybq2wg==",
   "success": true,
-  "projectFilePath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj",
+  "projectFilePath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.16\\microsoft.aspnetcore.mvc.razor.extensions.5.0.16.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\5.0.16\\microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.16.nupkg.sha512",

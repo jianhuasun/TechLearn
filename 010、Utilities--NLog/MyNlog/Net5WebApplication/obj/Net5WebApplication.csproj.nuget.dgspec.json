@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj": {}
+    "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj": {}
   },
   "projects": {
-    "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj": {
+    "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj",
+        "projectUniqueName": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj",
         "projectName": "Net5WebApplication",
-        "projectPath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj",
+        "projectPath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\Net5WebApplication.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\obj\\",
+        "outputPath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net5WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

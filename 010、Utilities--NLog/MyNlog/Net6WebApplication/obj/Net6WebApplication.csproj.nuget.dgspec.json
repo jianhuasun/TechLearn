@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj": {}
+    "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj": {}
   },
   "projects": {
-    "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj": {
+    "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj",
+        "projectUniqueName": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj",
         "projectName": "Net6WebApplication",
-        "projectPath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj",
+        "projectPath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\obj\\",
+        "outputPath": "E:\\TechLearn\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
