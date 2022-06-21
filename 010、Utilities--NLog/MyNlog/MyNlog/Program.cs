@@ -1,4 +1,5 @@
 ﻿using NLog;
+using System;
 
 namespace MyNlog
 {
@@ -16,8 +17,10 @@ namespace MyNlog
                 //config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
                 ////配置文件生效
                 //LogManager.Configuration = config;
-                ////创建日志记录对象
-                //Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+                ////创建日志记录对象方式1
+                //Logger Logger = LogManager.GetCurrentClassLogger();
+                ////创建日志记录对象方式2，手动命名
+                //Logger Logger2 = LogManager.GetLogger("MyLogger");
                 ////打出日志
                 //Logger.Debug("我打出了Nlog日志！");
             }
