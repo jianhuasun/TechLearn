@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "djwDqXbujKmtjB2ueqLQ5aOS31Vh0jVpn2idwZ+SprHvjtn5OmIgk0oS5HwHKkl+Bwt7J4yhL3S/K5RNb3mh6g==",
+  "success": true,
+  "projectFilePath": "E:\\TechLearnBeta\\010、Utilities--NLog\\MyNlog\\Net6WebApplication\\Net6WebApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nlog\\5.0.0\\nlog.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nlog.extensions.logging\\5.0.0\\nlog.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nlog.web.aspnetcore\\5.0.0\\nlog.web.aspnetcore.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
