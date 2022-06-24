@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m63A3M+1h51LF+WY5dI8RyCDyFpRc47zmzB4NoIHsjU6Vz5HxuEc7PdP5XtanxpOypbTK3AQJz8VJtCCCmpjTg==",
+  "dgSpecHash": "7TWgpirnxA75jEgIqAmAyvbFmDxY/33MIHf/IhKYr+khdCX70tMQkt9lc1zn/W8KIbaV+dZTtSjIvl7Rd0KJGQ==",
   "success": true,
-  "projectFilePath": "E:\\TechLearnBeta\\010、Utilities--Hangfire\\MyHangfire\\Net6WebApplication\\Net6WebApplication.csproj",
+  "projectFilePath": "E:\\TechLearn\\010、Utilities--Hangfire\\MyHangfire\\Net6WebApplication\\Net6WebApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\dapper\\1.50.5\\dapper.1.50.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\hangfire.aspnetcore\\1.7.30\\hangfire.aspnetcore.1.7.30.nupkg.sha512",

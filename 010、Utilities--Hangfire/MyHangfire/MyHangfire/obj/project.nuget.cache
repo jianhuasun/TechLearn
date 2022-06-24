@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4C7FUQkX3ZkiSZuoqpeIhkzmfxpln6UNpj8WR7I+BMXBJlqjABE85KomXSwJSBL4tuKJe9UYep6LZmiDvz0E1w==",
+  "dgSpecHash": "IhkjG6RB1EoWvB3fGxpMPufMdvXmxWCaVYJSaQjL84pHC2dysPmUNfyBdfIw7GlsslYkxkiId4A3dUZ70NwWqQ==",
   "success": true,
-  "projectFilePath": "E:\\TechLearnBeta\\010、Utilities--Hangfire\\MyHangfire\\MyHangfire\\MyHangfire.csproj",
+  "projectFilePath": "E:\\TechLearn\\010、Utilities--Hangfire\\MyHangfire\\MyHangfire\\MyHangfire.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\dapper\\1.50.5\\dapper.1.50.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\hangfire.core\\1.7.30\\hangfire.core.1.7.30.nupkg.sha512",
