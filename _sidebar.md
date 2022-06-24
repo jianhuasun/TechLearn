@@ -17,6 +17,7 @@
 * [010、Utilities--AutoMapper](/010、Utilities--AutoMapper/AutoMapper详解.md)
 * [010、Utilities--Autofac](/010、Utilities--Autofac/Autofac详解.md)
 * [010、Utilities--NLog](/010、Utilities--NLog/NLog详解.md)
+* [010、Utilities--Hangfire](/010、Utilities--Hangfire/Hangfire详解.md)
 * [013、NetFrame](/013、NetFrame/AspNetCore5基础.md)
 * [016、Microservice--Docker](/016、Microservice--Docker/Docker详解.md)
 * [019、CodeSkill--DesignPatterns](/019、CodeSkill--DesignPatterns/设计模式之美.md)
