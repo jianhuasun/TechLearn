@@ -56,7 +56,7 @@ navicat premium 15 科学安装教程：[https://blog.csdn.net/weixin_51560103/a
 
 > 获取到解压路径：D:\developtools\mysql-8.0.28-winx64
 
-![image-20220622074240545](http://cdn.bluecusliyou.com/202206220742584.png)
+![image-20220622074240545](C:/Users/Administrator/Desktop/202206220742584.png)
 
 > 将安装包路径配置到环境变量中
 >
@@ -350,7 +350,7 @@ REVOKE 权限列表 ON 表名 FROM 用户名
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM 用户名 -- 撤销所有权限
 ```
 
-### 2、权限解释
+### 3、权限解释
 
 ```sql
 ALL [PRIVILEGES] -- 设置除GRANT OPTION之外的所有简单权限 
