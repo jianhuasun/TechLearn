@@ -3852,7 +3852,7 @@ curl -G --data-urlencode 'comment=hello world' https://www.example.com
 curl -k https://www.example.com
 ```
 
-### 25、**-L**(让 HTTP 请求跟随服务器的重定向)
+### 19、**-L**(让 HTTP 请求跟随服务器的重定向)
 
 curl 默认不跟随重定向。
 
@@ -3860,7 +3860,7 @@ curl 默认不跟随重定向。
 curl -L -d 'tweet=hi' https://api.twitter.com/tweet
 ```
 
-### 26、--limit-rate(限制 HTTP 请求和回应的带宽）
+### 20、--limit-rate(限制 HTTP 请求和回应的带宽）
 
 可以模拟慢网速的环境。
 
@@ -3869,7 +3869,7 @@ curl -L -d 'tweet=hi' https://api.twitter.com/tweet
 curl --limit-rate 200k https://google.com
 ```
 
-### 29、-s(不显示错误信息)
+### 21、-s(不显示错误信息)
 
 `-s`参数将不输出错误和进度信息。
 
@@ -3884,14 +3884,14 @@ curl -s https://www.example.com
 curl -s -o /dev/null https://google.com
 ```
 
-### 30、-S(只输出错误信息)
+### 22、-S(只输出错误信息)
 
 ```bash
 # 没有任何输出，除非发生错误
 curl -s -o /dev/null https://google.com
 ```
 
-### 31、-u(设置服务器认证的用户名和密码)(--user)
+### 23、-u(设置服务器认证的用户名和密码)(--user)
 
 ```bash
 # 设置用户名为`bob`，密码为`12345`，然后将其转为 HTTP 标头`Authorization: Basic Ym9iOjEyMzQ1`
