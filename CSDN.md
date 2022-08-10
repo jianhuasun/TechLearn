@@ -29,14 +29,13 @@
 [加密解密详解](https://blog.csdn.net/liyou123456789/article/details/120609269)
 ### 数据库
 [SqlServer详解](https://blog.csdn.net/liyou123456789/article/details/121217959)
-
 [Mysql详解基础](https://blog.csdn.net/liyou123456789/article/details/126023696)
-
 ### 常用组件
 [AutoMapper详解](https://blog.csdn.net/liyou123456789/article/details/125222690)
 [Autofac详解](https://blog.csdn.net/liyou123456789/article/details/125331813)
 [Nlog详解](https://blog.csdn.net/liyou123456789/article/details/125392815)
 [Hangfire详解](https://blog.csdn.net/liyou123456789/article/details/125449302)
+[Log4Net详解](https://blog.csdn.net/liyou123456789/article/details/126264613)
 ### Net框架
 [AspNetCore5基础](https://blog.csdn.net/liyou123456789/article/details/119714802)
 ### 微服务
