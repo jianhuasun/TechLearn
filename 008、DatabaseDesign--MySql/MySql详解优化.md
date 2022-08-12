@@ -1,6 +1,7 @@
 # MySql详解优化
 
 MySql基础知识请参考[MySql详解基础](https://blog.csdn.net/liyou123456789/article/details/126023696)
+MySql优化知识请参考[MySql详解优化](https://blog.csdn.net/liyou123456789/article/details/126297268)
 
 ## 一、慢查询分析
 

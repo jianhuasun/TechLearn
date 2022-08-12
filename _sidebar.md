@@ -15,6 +15,7 @@
 * [003、CSharpAdvanced--委托](/003、CSharpAdvanced--委托/委托详解.md)
 * [008、DatabaseDesign--SQLServer](/008、DatabaseDesign--SQLServer/SqlServer详解.md)
 * [008、DatabaseDesign--MySql](/008、DatabaseDesign--MySql/MySql详解基础.md)
+* [008、DatabaseDesign--MySql](/008、DatabaseDesign--MySql/MySql详解优化.md)
 * [010、Utilities--AutoMapper](/010、Utilities--AutoMapper/AutoMapper详解.md)
 * [010、Utilities--Autofac](/010、Utilities--Autofac/Autofac详解.md)
 * [010、Utilities--NLog](/010、Utilities--NLog/NLog详解.md)
