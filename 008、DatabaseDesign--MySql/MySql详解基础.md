@@ -2,11 +2,11 @@
 
 ## 一、简介
 
-**概念** **:** 是现在**流行**的**开源**的,**免费**的 **关系型**数据库
+### 1、概念
 
-**历史** **:** 由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。
+是现在**流行**的**开源**的,**免费**的**关系型**数据库。
 
-**特点** **:**
+### 2、特点
 
 - 免费 , 开源数据库
 - 小巧 , 功能齐全
@@ -14,7 +14,63 @@
 - 可运行于Windows或Linux操作系统
 - 可适用于中小型甚至大型网站应用
 
+### 3、参考网站
+
 **官网** **:** [https://www.mysql.com/](https://www.mysql.com/)
+
+**参考网站**：[https://www.runoob.com/mysql/mysql-tutorial.html](https://www.runoob.com/mysql/mysql-tutorial.html)
+
+### 4、MySQL分支
+
+![image-20220807104722045](http://cdn.bluecusliyou.com/202208071047196.png)
+
+### 5、MySQL的起源
+
+　　MySQL数据库的历史可以追溯到1979年，那时Bill Gates退学没多久，微软公司也才刚刚起步，而Larry Ellison的Oracle公司也才成立不久。那个时候有一个天才程序员Monty Widenius为一个名为TcX的小公司打工，并且用BASIC设计了一个报表工具，使其可以在4MHz主频和16KB内存的计算机上运行。没过多久，Monty又将此工具用C语言进行了重新编写并移植到了UNIX平台上。当时，这只是一个很底层且仅面向报表的存储引擎，名叫UNIREG。最初的UNIREG是运行在瑞典人制造的ABC800计算机上的。ABC800的内存只有32KB，CPU是频率只有4MHz的Z80。在1983年Monty Widenius遇到了David Axmark，两人相见恨晚，开始合作运营TcX，Monty Widenius负责技术，David Axmark负责搞管理。后来TcX将UNIREG移植到其他更加强大的硬件平台，主要是Sun的平台。虽然TcX这个小公司资源有限，但Monty Widenius天赋极高，面对资源有限的不利条件，反而更能发挥他的潜能。Monty Widenius总是力图写出最高效的代码，并因此养成了习惯。与Monty Widenius在一起的还有一些别的同事，很少有人能坚持把那些代码持续写到20年后，而Monty Widenius却做到了。
+
+　　1990年，一次Monty接到了一个项目，客户需要为当时的UNIREG提供更加通用的SQL接口，当时有人提议直接使用商用数据库，但是Monty Widenius觉得商用数据库的速度难以令人满意。于是Monty Widenius找到了David Hughes(mSQL的发明人)商讨合作事宜。想借助于mSQL的代码，将它集成到自己的存储引擎中。然而令人失望的是，在经过一番测试后，他们发现mSQL的速度并不尽如人意，无法满足客户的需求。于是Monty Widenius雄心大起，决心自己重写一个SQL支持。从此MySQL就开始诞生了。
+
+　　MySQL命名的由来：Monty Widenius有一个女儿，名叫My Widenius，因此他将自己开发的数据库命名为MySQL。Monty还有一个儿子，名为Max，因此在2003年，SAP公司与MySQL公司建立合作伙伴关系后，Monty Widenius又将与SAP合作开发的数据库命名为MaxDB。而现在的MariaDB中的Maria便是Monty Widenius的小孙女的名字。
+
+　　（MaxDB：MaxDB是一种企业级数据库管理系统(DBMS)，以前称为SAPDB，是著名的企业管理软件供应商SAP公司的自有数据库技术，并由SAP公司开发和支持。2003年，SAP AG和MySQL AB确立了合作伙伴关系，并将数据库系统重命名为MaxDB。自此以后，MaxDB的开发一直由SAP开发者团队负责，MaxDB是能够承受高负载的开源数据库，它适合于OLAP和OLTP应用，并能提供高可靠性、可用性、扩展性和非常完善的特性集。）
+
+　　（MariaDB：MariaDB数据库管理系统是MySQL的一个分支，主要由开源社区在维护，采用GPL授权许可。MariaDB的目的是完全兼容MySQL，包括API和命令行，使之能轻松成为MySQL的代替品。在存储引擎方面，使用XtraDB来代替MySQL的InnoDB。）
+
+　　（MySQL的小海豚标志名叫：sakila(塞拉)，它是由MySQL AB的创始人从用户在“海豚命名”的竞赛中建议的大量的名字表中选出的。获胜的名字是由来自非洲斯威士兰的开源软件开发者Ambrose Twebaze提供的。根据Ambrose所说，Sakila来自一种叫SiSwati的斯威士兰方言，也是在Ambrose的家乡乌干达附近的坦桑尼亚的Arusha的一个小镇的名字）
+
+![img](http://cdn.bluecusliyou.com/202208071043487.png)
+
+### 6、MySQL的历史
+
+　　1995年5月23日，MySQL的第一个内部版本发行了。
+
+　　1996年10月，MySQL 3.11.1发布(MySQL没有2.x版本)，有趣的是，第一个MySQL正式版恰巧只能运行在Sun Solaris上，仿佛昭示了它日后被Sun收购的命运。一个月后，Linux版本出现了。在接下来的两年里，MySQL被依次移植到各个平台，同时加入了不少新的特性。在发布时，MySQL数据库采用的许可策略有些与众不同：允许免费使用，但是不能将MySQL与自己的产品绑定在一起发布。如果想一起发布，就必须使用特殊许可，意味着要花“银子”。当然，商业支持也是需要花“银子”的。其他方面，随用户怎么用都可以。这种特殊许可为MySQL带来了一些收入，从而为它的持续发展打下了良好的基础。
+
+　　1998年1月，MySQL关系型数据库发行了第一个版本。它使用系统核心的多线程机制提供完全的多线程运行模式，并提供了面向C、C++、Eiffel、Java、Perl、PHP、Python及Tcl等编程语言的编程接口(API)，且支持多种字段类型，并且提供了完整的操作符支持。而且MySQL已经能够运行在10多种操作系统之上，其中包括应用非常广泛的 FreeBSD、Linux、Windows 95和Windows NT等。很快MySQL 3.22也发布了，但它仍然存在很多问题--如不支持事务操作、子查询、外键、存储过程和视图等功能。正因为这些缺陷，当时许多Oracle和SQL Server的用户对MySQL根本不屑一顾。
+
+　　1999-2000年，MySQL AB公司在瑞典成立。Monty Widenius雇了几个人与Sleepycat合作，开发出了Berkeley DB引擎, 因为BDB支持事务处理，从此MySQL开始支持事务处理了。
+
+　　2000年4月，MySQL对旧的存储引擎ISAM进行了整理，将其命名为MyISAM。
+
+　　2001年，Heikki Tuuri向MySQL提出建议，希望能集成他的存储引擎InnoDB，这个引擎同样支持事务处理，还支持行级锁。该引擎之后被证明是最为成功的MySQL事务存储引擎。
+
+　　2003年12月，MySQL 5.0版本发布，提供了视图、存储过程等功能。
+
+　　2008年1月，MySQL AB公司被Sun公司以10亿美金收购，MySQL数据库进入Sun时代。在Sun时代，Sun公司对其进行了大量的推广、优化、Bug修复等工作。
+
+　　2008年11月，MySQL 5.1发布，它提供了分区、事件管理，以及基于行的复制和基于磁盘的NDB集群系统，同时修复了大量的Bug。
+
+　　2009年4月20日，Oracle公司以74亿美元收购Sun公司，自此MySQL数据库进入Oracle时代，而其第三方的存储引擎InnoDB早在2005年就被Oracle公司收购。
+
+　　2010年12月，MySQL 5.5发布，其主要新特性包括半同步的复制及对SIGNAL/RESIGNAL的异常处理功能的支持，最重要的是InnoDB存储引擎终于变为当前MySQL的默认存储引擎。MySQL 5.5不是时隔两年后的一次简单的版本更新，而是加强了MySQL各个方面在企业级的特性。Oracle公司同时也承诺MySQL 5.5和未来版本仍是采用GPL授权的开源产品。
+
+　　2013年2月，MySQL5.6发布。Oracle最近宣布将于2021年2月停止5.6版本的更新，结束其生命周期。
+
+　　2015年12月，MySQL5.7发布，其性能、新特性、性能分析带来了质的改变。
+
+　　2016年9月，MySQL开始了8.0版本，Oracle宣称该版本速度是5.7的两倍，性能更好。
+
+　　2018年4月，MySQL8.0.11发布。
 
 ## 二、安装
 
@@ -56,7 +112,7 @@ navicat premium 15 科学安装教程：[https://blog.csdn.net/weixin_51560103/a
 
 > 获取到解压路径：D:\developtools\mysql-8.0.28-winx64
 
-![image-20220622074240545](C:/Users/Administrator/Desktop/202206220742584.png)
+![cb8b09ed8fd247848c28349e50866446](http://cdn.bluecusliyou.com/202208101708686.png)
 
 > 将安装包路径配置到环境变量中
 >
@@ -169,6 +225,7 @@ flush privileges;                           --保存
 
 ```bash
 ## mysql -h 服务器主机地址 -u 用户名 -p 用户密码
+## 连接完成退出 exit
 ```
 
 ### 3、Linux安装mysql
@@ -302,55 +359,42 @@ docker run --name mysqlserver -v /data/mysql/conf:/etc/mysql/conf.d -v /data/mys
 
 ## 三、权限管理
 
-### 1、Navicat管理
+### 1、MySQL权限
 
-![image-20220727161529649](http://cdn.bluecusliyou.com/202207271615807.png)
+权限系统的作用是授予来自**某个主机**的**某个用户**可以查询、插入、修改、删除等数据库操作的权限。
 
-### 2、基本命令
+- 权限控制(授权与回收)的执行语句包括create user, grant, revoke。
+- 授权后的权限都会存放在MySQL的内部数据库中（数据库名叫mysql）,并在数据库启动之后把权限信息复制到内存中
+- MySQL用户的认证信息不光包括用户名，还要包含连接发起的主机
+
+### 2、权限级别详解
+
+- MySQL权限级别：
+
+  - 全局性的管理权限，作用于整个MySQL实例级别.
+
+  - 数据库级别的权限，作用于某个指定的数据库上或者所有的数据库上.
+
+  - 数据库对象级别的权限，作用于指定的数据库对象上（表、视图等）或者 所有的数据库对象上.
+
+- 权限存储在`mysql库`的user, db, tables_priv, columns_priv, and procs_priv这几个系统表中，待MySQL实例启动后就加载到内存中。
+
+  - User表：存放用户账户信息以及全局级别（所有数据库）权限，决定了来自哪些主机的哪些用户可以访问数据库实例，如果有全局权限则意味着对所有数据库都有此权限。
+
+  - Db表：存放数据库级别的权限，决定了来自哪些主机的哪些用户可以访问此数据库。
+
+  - Tables_priv表：存放表级别的权限，决定了来自哪些主机的哪些用户可以访问数据库的这个表。
+
+  - Columns_priv表：存放列级别的权限，决定了来自哪些主机的哪些用户可以访问数据库表的这个字段。
+
+  - Procs_priv表：存放存储过程和函数级别的权限
 
 ```sql
-/* 用户和权限管理 */ 
--- 用户信息表：mysql.user 
-
--- 刷新权限 
-FLUSH PRIVILEGES 
-
--- 增加用户 CREATE USER ly IDENTIFIED BY '123456' 
-CREATE USER 用户名 IDENTIFIED BY [PASSWORD] 密码(字符串) 
--- 必须拥有mysql数据库的全局CREATE USER权限，或拥有INSERT权限。 
--- 只能创建用户，不能赋予权限。 
--- 用户名，注意引号：如 'user_name'@'192.168.1.1' 
--- 密码也需引号，纯数字密码也要加引号 
--- 要在纯文本中指定密码，需忽略PASSWORD关键词。要把密码指定为由PASSWORD()函数返回的 混编值，需包含关键字PASSWORD 
-
--- 重命名用户 RENAME USER ly TO ly2 
-RENAME USER old_user TO new_user 
-
--- 设置密码 
-SET PASSWORD = PASSWORD('密码') -- 为当前用户设置密码 
-SET PASSWORD FOR 用户名 = PASSWORD('密码') -- 为指定用户设置密码
-
--- 删除用户 DROP USER ly2 
-DROP USER 用户名
-
--- 分配权限/添加用户
-GRANT 权限列表 ON 表名 TO 用户名 [IDENTIFIED BY [PASSWORD] 'password'] 
--- all privileges 表示所有权限 
--- *.* 表示所有库的所有表 
--- 库名.表名 表示某库下面的某表
-
--- 查看权限 SHOW GRANTS FOR root@localhost;
-SHOW GRANTS FOR 用户名
-
--- 查看当前用户权限
-SHOW GRANTS; 或 SHOW GRANTS FOR CURRENT_USER; 或 SHOW GRANTS FOR CURRENT_USER();
-
--- 撤消权限
-REVOKE 权限列表 ON 表名 FROM 用户名
-REVOKE ALL PRIVILEGES, GRANT OPTION FROM 用户名 -- 撤销所有权限
+-- 查看root用户权限
+show grants for root@localhost;
 ```
 
-### 3、权限解释
+### 3、权限项解释
 
 ```sql
 ALL [PRIVILEGES] -- 设置除GRANT OPTION之外的所有简单权限 
@@ -382,6 +426,174 @@ UPDATE -- 允许使用UPDATE
 USAGE -- “无权限”的同义词 
 GRANT OPTION -- 允许授予权限
 ```
+
+### 4、命令管理权限
+
+#### （1）查看用户权限
+
+```sql
+SHOW GRANTS; 
+SHOW GRANTS FOR CURRENT_USER; 
+SHOW GRANTS FOR CURRENT_USER();
+SHOW GRANTS FOR '用户名'@'%';
+```
+
+#### （2）创建用户
+
+```sql
+/* 用户和权限管理 */ 
+-- 用户信息表：mysql.user 
+
+-- 增加用户 CREATE USER ly IDENTIFIED BY '123456'   相当于在user表添加一行记录
+CREATE USER 用户名 IDENTIFIED BY [PASSWORD] 密码(字符串) 
+-- 必须拥有mysql数据库的全局CREATE USER权限，或拥有INSERT权限。 
+-- 只能创建用户，不能赋予权限。 
+-- 用户名，注意引号：如 'user_name'@'192.168.1.1' 
+-- 密码也需引号，纯数字密码也要加引号 
+-- 要在纯文本中指定密码，需忽略PASSWORD关键词。要把密码指定为由PASSWORD()函数返回的 混编值，需包含关键字PASSWORD
+
+-- 重命名用户 RENAME USER ly TO ly2 
+RENAME USER old_user TO new_user 
+
+-- 设置密码 
+SET PASSWORD = PASSWORD('密码') -- 为当前用户设置密码 
+SET PASSWORD FOR 用户名 = PASSWORD('密码') -- 为指定用户设置密码
+
+-- 删除用户 DROP USER ly2 
+DROP USER 用户名
+```
+
+#### （3）给用户授权
+
+```sql
+-- 分配权限/添加用户
+grant 权限 on 目标 to 用户名 (identified by 密码) (with grant option)
+-- 权限： all privilege代表所有权限，或者其他权限，比如增删改查：insert、delete、update、select
+-- 目标： '.' 代表作用于整个mysql实例，也可以作用于数据级别、或者表级别等
+-- 用户名： 这里需要和Host一块写，格式为 xxx@xxx，如果没有特殊符号，可以不加单引号，但是如果有特殊服务，必须加单引号
+-- indentified by 设置密码，当指令中带着 identified by xxx 的时候，会先创建该用户再授权，如果该用户已经存在，则直接授权
+-- with grant option 允许授权和回收
+
+-- 刷新权限 
+FLUSH PRIVILEGES 
+```
+
+**mysql权限的生效规则**
+
+- 执行Grant,revoke,set password,rename user命令修改权限之后，MySQL会自动将修改后的权限信息同步加载到系统内存中
+- 如果执行insert/update/delete操作上述的系统权限表之后，则必须再执行刷新权限命令才能同步到系统内存中，刷新权限命令包括：flush privileges / mysqladmin flush-privileges / mysqladmin reload
+- 如果是修改tables和columns级别的权限，则客户端的下次操作新权限就会生效
+- 如果是修改database级别的权限，则新权限在客户端执行use database命令后生效
+- 如果是修改global级别的权限，则需要重新创建连接新权限才能生效
+- --skip-grant-tables可以跳过所有系统权限表而允许所有用户登录，只在特殊情况下暂时使用
+
+#### （4）允许远程访问
+
+允许某个已经存在的用户可以远程访问mysql服务器，**本质就是修改User表中的Host字段，比如改为 %**，代表允许所有地址访问即可。
+
+```sql
+-- 方式一、grant允许所有ip访问
+grant all privileges on *.* to '用户名'@'%' identified by '123456' with grant option;
+flush privileges; 
+
+-- 方式二、直接update所有ip
+update user set host = '%' where user = '用户名'; 
+flush privileges; 
+```
+
+#### （5）收回用户权限
+
+```sql
+-- 撤消权限
+REVOKE 权限列表 ON 表名 FROM 用户名
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 用户名 -- 撤销所有权限
+```
+
+#### （6）设置密码过期策略
+
+> 全局配置，作用于所有密码，在mysql配置文件中做如下配置
+
+```ini
+default_password_lifetime=180  设置180天过期
+default_password_lifetime=0  设置密码不过期
+```
+
+> 为每个用户设置过期策略，会覆盖上面的全局配置
+
+```sql
+-- 设置密码过期时间为90天
+ALTER USER '用户名'@'%' PASSWORD EXPIRE INTERVAL 90 DAY;
+-- 设置密码永不过期
+ALTER USER '用户名'@'%' PASSWORD EXPIRE NEVER; 
+-- 设置密码为默认过期策略
+ALTER USER '用户名'@'%' PASSWORD EXPIRE DEFAULT; 
+-- 设置密码马上过期
+ALTER USER '用户名'@'%' PASSWORD EXPIRE;
+```
+
+#### （7）设置用户资源限制
+
+**如果要取消限制，将对应参数的值改为0即可**
+
+```sql
+-- 每小时最大查询数为10，每小时最大更新数为20，每小时最大连接数为30，最大用户连接数为40
+ALTER USER 用户名@'%' WITH
+MAX_QUERIES_PER_HOUR 10
+MAX_UPDATES_PER_HOUR 20
+MAX_CONNECTIONS_PER_HOUR 30
+MAX_USER_CONNECTIONS 40;
+```
+
+#### （8）锁定用户
+
+**用户锁定后，则不能登录mysql**
+
+```sql
+-- 默认创建用户名是不带锁的
+create user abc2@localhost identified by '123456';
+-- 创建用户名的时候加锁
+create user abc2@localhost identified by '123456' account lock;
+-- 加锁
+alter user 'mysql.sys'@localhost account lock;
+-- 解锁
+alter user 'mysql.sys'@localhost account unlock;
+```
+
+### 5、Navicat界面权限
+
+#### （1）新建用户
+
+![image-20220807142848713](http://cdn.bluecusliyou.com/202208071428806.png)
+
+#### （2）配置用户信息
+
+用户名、哪些地址可以访问、密码、密码过期策略。
+
+![image-20220807143007225](http://cdn.bluecusliyou.com/202208071430316.png)
+
+#### （3）配置访问次数
+
+这里一般不做特殊配置，保持默认即可，也就是不限制。
+
+![image-20220807143057787](http://cdn.bluecusliyou.com/202208071430885.png)
+
+#### （4）配置服务器权限
+
+这里配置的权限是针对整个MySQL实例而言的。比如配置 增删改查 权限。
+
+![image-20220807143155528](http://cdn.bluecusliyou.com/202208071431617.png)
+
+#### （5）配置详细的权限
+
+这里指配置 数据库级别、表级别、列级别、存储过程级别等的权限，比如配置 表级别的权限。
+
+![image-20220807143818412](http://cdn.bluecusliyou.com/202208071438525.png)
+
+#### （6）SQL预览
+
+SQL预览可以看到对应的SQL语句
+
+![image-20220807144318622](http://cdn.bluecusliyou.com/202208071443709.png)
 
 ## 四、数据库操作
 
@@ -424,7 +636,7 @@ ALTER DATABASE db_name DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE db_name;
 ```
 
-### 6、其他
+### 6、其他规则
 
 - 可用反引号（`）为标识符（库名、表名、字段名、索引、别名）包裹，以避免与关键字重名！中文 也可以作为标识符！ 
 - 每个库目录存在一个保存当前数据库的选项文件db.opt。 
@@ -433,6 +645,94 @@ USE db_name;
 - CMD命令行内的语句结束符可以为 ";", "\G", "\g"，仅影响显示结果。其他地方还是用分号结 束。delimiter 可修改当前对话的语句结束符。 
 - SQL对大小写不敏感 （关键字）
 - 清除已有语句：\c
+
+### 7、字符集和排序规则
+
+#### （1）字符集
+
+MySQL提供了多种字符集和排序规则选择，其中字符集设置和数据存储以及客户端与MySQL实例的交互相关，排序规则和字符串的对比规则相关
+
+- 字符集的设置可以在MySQL实例、数据库、表、列四个级别
+- MySQL设置字符集支持在InnoDB, MyISAM, Memory三个存储引擎
+- 查看当前MySQL支持的字符集的方式有两种，一种是通过查看information_schema.character_set系统表，一种是通过命令【 show character set; 】查看。
+
+```sql
+mysql> show character set;
++----------+---------------------------------+---------------------+--------+
+| Charset  | Description                     | Default collation   | Maxlen |
++----------+---------------------------------+---------------------+--------+
+| armscii8 | ARMSCII-8 Armenian              | armscii8_general_ci |      1 |
+| ascii    | US ASCII                        | ascii_general_ci    |      1 |
+| big5     | Big5 Traditional Chinese        | big5_chinese_ci     |      2 |
+| binary   | Binary pseudo charset           | binary              |      1 |
+| cp1250   | Windows Central European        | cp1250_general_ci   |      1 |
+| cp1251   | Windows Cyrillic                | cp1251_general_ci   |      1 |
+| cp1256   | Windows Arabic                  | cp1256_general_ci   |      1 |
+| cp1257   | Windows Baltic                  | cp1257_general_ci   |      1 |
+| cp850    | DOS West European               | cp850_general_ci    |      1 |
+| cp852    | DOS Central European            | cp852_general_ci    |      1 |
+| cp866    | DOS Russian                     | cp866_general_ci    |      1 |
+| cp932    | SJIS for Windows Japanese       | cp932_japanese_ci   |      2 |
+| dec8     | DEC West European               | dec8_swedish_ci     |      1 |
+| eucjpms  | UJIS for Windows Japanese       | eucjpms_japanese_ci |      3 |
+| euckr    | EUC-KR Korean                   | euckr_korean_ci     |      2 |
+| gb18030  | China National Standard GB18030 | gb18030_chinese_ci  |      4 |
+| gb2312   | GB2312 Simplified Chinese       | gb2312_chinese_ci   |      2 |
+| gbk      | GBK Simplified Chinese          | gbk_chinese_ci      |      2 |
+...
+```
+
+#### （2）排序规则
+
+每个指定的字符集都会有一个或多个支持的排序规则，可以通过两种方式查看，一种是查看information_schema.collations表，另一种是通过【show collation】命令查看
+
+- 当仅指定了字符集而没有指定排序规则时，则会使用该字符集的默认排序规则
+- 当仅指定了排序规则而没有字符集时，则在该排序规则名称上含有的字符集会被使用
+- 当数据库创建时没有指定这两项，则使用实例级别的字符集和排序规则
+
+```sql
+mysql> show collation where charset ='utf8mb4';
++----------------------------+---------+-----+---------+----------+---------+---------------+
+| Collation                  | Charset | Id  | Default | Compiled | Sortlen | Pad_attribute |
++----------------------------+---------+-----+---------+----------+---------+---------------+
+| utf8mb4_0900_ai_ci         | utf8mb4 | 255 | Yes     | Yes      |       0 | NO PAD        |
+| utf8mb4_0900_as_ci         | utf8mb4 | 305 |         | Yes      |       0 | NO PAD        |
+| utf8mb4_0900_as_cs         | utf8mb4 | 278 |         | Yes      |       0 | NO PAD        |
+| utf8mb4_0900_bin           | utf8mb4 | 309 |         | Yes      |       1 | NO PAD        |
+| utf8mb4_bin                | utf8mb4 |  46 |         | Yes      |       1 | PAD SPACE     |
+| utf8mb4_croatian_ci        | utf8mb4 | 245 |         | Yes      |       8 | PAD SPACE     |
+| utf8mb4_cs_0900_ai_ci      | utf8mb4 | 266 |         | Yes      |       0 | NO PAD        |
+| utf8mb4_cs_0900_as_cs      | utf8mb4 | 289 |         | Yes      |       0 | NO PAD 
+...
+```
+
+#### （3）查看数据库编码
+
+```sql
+mysql> show variables like '%character%';
++--------------------------+--------------------------------+
+| Variable_name            | Value                          |
++--------------------------+--------------------------------+
+| character_set_client     | utf8mb4                        |
+| character_set_connection | utf8mb4                        |
+| character_set_database   | utf8mb3                        |
+| character_set_filesystem | binary                         |
+| character_set_results    | utf8mb4                        |
+| character_set_server     | utf8mb4                        |
+| character_set_system     | utf8mb3                        |
+| character_sets_dir       | /usr/share/mysql-8.0/charsets/ |
++--------------------------+--------------------------------+
+```
+
+- 每个数据库客户端连接都有自己的字符集和排序规则属性，客户端发送的语句的字符集是由character_set_client决定，而与服务端交互时会根据character_set_connection和collation_connection两个参数将接收到的语句转化。当涉及到显示字符串的比较时，由collation_connection参数决定，而当比较的是字段里的字符串时则根据字段本身的排序规则决定
+- character_set_result 参数决定了语句的执行结果以什么字符集返回给客户端
+- 客户端可以很方便的调整字符集和排序规则，比如使用SET NAMES'charset_name' [COLLATE 'collation_name']表明后续的语句都以该字符集格式传送给服务端，而执行结果也以此字符集格式返回。
+
+```ini
+SET character_set_client = utf8mb4;
+SET character_set_results = utf8mb4;
+SET character_set_connection = utf8mb4;
+```
 
 ## 五、数据库表操作
 
@@ -572,51 +872,7 @@ show tables;
 show create table tb_user;
 ```
 
-### 6、索引
-
-#### （1）唯一索引		
-
-```sql
-##创建索引
-CREATE UNIQUE INDEX index_name ON tb_name (account);
-##修改索引
-ALTER TABLE tb_name ADD UNIQUE index_name(field_name);
-##删除索引
-DROP INDEX 索引名称 ON 表名
-```
-
-#### （2）普通索引		
-
-```sql
-##创建索引
-CREATE INDEX Index_name ON tb_name(`account`);
-CREATE INDEX 索引名称 ON 表名(字段名);
-##修改索引
-ALTER TABLE 表名 ADD INDEX 索引名称(字段名称);
-##删除索引
-DROP INDEX 索引名称 ON 表名
-```
-
-#### （3）主键
-
-```sql
-##创建索引
-ALTER TABLE tb_name ADD PRIMARY KEY (field_name);
-ALTER TABLE 表名 ADD PRIMARY KEY (字段名称)
-##删除索引
-ALTER TABLE tb_name DROP PRIMARY KEY;
-```
-
-#### （4）联合索引
-
-```sql
-##创建索引
-ALTER TABLE tb_name ADD index_name (field_name1,field_name2);
-##删除索引
-DROP INDEX 索引名称 ON 表名
-```
-
-### 7、外键
+### 6、外键
 
 #### （1）外键概念
 
@@ -2878,22 +3134,44 @@ mysql> SELECT LAST_INSERT_ID();
 +------------------+
 ```
 
-## 九、导出导入数据
+## 九、数据备份还原
 
-### 1、概述
-
-数据库备份必要性
+### 1、数据库备份必要性
 
 - 保证重要数据不丢失
 - 数据转移
 
-MySQL数据库备份方法
+### 2、Navicat备份还原
 
-- mysqldump备份工具
-- 数据库管理工具,如SQLyog，Navicat等
-- 直接拷贝数据库文件和相关配置文件
+#### （1）Navicat导入导出sql文件
 
-> 数据准备，创建数据库testdb和表tb_test1、tb_test2
+![image-20220727160403166](http://cdn.bluecusliyou.com/202208070954844.png)
+
+#### （2）Navicat备份
+
+![image-20220807101022831](http://cdn.bluecusliyou.com/202208071010919.png)
+
+#### （3）Navicat还原
+
+![image-20220807101126450](http://cdn.bluecusliyou.com/202208071011536.png)
+
+### 3、文件备份（物理备份）
+
+​        物理备份是指通过拷贝数据库文件的方式完成备份，这种备份方式**适用于数据库很大**，数据重要且**需要快速恢复的数据库。**
+
+​         通常情况下物理备份的速度要快于逻辑备份，另外物理备份的备份和恢复粒度范围为整个数据库或者是单个文件。对单表是否有恢复能力取决于存储引擎，比如在MyISAM存储引擎下每个表对应了独立的文件，可以单独恢复；但对于InnoDB存储引擎表来说，可能每个表对应了独立的文件，也可能表使用了共享数据文件。
+
+​         物理备份通常要求在数据库关闭的情况下执行，但如果是在数据库运行情况下执行，则要求备份期间数据库不能修改。
+
+**注：MyISAM的表天生就分成了三个独立的数据文件（\*.frm, \*.MYD, and \*.MYI），可以直接拷贝；InnoDB不支持拷贝表级别或者DB级别的拷贝，但是InnoDB可以直接把Data文件夹整体拷贝，也就是将所有的数据库都拷贝了。**
+
+​        逻辑备份的速度要慢于物理备份，是因为逻辑备份需要访问数据库并将内容转化成逻辑备份需要的格式；通常输出的备份文件大小也要比物理备份大；另外逻辑备份也不包含数据库的配置文件和日志文件内容；备份和恢复的粒度可以是所有数据库，也可以是单个数据库，也可以是单个表；逻辑备份需要再数据库运行的状态下执行；它的执行工具可以是mysqldump或者是select … into outfile两种方式。
+
+### 4、mysqldump（逻辑备份）
+
+#### （1）数据准备
+
+创建数据库testdb和表tb_test1、tb_test2
 
 ![image-20220629205613142](http://cdn.bluecusliyou.com/202206292056271.png)
 
@@ -2915,13 +3193,7 @@ CREATE TABLE `tb_test2` (
 INSERT INTO `tb_test2` VALUES (1001,'ly');
 ```
 
-> Navicat导入导出
-
-![image-20220727160403166](http://cdn.bluecusliyou.com/202207271604318.png)
-
-以下主要讲解mysqldump导入导出
-
-### 2、导出单张表结构+数据
+#### （2）导出单张表结构+数据
 
 ```bash
 ## cmd命令窗口下执行
@@ -2929,25 +3201,25 @@ mysqldump -u[用户名] -h[ip] -p[密码] -P[端口号] 数据库名 表名>导�
 mysqldump -uroot -h127.0.0.1 -p123 -P3306 testdb tb_test1>d:/sqls/testdb.sql
 ```
 
-### 3、导出多张表结构+数据
+#### （3）导出多张表结构+数据
 
 ```bash
 mysqldump -uroot -h127.0.0.1 -p123 -P3306 testdb --tables tb_test1 tb_test2>d:/sqls/testdb2.sql
 ```
 
-### 4、只导出表结构不导表数据，添加`-d`命令参数
+#### （4）只导出表结构不导表数据，添加`-d`命令参数
 
 ```bash
 mysqldump -uroot -h127.0.0.1 -p123 -P3306 -d testdb tb_test1>d:/sqls/testdb3.sql
 ```
 
-### 5、只导出表数据不导表结构，添加`-t`命令参数
+#### （5）只导出表数据不导表结构，添加`-t`命令参数
 
 ```bash
 mysqldump -uroot -h127.0.0.1 -p123 -P3306 -t testdb tb_test1>d:/sqls/testdb4.sql
 ```
 
-### 6、导出指定数据库的全部表结构+数据
+#### （6）导出指定数据库的全部表结构+数据
 
 ```bash
 ##导出命令
@@ -2957,7 +3229,7 @@ mysqldump -uroot -h127.0.0.1 -p123 -P3306 testdb>d:/sqls/testdb5.sql
 mysql -uroot -h127.0.0.1 -p123 -P3306 testdb<d:/sqls/testdb5.sql
 ```
 
-### 7、导出指定数据库+全部表结构+数据`--databases`
+#### （7）导出指定数据库+全部表结构+数据`--databases`
 
 ```bash
 ##导出命令
@@ -2967,13 +3239,13 @@ mysqldump -uroot -h127.0.0.1 -p123 -P3306 --databases testdb>d:/sqls/testdb6.sql
 mysql -uroot -h127.0.0.1 -p123 -P3306<d:/sqls/testdb6.sql
 ```
 
-### 8、导出所有数据库+全部表结构+数据`--all-databases`
+#### （8）导出所有数据库+全部表结构+数据`--all-databases`
 
 ```bash
 mysqldump -uroot -h127.0.0.1 -p123 -P3306  --all-databases>d:/sqls/testdb7.sql
 ```
 
-### 9、只导出数据库+全部表结构`--no-data`
+#### （9）只导出数据库+全部表结构`--no-data`
 
 ```bash
 mysqldump -uroot -h127.0.0.1 -p123 -P3306  --no-data --databases testdb>d:/sqls/testdb8.sql
@@ -2983,63 +3255,52 @@ mysqldump -uroot -h127.0.0.1 -p123 -P3306  --no-data --databases testdb>d:/sqls/
 
 ### 1、mysql的体系结构
 
+MySQL Server架构自顶向下大致可以分网络连接层、服务层、存储引擎层和系统文件层。
+
 ![image-20220705141820481](http://cdn.bluecusliyou.com/202207051418690.png)
 
-#### （1）MysqlServer组成
+#### （1）**网络连接层**
 
-> - `Connectors` ：指的是不同语言中与SQL的交互。
->
-> - `Connection Pool` : 管理缓冲用户连接，线程处理等需要缓存的需求。MySQL数据库的连接层。
->
->   ```sql
->   mysql> show variables like "%max_connections%";
->   +------------------------+-------+
->   | Variable_name          | Value |
->   +------------------------+-------+
->   | max_connections        | 151   |
->   | mysqlx_max_connections | 100   |
->   +------------------------+-------+
->   ```
->
-> - `Management Services & Utilities` : 系统管理和控制工具。备份、安全、复制、集群等。
->
-> - `SQL Interface` : 接受用户的SQL命令，并且返回用户需要查询的结果。
->
-> - `Parser` : SQL语句解析器。
->
-> - `Optimizer` : 查询优化器，SQL语句在查询之前会使用查询优化器对查询进行优化。就是优化客户端请求query，根据客户端请求的 query 语句，和数据库中的一些统计信息，在一系列算法的基础上进行分析，得出一个最优的策略，告诉后面的程序如何取得这个 query 语句的结果。ForExample： select uid,name from user where gender = 1; 这个 select 查询先根据where 语句进行选取，而不是先将表全部查询出来以后再进行 gender 过滤；然后根据 uid 和name 进行属性投影，而不是将属性全部取出以后再进行过滤。最后将这两个查询条件联接起来生成最终查询结果。
->
-> - `Caches & Buffers` : 查询缓存。
->
-> - `Pluggable Storage Engines` : 存储引擎接口。MySQL区别于其他数据库的最重要的特点就是其插件式的表存储引擎(注意：存储引擎是基于表的，而不是数据库)。
->
-> - `File System` : 数据落地到磁盘上，就是文件的存储。
+> 客户端连接器（Client Connectors）：提供与MySQL服务器建立的支持。目前几乎支持所有主流的服务端编程技术，例如常见的 Java、C、Python、.NET等，它们通过各自API技术与MySQL建立连接。
 
-#### （2）连接层
+#### （2）服务层
 
-> 最上层是一些客户端和链接服务，包含本地socket 通信和大多数基于客户端/服务端工具实现的类似于TCP/IP的通信。主要完成一些类似于连接处理、授权认证、及相关的安全方案。在该层上引入了线程池的概念，为通过认证安全接入的客户端提供线程。同样在该层上可以实现基于SSL的安全链接。服务器也会为安全接入的每个客户端验证它所具有的操作权限。
-
-#### （3）服务层
-
-> MySQL的核心服务功能层，该层是MySQL的核心，包括查询缓存，解析器，解析树，预处理器，查询优化器。主要进行查询解析、分析、查询缓存、内置函数、存储过程、触发器、视图等，select操作会先检查是否命中查询缓存，命中则直接返回缓存数据，否则解析查询并创建对应的解析树。
-
-#### （4）引擎层存储引擎层
-
-> 存储引擎真正的负责了MySQL中数据的存储和提取，服务器通过API和存储引擎进行通信。不同的存储引擎具有不同的功能，这样我们可以根据自己的需要，来选取合适的存储引擎。
-
-#### （5）存储层
-
-> 数据存储层， 主要是将数据存储在文件系统之上，并完成与存储引擎的交互。
+> 服务层是MySQL Server的核心，主要包含系统管理和控制工具、连接池、SQL接口、解析器、查询优化器和缓存六个部分。
 >
-> 和其他数据库相比，MySQL有点与众不同，它的架构可以在多种不同场景中应用并发挥良好作用。主要体现在存储引擎上，插件式的存储引擎架构，将查询处理和其他的系统任务以及数据的存储提取分离。这种架构可以根据业务的需求和实际需要选择合适的存储引擎。
+> - 连接池（Connection Pool）：负责存储和管理客户端与数据库的连接，一个线程负责管理一个连接。
+>
+> ```sql
+> mysql> show variables like "%max_connections%";
+> +------------------------+-------+
+> | Variable_name          | Value |
+> +------------------------+-------+
+> | max_connections        | 151   |
+> | mysqlx_max_connections | 100   |
+> +------------------------+-------+
+> ```
+>
+> - 系统管理和控制工具（Management Services & Utilities）：例如备份恢复、安全管理、集群管理等
+> - SQL接口（SQL Interface）：用于接受客户端发送的各种SQL命令，并且返回用户需要查询的结果。比如DML、DDL、存储过程、视图、触发器等。
+> - 解析器（Parser）：负责将请求的SQL解析生成一个"解析树"。然后根据一些MySQL规则进一步检查解析树是否合法。
+> - 查询优化器（Optimizer）：SQL语句在查询之前会使用查询优化器对查询进行优化。根据客户端请求的 query 语句，和数据库中的一些统计信息，在一系列算法的基础上进行分析，得出一个最优的策略，告诉后面的程序如何取得这个 query 语句的结果。
+> - 缓存（Cache&Buffer）： 缓存机制是由一系列小缓存组成的。比如表缓存，记录缓存，权限缓存，引擎缓存等。如果查询缓存有命中的查询结果，查询语句就可以直接去查询缓存中取数据。
+
+#### （4）存储引擎层
+
+> 存储引擎负责MySQL中数据的存储与提取，与底层系统文件进行交互。MySQL存储引擎是插件式的，服务器中的查询执行引擎通过接口与存储引擎进行通信，接口屏蔽了不同存储引擎之间的差异 。现在有很多种存储引擎，各有各的特点，最常见的是MyISAM和InnoDB。
+
+#### （5）**系统文件层**
+
+> 数据存储层， 主要是将数据存储在文件系统之上，并完成与存储引擎的交互。主要包含日志文件，数据文件，配置文件，pid 文件，socket 文件等。
+>
 
 ### 2、存储引擎
 
 #### （1）概述
 
 > 查看数据库支持的存储引擎 `show engines;`
->
-> MySQL5.7支持的存储引擎包含 ： InnoDB 、MyISAM 、BDB、MEMORY、MERGE、EXAMPLE、NDBCluster、ARCHIVE、CSV、BLACKHOLE、FEDERATED等，其中InnoDB和BDB提供事务安全表，其他存储引擎是非事务安全表。Mysql5.5之前的默认存储引擎是MyISAM，5.5之后改为InnoDB。
+
+MySQL5.7支持的存储引擎包含 ： InnoDB 、MyISAM 、BDB、MEMORY、MERGE、EXAMPLE、NDBCluster、ARCHIVE、CSV、BLACKHOLE、FEDERATED等，其中InnoDB和BDB提供事务安全表，其他存储引擎是非事务安全表。Mysql5.5之前的默认存储引擎是MyISAM，5.5之后改为InnoDB。
 
 ![image-20220713144659946](http://cdn.bluecusliyou.com/202207131447052.png)
 
@@ -3093,7 +3354,7 @@ InnoDb是MySQL5.5之后的默认存储引擎，提供了具有提交，回滚和
 MySQL支持外键的存储引擎只有InnoDB ， 在创建外键的时候， 要求父表必须有对应的索引 (一般关联主表的主键，因为主键非空且唯一)。
 
 ```sql
- --如下两张表，子表(city_innodb)的country_id为外键，关联主表(country_innodb)的country_id字段，并且设置了外键之间的级联关系
+-- 如下两张表，子表(city_innodb)的country_id为外键，关联主表(country_innodb)的country_id字段，并且设置了外键之间的级联关系
 CREATE TABLE country_innodb (
 	country_id INTEGER ( 10 ) AUTO_INCREMENT PRIMARY KEY,
 	country_name VARCHAR ( 30 ) NOT NULL
@@ -3284,52 +3545,23 @@ limit               # 7
 - 隔离性（Isolation）：当多个事务同时操作一个数据库时，可能存在并发问题，此时应保证各个事务要进行隔离，事务之间不能互相干扰。
 - 持久性（Durability）：持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的，不能再回滚。
 
-InnoDB 默认的事务隔离级别 REPEATABLE READ 完全遵循和满足事务的 ACID 性。
-
 ### 3、事务引发的问题
 
-#### （1）脏读
+#### （1）脏读（Dirty Reads）
 
-脏读指一个事务读取了另外一个事务未提交的数据。
+事务A读取到了事务B已经修改但尚未提交的数据，还在这个数据基础上做了操作。此时，如果B事务回滚，A读取的数据无效，不符合一致性要求。
 
-这是非常危险的，假设Ａ向Ｂ转帐100元，对应sql语句如下所示
+#### （2）幻读（Phantom Reads）
 
-```sql
-update account set money=money+100 where name='B';    
-update account set money=money-100  where name='A';
-```
+事务A读取到了事务B提交的新增数据，不符合隔离性。
 
-当第1条sql执行完，第2条还没执行(A未提交时)，如果此时Ｂ查询自己的帐户，就会发现自己多了100元钱。如果A等B完成后后再回滚，B就会损失100元。
+#### （3）不可重复读（Non-Repeatable Reads）
 
-#### （2）幻读
+事务A读取到了事务B已经提交的修改数据，不符合隔离性。
 
-出现幻读的情况，数据可能不是错误的，但是可能不符合实际的业务需求。
+####  （4）更新丢失（Lost Update）
 
-幻读出现情况：一个事务的两次不同时间的相同查询返回了不同的的结果集。例如:一个 select 语句执行了两次，但是在第二次返回了第一次没有返回的行,那么这些行就是“phantom” row。
-
-例如：银行在做统计报表时统计account表中所有用户的总金额时候，此时总共有三个账户，总共金额为3000元，这时候新增了一个用户账户，并且存入1000元，这时候银行再次统计就会发现账户总金额为4000，造成了幻读情况。
-
-#### （3）不重复读
-
-不可重复读指在一个事务内读取表中的某一行数据，多次读取结果不同。
-
-例如银行想查询A帐户余额，第一次查询A帐户为200元，此时A向帐户内存了100元并提交了，银行接着又进行了一次查询，此时A帐户为300元了。银行两次查询不一致，可能就会很困惑，不知道哪次查询是准的。
-
-不可重复读和脏读的区别是，脏读是读取前一事务未提交的脏数据，不可重复读是重新读取了前一事务已提交的数据。
-
-很多人认为这种情况无须困惑，当然是后面的为准。我们可以考虑这样一种情况，比如银行程序需要将查询结果分别输出到电脑屏幕和写到文件中，结果在一个事务中针对输出的目的地，进行的两次查询不一致，导致文件和屏幕中的结果不一致，银行工作人员就不知道以哪个为准了。
-
-####  （4）更新丢失
-
-丢失更新就是两个不同的事务（或者Java程序线程）在某一时刻对同一数据进行读取后，先后进行修改。导致第一次操作数据丢失。
-
-例如：
-
-![image-20220705191319950](http://cdn.bluecusliyou.com/202207051913058.png)
-
-假如原来t_customer表内id为10的行，是一条{id:10，name:"王五"，age:15} 的数据，经过事务A修改后变成{id:10，name:"张三"，age:15}。事务B提交后，该数据变成了{id:10，name:"李四"，age:20}。由事务A所执行的操作在事务B的提交后，数据被冲掉了。这个现象就叫做丢失更新。
-
-既然使用事务有这些问题，那我们应该怎么解决呢？在这里说一下mysql的事务隔离级别
+当两个或多个事务选择同一行，然后基于最初选定的值更新该行时，由于每个事务都不知道其他事务的存在，就会发生丢失更新问题–最后的更新覆盖了由其他事务所做的更新。
 
 ### 4、事务的隔离级别
 
@@ -3409,6 +3641,32 @@ insert into account(name,money) values('ggg',1000);--发现不能插入，只能
 
 从上面可以看出来，通过选择事务的隔离级别，可以很好的解决上面的4中事务问题
 
+#### （5）常见数据库的默认级别
+
+**注：4 种事务隔离级别从上往下，级别越高，并发性越差，安全性就越来越高。一般数据默认级别是读已提交或可重复读。**
+
+常见数据库的默认级别：
+
+- MySQL 数据库的默认隔离级别是 REPEATABLE_READ(可重复读) 级别。所以mysql中不会出现脏读、不可重复读，但是会出现幻读。
+- Oracle数据库中，只支持 SERIALIZABLE 和 READ_COMMITTED级别，默认的是 READ_COMMITTED 级别。
+- SQL Server 数据库中，默认的是 READ_COMMITTED(读已提交) 级别。
+
+MySQL下的指令：
+
+查看事务隔离级别
+
+```sql
+show variables like 'tx_isolation';
+```
+
+![img](http://cdn.bluecusliyou.com/202208061942519.png)
+
+设置事务隔离级别**(仅仅针对当前会话有效)**
+
+```sql
+set tx_isolation='REPEATABLE-READ';
+```
+
 ###  5、问题的解决
 
 #### （1）脏读
@@ -3449,20 +3707,7 @@ Serializable虽然可以防止更新丢失，但是效率太低，通常数据�
 
 ![image-20220705193518291](http://cdn.bluecusliyou.com/202207051935375.png)
 
-###  6、补充说明
-
-- SQL规范所规定的标准，不同的数据库具体的实现可能会有些差异
-- mysql中默认事务隔离级别是可重复读时并不会锁住读取到的行
-
-- 事务隔离级别为读提交时，写数据只会锁住相应的行
-
-- 事务隔离级别为可重复读时，如果有索引（包括主键索引）的时候，以索引列为条件更新数据，会存在间隙锁间隙锁、行锁、下一键锁的问题，从而锁住一些行；如果没有索引，更新数据时会锁住整张表。
-
-- 事务隔离级别为串行化时，读写数据都会锁住整张表。
-
-- 隔离级别越高，越能保证数据的完整性和一致性，但是对并发性能的影响也越大，鱼和熊掌不可兼得啊。对于多数应用程序，可以优先考虑把数据库系统的隔离级别设为Read Committed，它能够避免脏读取，而且具有较好的并发性能。尽管它会导致不可重复读、幻读这些并发问题，在可能出现这类问题的个别场合，可以由应用程序采用悲观锁或乐观锁来控制。
-
-### 7、事务实现
+### 6、事务实现
 
 #### （1）基本语法
 
@@ -3537,9 +3782,27 @@ COMMIT;-- 提交事务
 SET autocommit = 1;-- 恢复自动提交
 ```
 
+###  7、补充说明
+
+- SQL规范所规定的标准，不同的数据库具体的实现可能会有些差异
+- mysql中默认事务隔离级别是可重复读时并不会锁住读取到的行
+
+- 事务隔离级别为读提交时，写数据只会锁住相应的行
+
+- 事务隔离级别为可重复读时，如果有索引（包括主键索引）的时候，以索引列为条件更新数据，会存在间隙锁间隙锁、行锁、下一键锁的问题，从而锁住一些行；如果没有索引，更新数据时会锁住整张表。
+
+- 事务隔离级别为串行化时，读写数据都会锁住整张表。
+
+- 隔离级别越高，越能保证数据的完整性和一致性，但是对并发性能的影响也越大，鱼和熊掌不可兼得啊。对于多数应用程序，可以优先考虑把数据库系统的隔离级别设为Read Committed，它能够避免脏读取，而且具有较好的并发性能。尽管它会导致不可重复读、幻读这些并发问题，在可能出现这类问题的个别场合，可以由应用程序采用悲观锁或乐观锁来控制。
+
 ## 十二、锁机制
 
-### 1、锁分类
+### 1、锁定义
+
+- 锁是计算机协调多个进程或线程并发访问某一资源的机制。
+- 在数据库中，除了传统的计算资源（如CPU、RAM、I/O等）的争用以外，数据也是一种供需要用户共享的资源。如何保证数据并发访问的一致性、有效性是所有数据库必须解决的一个问题，锁冲突也是影响数据库并发访问性能的一个重要因素 。
+
+### 2、锁分类
 
 #### （1）从操作的粒度可分为表级锁、行级锁和页级锁
 
@@ -3565,7 +3828,7 @@ SET autocommit = 1;-- 恢复自动提交
 - 乐观锁 :一般的实现方式是对记录数据版本进行比对，在数据更新提交的时候才会进行冲突 检测，如果发现冲突了，则提示错误信息。
 - 悲观锁 :在对一条数据修改的时候，为了避免同时被其他人修改，在修改数据之前先锁定， 再修改的控制方式。共享锁和排他锁是悲观锁的不同实现，但都属于悲观锁范畴。
 
-### 2、行锁原理
+### 3、行锁原理
 
 #### （1）主要实现算法
 
@@ -3622,7 +3885,7 @@ SET autocommit = 1;-- 恢复自动提交
 
 ![image-20220707162849834](http://cdn.bluecusliyou.com/202207071628947.png)
 
-### 3、悲观锁
+### 4、悲观锁
 
 悲观锁（Pessimistic Locking），是指在数据处理过程，将数据处于锁定状态，一般使用数据库的锁机制实现。从广义上来讲，前面提到的行锁、表锁、读锁、写锁、共享锁、排他锁等，这些都属于悲观锁范畴。
 
@@ -3660,7 +3923,7 @@ unlock tables;
 - 排他锁又称为写锁，简称X锁。排他锁就是不能与其他锁并存，如一个事务获取了一个数据行的排他锁，其他事务就不能对该行记录做其他操作，也不能获取该行的锁，但是同一个事务内还可以进行写操作。
 - 使用排他锁的方法是在SQL末尾加上for update，innodb引擎默认会在update，delete语句加上for update。行级锁的实现其实是依靠其对应的索引，所以如果操作没用到索引的查询，那么会锁住全表记录。
 
-### 4、乐观锁
+### 5、乐观锁
 
 #### （1）概述
 
@@ -3700,7 +3963,7 @@ insert into items ...
 update products set quantity=quantity-1,version=version+1where id=1 and version=#{version};
 ```
 
-### 5、死锁与解决方案
+### 6、死锁与解决方案
 
 下面介绍几种常见的死锁现象和解决方案：
 
@@ -3719,6 +3982,8 @@ update products set quantity=quantity-1,version=version+1where id=1 and version=
 #### （2）行级锁死锁
 
 > 产生原因1：
+
+InnoDB的行锁是针对索引加的锁，不是针对记录加的锁。并且该索引不能失效，否则都会从行锁升级为表锁。
 
 如果在事务中执行了一条没有索引条件的查询，引发全表扫描，把行级锁上升为全表记录锁定（等价于表级锁），多个这样的事务执行后，就很容易产生死锁和阻塞，最终应用系统会越来越慢，发生阻塞或死锁。
 
@@ -3786,4 +4051,11 @@ show status like'innodb_row_lock%;
 - Innodb_row_lock_waits：系统启动后到现在总共等待的次数
 
 如果等待次数高，而且每次等待时间长，需要分析系统中为什么会有如此多的等待，然后着手定制优化。
+
+#### （5）优化建议
+
+- 尽可能让所有数据检索都通过索引来完成，避免无索引行锁升级为表锁
+- 合理设计索引，尽量缩小锁的范围
+- 尽量控制事务大小，减少锁定资源量和时间长度，涉及事务加锁的sql
+- 尽可能降低事务隔离级别
 
