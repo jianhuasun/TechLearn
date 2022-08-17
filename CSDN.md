@@ -29,8 +29,8 @@
 [加密解密详解](https://blog.csdn.net/liyou123456789/article/details/120609269)
 ### 数据库
 [SqlServer详解](https://blog.csdn.net/liyou123456789/article/details/121217959)
-[Mysql详解基础](https://blog.csdn.net/liyou123456789/article/details/126023696)
-[Mysql详解优化](https://blog.csdn.net/liyou123456789/article/details/126297268)
+[Mysql基础详解](https://blog.csdn.net/liyou123456789/article/details/126023696)
+[Mysql优化详解](https://blog.csdn.net/liyou123456789/article/details/126297268)
 ### 常用组件
 [AutoMapper详解](https://blog.csdn.net/liyou123456789/article/details/125222690)
 [Autofac详解](https://blog.csdn.net/liyou123456789/article/details/125331813)
