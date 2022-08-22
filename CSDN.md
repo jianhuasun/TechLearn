@@ -1,4 +1,4 @@
-# 技术文章目录
+# 文章代码地址
 
 ## [零、文章目录](https://blog.csdn.net/liyou123456789/article/details/119715435)
 
@@ -6,6 +6,12 @@
 
 - 个人博客-CSDN地址：[https://blog.csdn.net/liyou123456789](https://blog.csdn.net/liyou123456789)
 - 个人博客-GiteePages:[https://bluecusliyou.gitee.io/techlearn](http://bluecusliyou.gitee.io/techlearn)
+
+## 代码仓库地址
+
+Gitee：[https://gitee.com/bluecusliyou](https://gitee.com/bluecusliyou)
+
+Github：[https://github.com/bluecusliyou](https://github.com/bluecusliyou)
 
 ## 文章目录
 
