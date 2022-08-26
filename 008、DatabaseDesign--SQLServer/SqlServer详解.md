@@ -1141,24 +1141,29 @@ update 表 set 字段=XXX where 主键=YYY and 版本=SSS
 - 出现问题，不好调试；
 - 但是把所有的业务逻辑都丢给数据库也增加了数据库的压力，容易造成系统瓶颈。
 
-#### （4）系统存储过程
+#### （4）常用系统存储过程
 
-```
-exec sp_databases; --查看数据库
-exec sp_tables; --查看表
-exec sp_columns student;--查看列
-exec sp_helpIndex student;--查看索引
-exec sp_helpConstraint student;--约束
-exec sp_stored_procedures;
-exec sp_helptext 'sp_stored_procedures';--查看存储过程创建、定义语句
-exec sp_rename student, stuInfo;--修改表、索引、列的名称
-exec sp_renamedb myTempDB, myDB;--更改数据库名称
-exec sp_defaultdb 'master', 'myDB';--更改登录名的默认数据库
-exec sp_helpdb;--数据库帮助，查询数据库信息
-exec sp_helpdb master;exec sp_configure--例：--表重命名
-exec sp_rename 'stu', 'stud';
-select * from stud;--列重命名
-```
+- 
+  exec sp_databases;	查看所有数据库
+- exec sp_helpdb;	查询数据库信息
+- exec sp_helpdb 数据名;	查询指定数据库信息
+- exec sp_renamedb ‘旧库名’, ‘新库名’;	更改数据库名称
+- exec sp_tables;	查询当前数据库的所有表
+- exec sp_columns 表名;	查看列
+- exec sp_help 表名;	返回表的所有信息
+- exec sp_helpIndex 表名;	查看索引
+- exec sp_helpConstraint 表名;	约束
+- exec sp_stored_procedures;	当前环境的所有存储
+- exec sp_helptext ‘存储过程’;	查看存储过程源码
+- exec sp_rename ‘旧名’, ‘新名’;	修改表、索引、列的名称
+- exec sp_defaultdb ‘旧库名’, ‘新库名’;	更改登录名的默认数据库
+
+ 系统存储过程示例：
+
+-  表重命名语法：exec sp_rename 'stu', 'stud';
+-  列重命名语法：exec sp_rename '表名.旧列名', '新列名','column';
+-  重命名索引语法：exec sp_rename N'student.idx_cid',N'idx_cidd', N'index';
+-  查询所有存储过程语法： select * from sys.objects where type = 'P';
 
 #### （5）自定义存储过程
 
@@ -2075,3 +2080,111 @@ Hash Table：通过hashing处理，把数据以key/value的形式存储在表格
 > Computer Scalar
 
 在需要查询的列中需要自定义列，比如count（*） as cnt ，select name+''+age 等会出现此符号。
+
+## 十三、SQL Server Profiler
+
+### 1、概述
+
+Microsoft SQL Server Profiler 是 SQL 跟踪的图形用户界面，用于监视数据库引擎或 Analysis Services 的实例。 您可以捕获有关每个事件的数据并将其保存到文件或表中供以后分析。 例如，可以对生产环境进行监视，了解哪些存储过程由于执行速度太慢而影响了性能。SQL Server Profiler 用于下列活动中：
+
+- 逐步分析有问题的查询以找到问题的原因。
+- 查找并诊断运行慢的查询。
+- 捕获导致某个问题的一系列 Transact-SQL 语句。 然后用所保存的跟踪在某台测试服务器上复制此问题，接着在该测试服务器上诊断问题。
+- 监视 SQL Server 的性能以优化工作负荷。 有关为数据库工作负荷而优化物理数据库设计的信息，请参阅[数据库引擎优化顾问](https://docs.microsoft.com/zh-cn/previous-versions/sql/sql-server-2012/hh231122(v=sql.110))。
+- 使性能计数器与诊断问题关联。
+
+### 2、SQL Server Profiler实操
+
+#### （1）运行SQL Server Profiler
+
+可以从SQL Server Management Studio中打开
+
+![image-20220826144054336](http://cdn.bluecusliyou.com/202208261441498.png)
+
+也可以直接快捷方式打开
+
+![image-20220826152052181](http://cdn.bluecusliyou.com/202208261520258.png)
+
+#### （2）登录需要监控的数据库服务器
+
+![image-20220826144719967](http://cdn.bluecusliyou.com/202208261447044.png)
+
+![image-20220826144345792](http://cdn.bluecusliyou.com/202208261443909.png)
+
+#### （3）设置跟踪的配置项
+
+![image-20220826144608967](http://cdn.bluecusliyou.com/202208261446079.png)
+
+可以选择显示所有监听的事件显示所有的列信息
+
+![image-20220826144925452](http://cdn.bluecusliyou.com/202208261449539.png)
+
+#### （4）对监听的内容进行筛选
+
+设置好筛选条件之后确定就行了。
+
+![image-20220826145335750](http://cdn.bluecusliyou.com/202208261453841.png)
+
+这里需要介绍一下默认选择器的含义：
+
+- ApplicationName: 创建 SQL Server 连接的客户端应用程序的名称。此列由该应用程序传递的值填充，而不是由所显示的程序名填充的；
+- BinaryData: 依赖于跟踪中捕获的事件类的二进制值。
+- ClientProcessID: 调用 SQL Server 的应用程序的进程 ID。
+- CPU: 事件使用的 CPU 时间(毫秒)。
+- Duration: 事件占用的时间。尽管服务器以微秒计算持续时间，SQL Server Profiler 却能够以毫秒为单位显示该值，具体情况取决于“工具”>“选项”对话框中的设置
+- EndTime: 事件结束的时间。对指示事件开始的事件类(例如 SQL:BatchStarting 或 SP:Starting)将不填充此列。
+- LoginName: 用户的登录名(SQL Server 安全登录或 Windows 登录凭据，格式为“域\用户名”)
+- NTusername: Windows用户名。
+- Reads: 由服务器代表事件读取逻辑磁盘的次数。
+- TextDate: 依赖于跟踪中捕获的事件类的文本值；
+- SPID: SQL Server 为客户端的相关进程分配的服务器进程 ID。
+- StratTime: 事件(如果可用)的启动时间。
+- Writes: 由服务器代表事件写入物理磁盘的次数。
+
+如果显示所有事件，还有其他一些列，比如现在筛选数据库id是6的数据库，查找数据库id可以用如下sql
+
+```sql
+select DB_ID ('数据库名称');
+```
+
+![image-20220826145302041](http://cdn.bluecusliyou.com/202208261453177.png)
+
+#### （5）开始运行监听程序
+
+![image-20220826145605062](http://cdn.bluecusliyou.com/202208261456149.png)
+
+可以开始监听，暂停，关闭
+
+![image-20220826145836815](http://cdn.bluecusliyou.com/202208261458913.png)
+
+可以对监听结果进行筛选
+
+![image-20220826150249639](http://cdn.bluecusliyou.com/202208261502735.png)
+
+清空跟踪窗口
+
+![image-20220826151332173](http://cdn.bluecusliyou.com/202208261513233.png)
+
+#### （6）一些其他功能介绍
+
+新建跟踪
+
+![image-20220826150914301](http://cdn.bluecusliyou.com/202208261509359.png)
+
+新建跟踪模板
+
+![image-20220826150749994](http://cdn.bluecusliyou.com/202208261507078.png)
+
+导出导入跟踪模板
+
+![image-20220826153006915](http://cdn.bluecusliyou.com/202208261530984.png)
+
+打开跟踪文件，如果跟踪配置了将跟踪结果保存到文件，后续就可以打开跟踪文件
+
+![image-20220826150721826](http://cdn.bluecusliyou.com/202208261507890.png)
+
+![image-20220826151817912](http://cdn.bluecusliyou.com/202208261518996.png)
+
+查看当前的跟踪属性，跟踪停止后才能编辑
+
+![image-20220826151238232](http://cdn.bluecusliyou.com/202208261512312.png)
