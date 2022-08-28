@@ -3,18 +3,14 @@
 ## [零、文章目录](https://blog.csdn.net/liyou123456789/article/details/119715435)
 
 ## 文章地址
-
 - 个人博客-CSDN地址：[https://blog.csdn.net/liyou123456789](https://blog.csdn.net/liyou123456789)
 - 个人博客-GiteePages:[https://bluecusliyou.gitee.io/techlearn](http://bluecusliyou.gitee.io/techlearn)
 
 ## 代码仓库地址
-
 Gitee：[https://gitee.com/bluecusliyou](https://gitee.com/bluecusliyou)
-
 Github：[https://github.com/bluecusliyou](https://github.com/bluecusliyou)
 
 ## 文章目录
-
 ### 工具
 [docsify详解](https://blog.csdn.net/liyou123456789/article/details/124504727)
 [Git详解](https://blog.csdn.net/liyou123456789/article/details/121411053)
@@ -43,10 +39,10 @@ Github：[https://github.com/bluecusliyou](https://github.com/bluecusliyou)
 [Nlog详解](https://blog.csdn.net/liyou123456789/article/details/125392815)
 [Hangfire详解](https://blog.csdn.net/liyou123456789/article/details/125449302)
 [Log4Net详解](https://blog.csdn.net/liyou123456789/article/details/126264613)
+[Quartz.Net详解](https://blog.csdn.net/liyou123456789/article/details/126575055)
 ### Net框架
 [AspNetCore5基础](https://blog.csdn.net/liyou123456789/article/details/119714802)
 ### 微服务
-[Docker详解](https://blog.csdn.net/liyou123456789/article/details/122292877) 
+[Docker详解](https://blog.csdn.net/liyou123456789/article/details/122292877)
 ### 代码技巧
-[设计模式之美](https://blog.csdn.net/liyou123456789/article/details/124300895) 
-
+[设计模式之美](https://blog.csdn.net/liyou123456789/article/details/124300895)
