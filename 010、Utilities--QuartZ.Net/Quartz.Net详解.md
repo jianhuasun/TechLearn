@@ -2379,33 +2379,7 @@ quartz.dataSource.myDS.provider = SqlServer
 quartz.dataSource.myDS.connectionString = Server=localhost;Database=quartznet;User Id=quartznet;Password=quartznet;
 ```
 
-### 16、常见问题
-
-#### （5）关于AdoJobStore的问题
-
-> 如何提高 AdoJobStore 的性能？
-
-有几种已知的加速 AdoJobStore 的方法，其中只有一种非常实用。
-
-首先，显而易见但不太实用：
-
-- 在运行 Quartz 的机器和运行 RDBMS 的机器之间购买更好（更快）的网络。
-- 购买更好（更强大）的机器来运行您的数据库。
-- 购买更好的 RDBMS。
-
-其次，使用特定于您的数据库的驱动程序委托实现，例如`SQLServerDelegate`，以获得最佳性能。
-
-您还应该始终喜欢最新版本的库。Quartz.NET 2.0 比 1.x 系列效率更高，并且 2.2.x 系列再次具有与早期 2.x 版本相比 AdoJobStore 相关的性能改进。
-
-#### （6）网页环境中的Quartz
-
-默认情况下，IIS 会不时回收和停止应用程序池。这意味着即使您在第一次访问 Web 应用程序时有 Application_Start 事件来启动 Quartz，调度程序也可能会由于站点不活动而在稍后被释放。
-
-如果您有可用的 IIS 8，则可以将您的站点配置为预加载并保持运行。
-
-Asp.Net Core使用控制台运行程序可以解决这个问题。
-
-### 17、最佳实践
+### 16、最佳实践
 
 #### （1）JobDataMap
 
@@ -2519,7 +2493,7 @@ Job 的执行方法应该包含一个处理所有可能异常的 try-catch 块�
 
 允许用户定义他们想要的任何作业，从而有效地打开您的系统，从而使您的系统容易受到与 OWASP 和 MITRE 定义的命令注入攻击相当/等效的各种漏洞的攻击。
 
-### 18、实现UI管理任务调度
+### 17、实现UI管理任务调度
 
 ​			代码第一条，不要自己造轮子，懂了原理之后，就去github上面找开源的项目，如果有找那个写的最好的拿过来修改下为我所用，如果找不到，那就恭喜你，你的想法可能是个没人想过的创意。
 
@@ -2608,7 +2582,7 @@ dotnet Host.dll --urls=http://*:8100
 
 ![image-20220828211102298](http://cdn.bluecusliyou.com/202208282111381.png)
 
-### 19、部署程序
+### 18、部署程序
 
 #### （1）IIS自动回收问题解决
 
