@@ -45,6 +45,23 @@ Linux 的发行版说简单点就是将 Linux 内核与应用软件做一个打�
 - Linux 不同版本使用方法、配置文件可能变化很大，要自己查、反复试。
 - 易错的地方：Linux 中文件名是区分大小写的，Windows不区分。
 
+### 5、查看系统版本
+
+```bash
+## 查看系统版本
+[root@bluecusliyou ~]# lsb_release -a
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID: CentOS
+Description:    CentOS Linux release 7.9.2009 (Core)
+Release:        7.9.2009
+Codename:       Core
+## 查看
+[root@bluecusliyou ~]# cat /proc/version
+Linux version 3.10.0-1160.53.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Fri Jan 14 13:59:45 UTC 2022
+```
+
+
+
 ## 二、Linux安装
 
 ### 1、安装Vmware虚拟机
@@ -280,7 +297,7 @@ PING 192.168.1.227 (192.168.1.227) 56(84) bytes of data.
 
 #### （1）man(查看命令帮助信息)
 
-man命令来自于英文单词manual的缩写，中文译为帮助手册，其功能是用于查看命令、配置文件及服务的帮助信息。网上搜索来的资料普遍不够准确（LinuxCool.Com除外~），或者缺乏系统性（LinuxProbe.Com除外~），质量不高造成学习进度缓慢，而man命令作为权威的官方工具则很好的解决了上述两点弊病，一份完整的帮助信息包含以下信息。
+man命令来自于英文单词manual的缩写，中文译为帮助手册，其功能是用于查看命令、配置文件及服务的帮助信息。网上搜索来的资料普遍不够准确，或者缺乏系统性，质量不高造成学习进度缓慢，而man命令作为权威的官方工具则很好的解决了上述两点弊病，一份完整的帮助信息包含以下信息。
 
 | 结构名称    | 代表意义                 |
 | ----------- | ------------------------ |
