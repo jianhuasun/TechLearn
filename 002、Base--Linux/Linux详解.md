@@ -288,8 +288,78 @@ PING 192.168.1.227 (192.168.1.227) 56(84) bytes of data.
 
 ### 6、常用连接工具
 
+#### （1）连接工具
+
 - FinalShell：[http://www.hostbuf.com/](http://www.hostbuf.com/)
 - MobaXterm：[https://mobaxterm.mobatek.net/](https://mobaxterm.mobatek.net/)
+
+#### （2）SSH服务
+
+​			运维人员是怎么远程连接到机房上的服务器，很少使用图形界面(卡，无法自动化)，远程登录有专门的通信协议telnet，telnet就是通过网络进行命令行操作服务器。只有服务器端开始了远程登录服务，客户端才能通过telnet协议控制服务器端。
+​			但telnet协议使用明文传输数据，这会造成严重的安全性问题，所以现在几乎不推荐使用，而替代协议是SSH，ssh命令可以让我们轻松的基于ssh加密协议进行远程主机访问，从而实现对远程服务器的管理工作。
+
+#### （3）ssh命令
+
+**语法格式:** ssh [参数] 远程主机
+
+**常用参数：**
+
+| -1           | 强制使用ssh协议版本1                                         |
+| ------------ | ------------------------------------------------------------ |
+| -2           | 强制使用ssh协议版本2                                         |
+| -4           | 强制使用IPv4地址                                             |
+| -6           | 强制使用IPv6地址                                             |
+| -A           | 开启认证代理连接转发功能                                     |
+| -a           | 关闭认证代理连接转发功能                                     |
+| -b<IP地址>   | 使用本机指定的地址作为对位连接的源IP地址                     |
+| -C           | 请求压缩所有数据                                             |
+| -F<配置文件> | 指定ssh指令的配置文件，默认的配置文件为“/etc/ssh/ssh_config” |
+| -f           | 后台执行ssh指令                                              |
+| -g           | 允许远程主机连接本机的转发端口                               |
+| -i<身份文件> | 指定身份文件（即私钥文件）                                   |
+| -l<登录名>   | 指定连接远程服务器的登录用户名                               |
+| -N           | 不执行远程指令                                               |
+| -o<选项>     | 指定配置选项                                                 |
+| -p<端口>     | 指定远程服务器上的端口                                       |
+| -q           | 静默模式，所有的警告和诊断信息被禁止输出                     |
+| -X           | 开启X11转发功能                                              |
+| -x           | 关闭X11转发功能                                              |
+| -y           | 开启信任X11转发功能                                          |
+
+**参考实例**
+
+```bash
+# 基于ssh协议，远程访问服务器主机系统
+[root@bluecusliyou ~]# ssh 链接的服务器IP地址
+root@121.4.29.23's password: 服务器密码
+Activate the web console with: systemctl enable --now cockpit.socket
+Last login: Sun Jul 31 13:27:41 2022 from 服务器IP
+[root@bluecusliyou ~]#
+# 使用指定的用户身份登录远程服务器主机系统
+[root@bluecusliyou ~]# ssh -l liyou 链接的服务器IP地址
+root@121.4.29.23's password: 服务器密码
+Activate the web console with: systemctl enable --now cockpit.socket
+Last login: Sun Jul 31 13:27:41 2022 from 服务器IP
+[root@bluecusliyou ~]$
+# 登录远程服务器主机系统后执行一条命令
+[root@bluecusliyou ~]# ssh 链接的服务器IP地址 "docker ps -a"
+root@121.4.29.23's password: 
+CONTAINER ID   IMAGE     COMMAND                  CREATED        STATUS                    PORTS                               NAMES
+9319e4a0df36   nginx     "/docker-entrypoint.…"   5 months ago   Exited (1) 5 months ago                                       mynginxhttps
+1c026f2f9a01   nginx     "/docker-entrypoint.…"   5 months ago   Up 5 months               80/tcp                              nginxforconf
+e6bd5bdcba5d   nginx     "/docker-entrypoint.…"   5 months ago   Up 5 months               0.0.0.0:80->80/tcp, :::80->80/tcp   mynginx
+[root@bluecusliyou ~]# 
+# 强制使用v1版本的ssh加密协议连接远程服务器主机
+[root@bluecusliyou ~]# ssh -1 链接的服务器IP地址
+```
+
+#### （4）图形连接			
+
+以MobaXterm为例，输入host地址，输入账号密码就可以进行远程控制服务器了。实际上也是通过命令行连接的。
+
+![image-20220902071103262](http://cdn.bluecusliyou.com/202209020711500.png)
+
+![image-20220902071817574](http://cdn.bluecusliyou.com/202209020718687.png)
 
 ## 三、Linux基础
 
@@ -3442,63 +3512,6 @@ wget命令支持如HTTP、HTTPS、FTP等常见协议，可以在命令行中直�
 [root@bluecusliyou testdir]# wget -c https://www.linuxprobe.com/docs/LinuxProbe.pdf
 # 下载指定的网络文件，将任务放至后台执行
 [root@bluecusliyou testdir]# wget -b https://www.linuxprobe.com/docs/LinuxProbe.pdf
-```
-
-#### （8）ssh(安全的远程连接服务器)
-
-ssh命令的功能是用于安全的远程连接服务器主机系统，作为openssh套件中的客户端连接工具，ssh命令可以让我们轻松的基于ssh加密协议进行远程主机访问，从而实现对远程服务器的管理工作。
-
-**语法格式:** ssh [参数] 远程主机
-
-**常用参数：**
-
-| -1           | 强制使用ssh协议版本1                                         |
-| ------------ | ------------------------------------------------------------ |
-| -2           | 强制使用ssh协议版本2                                         |
-| -4           | 强制使用IPv4地址                                             |
-| -6           | 强制使用IPv6地址                                             |
-| -A           | 开启认证代理连接转发功能                                     |
-| -a           | 关闭认证代理连接转发功能                                     |
-| -b<IP地址>   | 使用本机指定的地址作为对位连接的源IP地址                     |
-| -C           | 请求压缩所有数据                                             |
-| -F<配置文件> | 指定ssh指令的配置文件，默认的配置文件为“/etc/ssh/ssh_config” |
-| -f           | 后台执行ssh指令                                              |
-| -g           | 允许远程主机连接本机的转发端口                               |
-| -i<身份文件> | 指定身份文件（即私钥文件）                                   |
-| -l<登录名>   | 指定连接远程服务器的登录用户名                               |
-| -N           | 不执行远程指令                                               |
-| -o<选项>     | 指定配置选项                                                 |
-| -p<端口>     | 指定远程服务器上的端口                                       |
-| -q           | 静默模式，所有的警告和诊断信息被禁止输出                     |
-| -X           | 开启X11转发功能                                              |
-| -x           | 关闭X11转发功能                                              |
-| -y           | 开启信任X11转发功能                                          |
-
-**参考实例**
-
-```bash
-# 基于ssh协议，远程访问服务器主机系统
-[root@bluecusliyou ~]# ssh 链接的服务器IP地址
-root@121.4.29.23's password: 服务器密码
-Activate the web console with: systemctl enable --now cockpit.socket
-Last login: Sun Jul 31 13:27:41 2022 from 服务器IP
-[root@bluecusliyou ~]#
-# 使用指定的用户身份登录远程服务器主机系统
-[root@bluecusliyou ~]# ssh -l liyou 链接的服务器IP地址
-root@121.4.29.23's password: 服务器密码
-Activate the web console with: systemctl enable --now cockpit.socket
-Last login: Sun Jul 31 13:27:41 2022 from 服务器IP
-[root@bluecusliyou ~]$
-# 登录远程服务器主机系统后执行一条命令
-[root@bluecusliyou ~]# ssh 链接的服务器IP地址 "docker ps -a"
-root@121.4.29.23's password: 
-CONTAINER ID   IMAGE     COMMAND                  CREATED        STATUS                    PORTS                               NAMES
-9319e4a0df36   nginx     "/docker-entrypoint.…"   5 months ago   Exited (1) 5 months ago                                       mynginxhttps
-1c026f2f9a01   nginx     "/docker-entrypoint.…"   5 months ago   Up 5 months               80/tcp                              nginxforconf
-e6bd5bdcba5d   nginx     "/docker-entrypoint.…"   5 months ago   Up 5 months               0.0.0.0:80->80/tcp, :::80->80/tcp   mynginx
-[root@bluecusliyou ~]# 
-# 强制使用v1版本的ssh加密协议连接远程服务器主机
-[root@bluecusliyou ~]# ssh -1 链接的服务器IP地址
 ```
 
 ### 6、防火墙命令
