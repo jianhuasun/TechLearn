@@ -19,6 +19,7 @@ Github：[https://github.com/bluecusliyou](https://github.com/bluecusliyou)
 ### 计算机基础
 [Linux详解](https://blog.csdn.net/liyou123456789/article/details/121548156)
 [网络详解](https://blog.csdn.net/liyou123456789/article/details/122731144)
+[HTTP详解](https://blog.csdn.net/liyou123456789/article/details/127138103)
 ### C#高级
 [反射详解](https://blog.csdn.net/liyou123456789/article/details/119548050)
 [泛型详解](https://blog.csdn.net/liyou123456789/article/details/119113577)
