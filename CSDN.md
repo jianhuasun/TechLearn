@@ -7,8 +7,8 @@
 - 个人博客-GiteePages:[https://bluecusliyou.gitee.io/techlearn](http://bluecusliyou.gitee.io/techlearn)
 
 ## 代码仓库地址
-Gitee：[https://gitee.com/bluecusliyou](https://gitee.com/bluecusliyou)
-Github：[https://github.com/bluecusliyou](https://github.com/bluecusliyou)
+Gitee：[https://gitee.com/bluecusliyou/TechLearn](https://gitee.com/bluecusliyou/TechLearn)
+Github：[https://github.com/bluecusliyou/TechLearn](https://github.com/bluecusliyou/TechLearn)
 
 ## 文章目录
 ### 工具
@@ -16,10 +16,12 @@ Github：[https://github.com/bluecusliyou](https://github.com/bluecusliyou)
 [Git详解](https://blog.csdn.net/liyou123456789/article/details/121411053)
 [nssm详解](https://blog.csdn.net/liyou123456789/article/details/123094277)
 [Typora详解](https://blog.csdn.net/liyou123456789/article/details/122657783)
+
 ### 计算机基础
 [Linux详解](https://blog.csdn.net/liyou123456789/article/details/121548156)
 [网络详解](https://blog.csdn.net/liyou123456789/article/details/122731144)
 [HTTP详解](https://blog.csdn.net/liyou123456789/article/details/127138103)
+
 ### C#高级
 [反射详解](https://blog.csdn.net/liyou123456789/article/details/119548050)
 [泛型详解](https://blog.csdn.net/liyou123456789/article/details/119113577)
